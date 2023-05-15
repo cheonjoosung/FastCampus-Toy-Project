@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.example.fastcampus.countnumber.CountNumberActivity
 import com.example.fastcampus.databinding.ActivityMainBinding
+import com.example.fastcampus.unitconversion.UnitConversionActivity
 
 class MainActivity : AppCompatActivity() {
 
@@ -17,12 +18,14 @@ class MainActivity : AppCompatActivity() {
 
         val list = mutableListOf<ProjectList>().apply {
             add(ProjectList("숫자 세기", CountNumberActivity::class.java))
+            add(ProjectList("단위 변환기", UnitConversionActivity::class.java))
         }
 
         binding.rvAppList.adapter = ProjectListAdapter(list).apply {
             projectListClickListener = {
-                val it = Intent(this@MainActivity, it.claasName)
-                startActivity(it)
+                Intent(this@MainActivity, it.claasName).run {
+                    startActivity(this)
+                }
             }
         }
     }
