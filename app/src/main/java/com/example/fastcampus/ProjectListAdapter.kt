@@ -31,7 +31,8 @@ class ProjectListAdapter(
         val item = list[position]
 
         with(holder.binding) {
-            btnName.text = item.name
+            val str = (position + 1).toString() + ". " + item.name
+            btnName.text = str
 
             btnName.setOnClickListener {
                 projectListClickListener?.invoke(item)
