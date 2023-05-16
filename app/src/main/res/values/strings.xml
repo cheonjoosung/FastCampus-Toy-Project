@@ -3,4 +3,9 @@
     <string name="init">초기화</string>
     <string name="add">+</string>
     <string name="zero">0</string>
+    <string name="hint_number">자연수를 입력해주세요.</string>
+    <string name="mm">mm</string>
+    <string name="cm">cm</string>
+    <string name="m">m</string>
+    <string name="km">km</string>
 </resources>
