@@ -18,8 +18,9 @@
 
 
 ## 3. 응급 의료 정보
-<img src="https://github.com/cheonjoosung/FastCampus-Toy-Project/blob/master/image/no3-1.jpg?raw=true" width="180" height="400">
-<img src="https://github.com/cheonjoosung/FastCampus-Toy-Project/blob/master/image/no3-2.jpg?raw=true" width="180" height="400">
+|<img src="https://github.com/cheonjoosung/FastCampus-Toy-Project/blob/master/image/no3-1.jpg?raw=true" width="180" height="400">
+|<img src="https://github.com/cheonjoosung/FastCampus-Toy-Project/blob/master/image/no3-2.jpg?raw=true" width="180" height="400">
+|-|-|
 
 - 응급 의료 정보를 입력 받아서 SharedPreference 를 활용한 데이터 관리
 - UI 학습 : ConstraintLayout, ViewBinding, Spinner, RadioButton
