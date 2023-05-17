@@ -4,6 +4,169 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".unitconversion.InputActivity">
+    tools:context=".emergencymedical.InputActivity">
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.4" />
+
+    <TextView
+        android:id="@+id/tv_name"
+        style="@style/Title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:text="@string/name"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/et_name_value"
+        style="@style/Value"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="24dp"
+        android:hint="천주성"
+        app:layout_constraintBaseline_toBaselineOf="@id/tv_name"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/guideline2" />
+
+    <TextView
+        android:id="@+id/tv_birth"
+        style="@style/Title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:text="@string/birth"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_name" />
+
+    <TextView
+        android:id="@+id/tv_birth_value"
+        style="@style/Value"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        tools:hint="90.06.03"
+        app:layout_constraintBaseline_toBaselineOf="@id/tv_birth"
+        app:layout_constraintEnd_toStartOf="@id/iv_date"
+        app:layout_constraintStart_toStartOf="@+id/guideline2" />
+
+    <ImageView
+        android:id="@+id/iv_date"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/baseline_date_24"
+        app:layout_constraintBottom_toBottomOf="@id/tv_birth_value"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/tv_birth_value"
+        app:layout_constraintTop_toTopOf="@id/tv_birth_value" />
+
+    <TextView
+        android:id="@+id/tv_blood"
+        style="@style/Title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:text="@string/blood_type"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_birth" />
+
+    <RadioGroup
+        android:id="@+id/rg_blood"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:checkedButton="@id/rb_rg_plus"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="@id/tv_blood"
+        app:layout_constraintEnd_toStartOf="@id/spinner_blood"
+        app:layout_constraintStart_toStartOf="@+id/guideline2"
+        app:layout_constraintTop_toTopOf="@id/tv_blood">
+
+        <RadioButton
+            android:id="@+id/rb_rg_plus"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="rh+" />
+
+        <RadioButton
+            android:id="@+id/rb_rg_minus"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="rh-" />
+
+    </RadioGroup>
+
+    <Spinner
+        android:id="@+id/spinner_blood"
+        style="@style/Value"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        app:layout_constraintBottom_toBottomOf="@id/rg_blood"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/rg_blood"
+        app:layout_constraintTop_toTopOf="@id/rg_blood" />
+
+    <TextView
+        android:id="@+id/tv_phone"
+        style="@style/Title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:text="@string/phone_number"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_blood" />
+
+    <EditText
+        android:id="@+id/et_phone_value"
+        style="@style/Value"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="24dp"
+        android:hint="010-xxxx-xxxx"
+        app:layout_constraintBaseline_toBaselineOf="@id/tv_phone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/guideline2" />
+
+    <TextView
+        android:id="@+id/tv_etc"
+        style="@style/Title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:text="@string/etc"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_phone" />
+
+    <CheckBox
+        android:id="@+id/cb_etc"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="노출여부"
+        app:layout_constraintBottom_toBottomOf="@id/tv_etc"
+        app:layout_constraintEnd_toStartOf="@id/et_etc_value"
+        app:layout_constraintStart_toStartOf="@id/guideline2"
+        app:layout_constraintTop_toTopOf="@id/tv_etc" />
+
+    <EditText
+        android:id="@+id/et_etc_value"
+        style="@style/Value"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="24dp"
+        android:hint="주의사항"
+        app:layout_constraintBaseline_toBaselineOf="@id/tv_etc"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/cb_etc" />
+
+    <androidx.constraintlayout.helper.widget.Layer
+        android:id="@+id/birthDateLayer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:constraint_referenced_ids="tv_birth_value,iv_date"
+        tools:ignore="MissingConstraints" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
