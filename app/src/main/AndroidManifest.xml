@@ -13,6 +13,9 @@
         android:theme="@style/Theme.FastCampus"
         tools:targetApi="31">
         <activity
+            android:name=".unitconversion.InputActivity"
+            android:exported="false" />
+        <activity
             android:name=".emergencymedical.EmergencyMedicalCareActivity"
             android:exported="false" />
         <activity
