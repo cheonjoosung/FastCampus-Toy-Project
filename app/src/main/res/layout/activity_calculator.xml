@@ -6,4 +6,130 @@
     android:layout_height="match_parent"
     tools:context=".ch03_calculator.CalculatorActivity">
 
+    <androidx.constraintlayout.helper.widget.Flow
+        android:id="@+id/flow_keypad"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:padding="8dp"
+        app:constraint_referenced_ids="btn_mod, btn_mul, btn_divide, btn_delete, btn_1, btn_2, btn_3, btn_clear, btn_4, btn_5, btn_6, btn_add, btn_7, btn_8, btn_9, btn_minus, btn_0, btn_equal"
+        app:flow_horizontalGap="8dp"
+        app:flow_maxElementsWrap="4"
+        app:flow_wrapMode="chain"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHeight_percent="0.7"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1" />
+
+    <Button
+        android:id="@+id/btn_1"
+        style="@style/numberKeypad"
+        android:text="@string/one"
+        tools:ignore="MissingConstraints" />
+
+    <Button
+        android:id="@+id/btn_2"
+        style="@style/numberKeypad"
+        android:text="@string/two"
+        tools:ignore="MissingConstraints" />
+
+    <Button
+        android:id="@+id/btn_3"
+        style="@style/numberKeypad"
+        android:text="@string/three"
+        tools:ignore="MissingConstraints" />
+
+    <Button
+        android:id="@+id/btn_4"
+        style="@style/numberKeypad"
+        android:text="@string/four"
+        tools:ignore="MissingConstraints" />
+
+    <Button
+        android:id="@+id/btn_5"
+        style="@style/numberKeypad"
+        android:text="@string/five"
+        tools:ignore="MissingConstraints" />
+
+    <Button
+        android:id="@+id/btn_6"
+        style="@style/numberKeypad"
+        android:text="@string/six"
+        tools:ignore="MissingConstraints" />
+
+    <Button
+        android:id="@+id/btn_7"
+        style="@style/numberKeypad"
+        android:text="@string/seven"
+        tools:ignore="MissingConstraints" />
+
+    <Button
+        android:id="@+id/btn_8"
+        style="@style/numberKeypad"
+        android:text="@string/eight"
+        tools:ignore="MissingConstraints" />
+
+    <Button
+        android:id="@+id/btn_9"
+        style="@style/numberKeypad"
+        android:text="@string/nine"
+        tools:ignore="MissingConstraints" />
+
+    <Button
+        android:id="@+id/btn_0"
+        style="@style/numberKeypad"
+        android:text="@string/zero"
+        app:layout_constraintHorizontal_weight="1"
+        tools:ignore="MissingConstraints" />
+
+    <Button
+        android:id="@+id/btn_equal"
+        style="@style/equalKeypad"
+        android:text="@string/equal"
+        app:layout_constraintHorizontal_weight="3"
+        tools:ignore="MissingConstraints" />
+
+    <Button
+        android:id="@+id/btn_clear"
+        style="@style/operatorKeypad"
+        android:text="@string/clear"
+        tools:ignore="MissingConstraints" />
+
+    <Button
+        android:id="@+id/btn_add"
+        style="@style/operatorKeypad"
+        android:text="@string/add"
+        tools:ignore="MissingConstraints" />
+
+    <Button
+        android:id="@+id/btn_minus"
+        style="@style/operatorKeypad"
+        android:text="@string/minus"
+        tools:ignore="MissingConstraints" />
+
+    <Button
+        android:id="@+id/btn_mul"
+        style="@style/operatorKeypad"
+        android:text="@string/mul"
+        tools:ignore="MissingConstraints" />
+
+    <Button
+        android:id="@+id/btn_divide"
+        style="@style/operatorKeypad"
+        android:text="@string/divide"
+        tools:ignore="MissingConstraints" />
+
+    <Button
+        android:id="@+id/btn_mod"
+        style="@style/operatorKeypad"
+        android:text="@string/mod"
+        tools:ignore="MissingConstraints" />
+
+    <Button
+        android:id="@+id/btn_delete"
+        style="@style/operatorKeypad"
+        android:text="@string/delete"
+        tools:ignore="MissingConstraints" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
