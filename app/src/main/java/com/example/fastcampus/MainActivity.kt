@@ -3,11 +3,11 @@ package com.example.fastcampus
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import com.example.fastcampus.calculator.CalculatorActivity
-import com.example.fastcampus.count_number.CountNumberActivity
+import com.example.fastcampus.ch03_calculator.CalculatorActivity
+import com.example.fastcampus.ch01_count_number.CountNumberActivity
 import com.example.fastcampus.databinding.ActivityMainBinding
-import com.example.fastcampus.emergency_medical.EmergencyMedicalCareActivity
-import com.example.fastcampus.unit_conversion.UnitConversionActivity
+import com.example.fastcampus.ch04_emergency_medical.EmergencyMedicalCareActivity
+import com.example.fastcampus.ch02_unit_conversion.UnitConversionActivity
 
 class MainActivity : AppCompatActivity() {
 

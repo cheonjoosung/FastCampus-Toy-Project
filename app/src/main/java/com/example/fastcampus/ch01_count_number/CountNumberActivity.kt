@@ -1,4 +1,4 @@
-package com.example.fastcampus.count_number
+package com.example.fastcampus.ch01_count_number
 
 import android.os.Bundle
 import android.util.Log

@@ -1,4 +1,4 @@
-package com.example.fastcampus.emergency_medical
+package com.example.fastcampus.ch04_emergency_medical
 
 import android.app.DatePickerDialog
 import android.app.DatePickerDialog.OnDateSetListener

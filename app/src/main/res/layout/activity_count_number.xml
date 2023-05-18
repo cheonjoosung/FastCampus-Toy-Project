@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".count_number.CountNumberActivity">
+    tools:context=".ch01_count_number.CountNumberActivity">
 
     <TextView
         android:id="@+id/tv_count"

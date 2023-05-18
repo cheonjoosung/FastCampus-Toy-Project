@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".emergency_medical.InputActivity">
+    tools:context=".ch04_emergency_medical.InputActivity">
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline2"

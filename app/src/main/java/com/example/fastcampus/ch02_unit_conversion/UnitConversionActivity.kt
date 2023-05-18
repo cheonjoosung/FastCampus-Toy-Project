@@ -1,4 +1,4 @@
-package com.example.fastcampus.unit_conversion
+package com.example.fastcampus.ch02_unit_conversion
 
 import android.os.Bundle
 import android.text.Editable
