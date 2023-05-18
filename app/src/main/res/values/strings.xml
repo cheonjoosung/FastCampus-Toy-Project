@@ -36,5 +36,7 @@
     <string name="delete">←</string>
     <string name="mod">%</string>
     <string name="divide">/</string>
-    <string name="mul">X</string>
+    <string name="mul">*</string>
+    <string name="equation">equation</string>
+    <string name="result">result</string>
 </resources>

@@ -6,6 +6,32 @@
     android:layout_height="match_parent"
     tools:context=".ch03_calculator.CalculatorActivity">
 
+    <TextView
+        android:id="@+id/tv_equation"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:gravity="end"
+        android:padding="16dp"
+        android:textSize="30sp"
+        app:layout_constraintBottom_toTopOf="@id/tv_result"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="@string/equation" />
+
+    <TextView
+        android:id="@+id/tv_result"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:gravity="end"
+        android:padding="16dp"
+        android:textSize="30sp"
+        app:layout_constraintBottom_toTopOf="@id/flow_keypad"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_equation"
+        tools:text="@string/result" />
+
     <androidx.constraintlayout.helper.widget.Flow
         android:id="@+id/flow_keypad"
         android:layout_width="0dp"
