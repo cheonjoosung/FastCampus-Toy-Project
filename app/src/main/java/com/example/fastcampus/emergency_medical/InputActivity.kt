@@ -1,21 +1,20 @@
-package com.example.fastcampus.emergencymedical
+package com.example.fastcampus.emergency_medical
 
 import android.app.DatePickerDialog
 import android.app.DatePickerDialog.OnDateSetListener
 import android.content.Context
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.view.View
 import android.widget.AdapterView
 import android.widget.ArrayAdapter
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import com.example.fastcampus.BIRTH
 import com.example.fastcampus.BLOOD
 import com.example.fastcampus.ETC
 import com.example.fastcampus.NAME
 import com.example.fastcampus.PHONE
-import com.example.fastcampus.R
 import com.example.fastcampus.USER_INFORMATION
 import com.example.fastcampus.databinding.ActivityInputBinding
 
@@ -28,8 +27,6 @@ class InputActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityInputBinding.inflate(layoutInflater)
         setContentView(binding.root)
-
-        val message = intent.getStringExtra("intentMessage") ?: "없음"
 
         with(binding) {
 
@@ -57,7 +54,8 @@ class InputActivity : AppCompatActivity() {
             birthDateLayer.setOnClickListener {
                 val listener = OnDateSetListener { date, year, month, dayOfMonth ->
                     Log.e(localClassName, "??? $year-${month.inc()}-$dayOfMonth")
-                    tvBirthValue.text = "$year-${month.inc()}-$dayOfMonth"
+                    val str = "$year-${month.inc()}-$dayOfMonth"
+                    tvBirthValue.text = str
                 }
 
                 DatePickerDialog(this@InputActivity, listener, 2000, 2, 1).show()

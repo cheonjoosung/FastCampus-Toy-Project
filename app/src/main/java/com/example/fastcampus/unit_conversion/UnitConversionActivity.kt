@@ -1,7 +1,6 @@
-package com.example.fastcampus.unitconversion
+package com.example.fastcampus.unit_conversion
 
 import android.os.Bundle
-import android.os.PersistableBundle
 import android.text.Editable
 import android.text.TextWatcher
 import android.util.Log
@@ -94,13 +93,12 @@ class UnitConversionActivity : AppCompatActivity() {
 
             when (unit) {
                 "mm" -> {
-                    val mm = changedValue
-                    val cm = mm / 10.toDouble()
+                    val cm = changedValue / 10.toDouble()
                     val m = cm / 100.toDouble()
                     val km = m / 1000.toDouble()
 
-                    Log.e(localClassName, "$unit $mm $cm $m $km")
-                    convertUnitInTextValue(binding.tvMm, mm)
+                    Log.e(localClassName, "$unit $changedValue $cm $m $km")
+                    convertUnitInTextValue(binding.tvMm, changedValue)
                     convertUnitInTextValue(binding.tvCm, cm)
                     convertUnitInTextValue(binding.tvM, m)
                     convertUnitInTextValue(binding.tvKm, km)
@@ -108,12 +106,11 @@ class UnitConversionActivity : AppCompatActivity() {
 
                 "cm" -> {
                     val mm = changedValue * 10.toDouble()
-                    val cm = changedValue
-                    val m = cm / 100.toDouble()
+                    val m = changedValue / 100.toDouble()
                     val km = m / 1000.toDouble()
-                    Log.e(localClassName, "$unit $mm $cm $m $km")
+                    Log.e(localClassName, "$unit $mm $changedValue $m $km")
                     convertUnitInTextValue(binding.tvMm, mm)
-                    convertUnitInTextValue(binding.tvCm, cm)
+                    convertUnitInTextValue(binding.tvCm, changedValue)
                     convertUnitInTextValue(binding.tvM, m)
                     convertUnitInTextValue(binding.tvKm, km)
                 }
@@ -121,12 +118,11 @@ class UnitConversionActivity : AppCompatActivity() {
                 "m" -> {
                     val mm = changedValue / 1000.toDouble()
                     val cm = mm / 10.toDouble()
-                    val m = changedValue
-                    val km = m / 1000.toDouble()
-                    Log.e(localClassName, "$unit $mm $cm $m $km")
+                    val km = changedValue / 1000.toDouble()
+                    Log.e(localClassName, "$unit $mm $cm $changedValue $km")
                     convertUnitInTextValue(binding.tvMm, mm)
                     convertUnitInTextValue(binding.tvCm, cm)
-                    convertUnitInTextValue(binding.tvM, m)
+                    convertUnitInTextValue(binding.tvM, changedValue)
                     convertUnitInTextValue(binding.tvKm, km)
                 }
 
@@ -134,16 +130,15 @@ class UnitConversionActivity : AppCompatActivity() {
                     val mm = changedValue / 1000000.toDouble()
                     val cm = mm / 10.toDouble()
                     val m = cm / 100.toDouble()
-                    val km = changedValue
-                    Log.e(localClassName, "$unit $mm $cm $m $km")
+                    Log.e(localClassName, "$unit $mm $cm $m $changedValue")
                     convertUnitInTextValue(binding.tvMm, mm)
                     convertUnitInTextValue(binding.tvCm, cm)
                     convertUnitInTextValue(binding.tvM, m)
-                    convertUnitInTextValue(binding.tvKm, km)
+                    convertUnitInTextValue(binding.tvKm, changedValue)
                 }
             }
         } catch (e: Exception) {
-
+            Log.e(localClassName, "${e.message}")
         }
     }
 
@@ -156,14 +151,4 @@ class UnitConversionActivity : AppCompatActivity() {
 
     }
 
-    override fun onSaveInstanceState(outState: Bundle, outPersistentState: PersistableBundle) {
-        super.onSaveInstanceState(outState, outPersistentState)
-    }
-
-    override fun onRestoreInstanceState(
-        savedInstanceState: Bundle?,
-        persistentState: PersistableBundle?
-    ) {
-        super.onRestoreInstanceState(savedInstanceState, persistentState)
-    }
 }

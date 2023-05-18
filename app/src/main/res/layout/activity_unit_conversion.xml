@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".unitconversion.UnitConversionActivity">
+    tools:context=".unit_conversion.UnitConversionActivity">
 
     <Spinner
         android:id="@+id/spinner"
@@ -31,7 +31,8 @@
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@id/spinner"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        android:autofillHints="" />
 
     <TextView
         android:id="@+id/tv_mm"

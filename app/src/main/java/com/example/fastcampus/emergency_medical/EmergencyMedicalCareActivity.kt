@@ -1,4 +1,4 @@
-package com.example.fastcampus.emergencymedical
+package com.example.fastcampus.emergency_medical
 
 import android.content.Intent
 import android.net.Uri

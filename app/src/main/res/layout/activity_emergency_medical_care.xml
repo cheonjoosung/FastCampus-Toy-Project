@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".emergencymedical.EmergencyMedicalCareActivity">
+    tools:context=".emergency_medical.EmergencyMedicalCareActivity">
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline2"
@@ -129,7 +129,8 @@
         android:clickable="true"
         android:src="@android:drawable/ic_menu_edit"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent"
+        android:contentDescription="@string/inputButton" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/fab_delete"
@@ -140,6 +141,7 @@
         android:clickable="true"
         android:src="@android:drawable/ic_delete"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@id/fab_edit" />
+        app:layout_constraintEnd_toStartOf="@id/fab_edit"
+        android:contentDescription="@string/deleteButton"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

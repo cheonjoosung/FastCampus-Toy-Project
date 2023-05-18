@@ -12,8 +12,7 @@ class ProjectListAdapter(
 
     var projectListClickListener: ((ProjectList) -> Unit)? = null
 
-    class ProjectListViewHolder(val binding: ItemProjectListBinding) : ViewHolder(binding.root) {
-    }
+    class ProjectListViewHolder(val binding: ItemProjectListBinding) : ViewHolder(binding.root)
 
     override fun onCreateViewHolder(
         parent: ViewGroup,

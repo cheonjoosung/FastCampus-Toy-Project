@@ -13,4 +13,12 @@
     <string name="blood_type">혈액형</string>
     <string name="phone_number">연락처</string>
     <string name="etc">주의사항</string>
+    <string name="inputButton">건강정보입력버튼</string>
+    <string name="deleteButton">건강정보삭제버튼</string>
+    <string name="calendarButton">달력버튼</string>
+    <string name="rhPlus">rh+</string>
+    <string name="rhMinus">rh-</string>
+    <string name="hintPhone">010-xxxx-xxxx</string>
+    <string name="exposure">노출여부</string>
+    <string name="save">저장</string>
 </resources>

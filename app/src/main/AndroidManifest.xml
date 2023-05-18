@@ -18,17 +18,17 @@
             android:name=".calculator.CalculatorActivity"
             android:exported="false" />
         <activity
-            android:name=".emergencymedical.InputActivity"
+            android:name=".emergency_medical.InputActivity"
             android:exported="false" />
         <activity
-            android:name=".emergencymedical.EmergencyMedicalCareActivity"
+            android:name=".emergency_medical.EmergencyMedicalCareActivity"
             android:exported="false" />
         <activity
-            android:name=".unitconversion.UnitConversionActivity"
+            android:name=".unit_conversion.UnitConversionActivity"
             android:exported="false"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".countnumber.CountNumberActivity"
+            android:name=".count_number.CountNumberActivity"
             android:exported="false" />
         <activity
             android:name=".MainActivity"

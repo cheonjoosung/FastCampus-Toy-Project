@@ -4,10 +4,10 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.example.fastcampus.calculator.CalculatorActivity
-import com.example.fastcampus.countnumber.CountNumberActivity
+import com.example.fastcampus.count_number.CountNumberActivity
 import com.example.fastcampus.databinding.ActivityMainBinding
-import com.example.fastcampus.emergencymedical.EmergencyMedicalCareActivity
-import com.example.fastcampus.unitconversion.UnitConversionActivity
+import com.example.fastcampus.emergency_medical.EmergencyMedicalCareActivity
+import com.example.fastcampus.unit_conversion.UnitConversionActivity
 
 class MainActivity : AppCompatActivity() {
 
