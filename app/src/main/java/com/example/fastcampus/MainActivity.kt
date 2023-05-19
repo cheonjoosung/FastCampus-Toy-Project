@@ -1,13 +1,14 @@
 package com.example.fastcampus
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import com.example.fastcampus.ch03_calculator.CalculatorActivity
+import androidx.appcompat.app.AppCompatActivity
 import com.example.fastcampus.ch01_count_number.CountNumberActivity
-import com.example.fastcampus.databinding.ActivityMainBinding
-import com.example.fastcampus.ch04_emergency_medical.EmergencyMedicalCareActivity
 import com.example.fastcampus.ch02_unit_conversion.UnitConversionActivity
+import com.example.fastcampus.ch03_calculator.CalculatorActivity
+import com.example.fastcampus.ch04_emergency_medical.EmergencyMedicalCareActivity
+import com.example.fastcampus.ch05_stop_watch.StopWatchActivity
+import com.example.fastcampus.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
 
@@ -23,6 +24,7 @@ class MainActivity : AppCompatActivity() {
             add(ProjectList("단위 변환기", UnitConversionActivity::class.java))
             add(ProjectList("응급 의료 정보", EmergencyMedicalCareActivity::class.java))
             add(ProjectList("계산기", CalculatorActivity::class.java))
+            add(ProjectList("스톱 워치", StopWatchActivity::class.java))
         }
 
         binding.rvAppList.adapter = ProjectListAdapter(list).apply {
