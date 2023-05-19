@@ -1,12 +1,16 @@
 package com.example.fastcampus.ch05_stop_watch
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import com.example.fastcampus.R
+import androidx.appcompat.app.AppCompatActivity
+import com.example.fastcampus.databinding.ActivityStopWatchBinding
 
 class StopWatchActivity : AppCompatActivity() {
+
+    private lateinit var binding: ActivityStopWatchBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_stop_watch)
+        binding = ActivityStopWatchBinding.inflate(layoutInflater)
+        setContentView(binding.root)
+
     }
 }
