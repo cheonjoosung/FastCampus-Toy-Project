@@ -36,5 +36,5 @@
 
 - Thread 를 활용한 스톱와치로 재생/일시정지/랩타임/카운트다운 가능
 - UI 학습 : Group(뷰를 묶어서 visibility 처리 간편하게 사용 가능), ViewBinding, AlertDialog, ProgressBar, CustomView 사용
-- 기능 학습 : timber, runOnUiThread 이용
+- 기능 학습 : timer, runOnUiThread 이용
 
