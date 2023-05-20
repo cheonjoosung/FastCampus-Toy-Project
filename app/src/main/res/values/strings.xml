@@ -39,4 +39,12 @@
     <string name="mul">*</string>
     <string name="equation">equation</string>
     <string name="result">result</string>
+    <string name="lap">랩</string>
+    <string name="stop">정지</string>
+    <string name="pause">일시정지</string>
+    <string name="start">시작</string>
+    <string name="zero_time">00:00</string>
+    <string name="twoZero">00</string>
+    <string name="second">초</string>
+    <string name="countDown">카운트 다운</string>
 </resources>

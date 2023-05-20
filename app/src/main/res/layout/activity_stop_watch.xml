@@ -6,11 +6,52 @@
     android:layout_height="match_parent"
     tools:context=".ch05_stop_watch.StopWatchActivity">
 
+    <ProgressBar
+        android:id="@+id/countDownProgressBar"
+        style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="30dp"
+        app:layout_constraintBottom_toTopOf="@id/timeTextView"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/countDownTitleTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="24sp"
+        android:text="@string/countDown"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="@id/countDownTextView"
+        app:layout_constraintEnd_toStartOf="@id/countDownTextView"
+        app:layout_constraintTop_toTopOf="@id/countDownTextView" />
+
+    <TextView
+        android:id="@+id/countDownTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/twoZero"
+        android:textSize="50sp"
+        app:layout_constraintBottom_toTopOf="@id/countDownProgressBar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/countDownUnitTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:text="@string/second"
+        android:textSize="20sp"
+        app:layout_constraintBaseline_toBaselineOf="@id/countDownTextView"
+        app:layout_constraintStart_toEndOf="@id/countDownTextView" />
+
     <TextView
         android:id="@+id/timeTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="00:00"
+        android:text="@string/zero_time"
         android:textSize="120sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -42,6 +83,7 @@
         android:layout_height="wrap_content"
         android:backgroundTint="@color/green"
         android:clickable="true"
+        android:contentDescription="@string/start"
         app:layout_constraintBottom_toTopOf="@id/guideline"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.7"
@@ -55,6 +97,7 @@
         android:layout_height="wrap_content"
         android:backgroundTint="@color/yellow"
         android:clickable="true"
+        android:contentDescription="@string/pause"
         android:visibility="gone"
         app:layout_constraintBottom_toTopOf="@id/guideline"
         app:layout_constraintEnd_toEndOf="parent"
@@ -69,6 +112,7 @@
         android:layout_height="wrap_content"
         android:backgroundTint="@color/red"
         android:clickable="true"
+        android:contentDescription="@string/stop"
         app:layout_constraintBottom_toTopOf="@id/guideline"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.3"
@@ -82,6 +126,7 @@
         android:layout_height="wrap_content"
         android:backgroundTint="@color/blue"
         android:clickable="true"
+        android:contentDescription="@string/lap"
         android:visibility="gone"
         app:layout_constraintBottom_toTopOf="@id/guideline"
         app:layout_constraintEnd_toEndOf="parent"
@@ -89,5 +134,30 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@id/guideline"
         app:srcCompat="@drawable/baseline_check_24" />
+
+    <ScrollView
+        android:id="@+id/lapScrollView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="50dp"
+        android:padding="16dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/guideline">
+
+        <LinearLayout
+            android:id="@+id/lapContainerLinearLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" />
+
+    </ScrollView>
+
+    <androidx.constraintlayout.widget.Group
+        android:id="@+id/groupCountDown"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:constraint_referenced_ids="countDownTextView, countDownTitleTextView, countDownUnitTextView" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
