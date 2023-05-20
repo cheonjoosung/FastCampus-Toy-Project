@@ -28,6 +28,12 @@
 ## 4. 계산기 앱
 <img src="https://github.com/cheonjoosung/FastCampus-Toy-Project/blob/master/image/no4.jpg?raw=true" width="180" height="400">
 
+- 숫자 & 연산자 입력에 따른 계산기
+- UI 학습 : Flow(계층구조를 줄여 빠른 레이아웃 로딩), ViewBinding
+
+## 5. 스톱 워치
+<img src="https://github.com/cheonjoosung/FastCampus-Toy-Project/blob/master/image/no5.jpg?raw=true" width="180" height="400">
+
 - Thread 를 활용한 스톱와치로 재생/일시정지/랩타임/카운트다운 가능
 - UI 학습 : Group(뷰를 묶어서 visibility 처리 간편하게 사용 가능), ViewBinding, AlertDialog, ProgressBar, CustomView 사용
 - 기능 학습 : timber, runOnUiThread 이용
