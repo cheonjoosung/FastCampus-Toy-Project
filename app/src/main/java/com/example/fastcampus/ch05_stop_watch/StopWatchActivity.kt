@@ -1,12 +1,17 @@
 package com.example.fastcampus.ch05_stop_watch
 
+import android.media.AudioManager
+import android.media.ToneGenerator
 import android.os.Bundle
 import android.os.Handler
 import android.util.Log
+import android.view.Gravity
 import android.view.View
+import android.widget.TextView
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.isVisible
+import androidx.core.view.setPadding
 import com.example.fastcampus.R
 import com.example.fastcampus.databinding.ActivityStopWatchBinding
 import com.example.fastcampus.databinding.DialogCountdownSettingBinding
@@ -92,6 +97,11 @@ class StopWatchActivity : AppCompatActivity() {
                 }
 
             }
+
+            if (currentDeciSecond == 0 && currentCountDownDeciSecond < 31 && currentCountDownDeciSecond % 10 == 0) {
+                val toneType = if (currentCountDownDeciSecond == 0) ToneGenerator.TONE_CDMA_HIGH_L else ToneGenerator.TONE_CDMA_ANSWER
+                ToneGenerator(AudioManager.STREAM_ALARM, ToneGenerator.MAX_VOLUME).startTone(toneType, 100)
+            }
         }
     }
 
@@ -104,6 +114,7 @@ class StopWatchActivity : AppCompatActivity() {
         binding.groupCountDown.isVisible = true // 뷰 3개를 helper > group 으로 이용하면 간편함
         currentDeciSecond = 0
         initCountView()
+        binding.lapContainerLinearLayout.removeAllViews()
     }
 
     private fun pause() {
@@ -112,7 +123,22 @@ class StopWatchActivity : AppCompatActivity() {
     }
 
     private fun lap() {
+        if (currentDeciSecond == 0) return
 
+        val container = binding.lapContainerLinearLayout
+        TextView(this).apply {
+            textSize = 20f
+            gravity = Gravity.CENTER
+            setPadding(30)
+
+            val minute = currentDeciSecond.div(10) / 60
+            val second = currentDeciSecond.div(10) % 60
+            val deciSecond = currentDeciSecond % 10
+
+            text = container.childCount.inc().toString() + ". " + String.format("%02d:%02d %01d", minute, second, deciSecond)
+        }.run {
+            container.addView(this, 0)
+        }
     }
 
     private fun setVisibility(start: Boolean, stop: Boolean, pause: Boolean, lap: Boolean) {
