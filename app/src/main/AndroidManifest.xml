@@ -15,6 +15,12 @@
         android:theme="@style/Theme.FastCampus"
         tools:targetApi="31">
         <activity
+            android:name=".ch06_word_book.AddActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ch06_word_book.WordBookActivity"
+            android:exported="false" />
+        <activity
             android:name=".ch05_stop_watch.StopWatchActivity"
             android:exported="false" />
         <activity
