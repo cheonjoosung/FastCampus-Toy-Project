@@ -38,3 +38,12 @@
 - UI 학습 : Group(뷰를 묶어서 visibility 처리 간편하게 사용 가능), ViewBinding, AlertDialog, ProgressBar, CustomView 사용
 - 기능 학습 : timer, runOnUiThread 이용
 
+## 6. 단어장
+|<img src="https://github.com/cheonjoosung/FastCampus-Toy-Project/blob/master/image/no6-1.jpg?raw=true" width="180" height="400">
+|<img src="https://github.com/cheonjoosung/FastCampus-Toy-Project/blob/master/image/no6-2.jpg?raw=true" width="180" height="400">
+|-|-|
+- 데이터베이스를 활용한 영어 단어장
+- UI 학습 : TextInputLayout, TextEditLayout, Chip, Barrier, ViewBinding 사용
+- 기능 학습 : Room DB 초기화 및 Dao 구현, RecyclerView, Intent 활용(registerForActivityResult), Parcelize
+
+
