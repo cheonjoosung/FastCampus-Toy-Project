@@ -9,6 +9,7 @@ import com.example.fastcampus.ch03_calculator.CalculatorActivity
 import com.example.fastcampus.ch04_emergency_medical.EmergencyMedicalCareActivity
 import com.example.fastcampus.ch05_stop_watch.StopWatchActivity
 import com.example.fastcampus.ch06_word_book.WordBookActivity
+import com.example.fastcampus.ch07_my_gallery.MyGalleryActivity
 import com.example.fastcampus.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
@@ -27,6 +28,7 @@ class MainActivity : AppCompatActivity() {
             add(ProjectList("계산기", CalculatorActivity::class.java))
             add(ProjectList("스톱 워치", StopWatchActivity::class.java))
             add(ProjectList("단어장", WordBookActivity::class.java))
+            add(ProjectList("나만의 갤러리", MyGalleryActivity::class.java))
         }
 
         binding.rvAppList.adapter = ProjectListAdapter(list).apply {
