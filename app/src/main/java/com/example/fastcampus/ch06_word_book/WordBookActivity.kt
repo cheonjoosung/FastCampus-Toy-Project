@@ -28,7 +28,7 @@ class WordBookActivity : AppCompatActivity() {
 
             recyclerView.apply {
                 addItemDecoration(DividerItemDecoration(applicationContext, LinearLayout.VERTICAL))
-                adapter = WordAdapter(dummyList).apply {
+                adapter = WordAdapter(mutableListOf()).apply {
                     click = {
                         Toast.makeText(applicationContext, "Clicked $it", Toast.LENGTH_SHORT).show()
                     }
