@@ -5,16 +5,17 @@ import android.content.Intent
 import android.content.pm.PackageManager
 import android.net.Uri
 import android.os.Build
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.widget.Toast
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AlertDialog
+import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.GridLayoutManager
 import com.example.fastcampus.R
+import com.example.fastcampus.ch07_my_gallery.FrameActivity.Companion.IMAGES
 import com.example.fastcampus.databinding.ActivityMyGalleryBinding
 
 class MyGalleryActivity : AppCompatActivity() {
@@ -27,9 +28,10 @@ class MyGalleryActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityMyGalleryBinding
 
-    private val imageLoadLauncher = registerForActivityResult(ActivityResultContracts.GetMultipleContents()) { uriList ->
-        uriList?.let { updateImages(it) }
-    }
+    private val imageLoadLauncher =
+        registerForActivityResult(ActivityResultContracts.GetMultipleContents()) { uriList ->
+            uriList?.let { updateImages(it) }
+        }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -40,13 +42,27 @@ class MyGalleryActivity : AppCompatActivity() {
             loadImageButton.setOnClickListener {
                 checkPermission()
             }
+
+            navigateFrameActivityButton.setOnClickListener {
+                val images = imageAdapter.currentList.filterIsInstance<ImageItems.Image>()
+                    .map { it.uri.toString() }.toTypedArray()
+
+                if (images.isNullOrEmpty()) {
+                    Toast.makeText(applicationContext, "선택된 이미지가 없습니다.", Toast.LENGTH_SHORT).show()
+                    return@setOnClickListener
+                }
+
+                val intent = Intent(applicationContext, FrameActivity::class.java)
+                    .putExtra(IMAGES, images)
+                startActivity(intent)
+            }
         }
 
         initRecyclerView()
     }
 
     private fun initRecyclerView() {
-        imageAdapter = ImageAdapter(object: ImageAdapter.ItemClickListener{
+        imageAdapter = ImageAdapter(object : ImageAdapter.ItemClickListener {
             override fun onLoadMoreClick() {
                 checkPermission()
             }

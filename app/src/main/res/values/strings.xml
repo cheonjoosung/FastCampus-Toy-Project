@@ -70,5 +70,6 @@
     <string name="msg_load_image">이미지 가져오기를 실행합니다.</string>
     <string name="load_image">이미지 가져오기</string>
     <string name="load_more_image">사진 더 불러오기</string>
+    <string name="make_my_album">나만의 앨범 만들기</string>
 
 </resources>
