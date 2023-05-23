@@ -46,4 +46,10 @@
 - UI 학습 : TextInputLayout, TextEditLayout, Chip, Barrier, ViewBinding 사용
 - 기능 학습 : Room DB 초기화 및 Dao 구현, RecyclerView, Intent 활용(registerForActivityResult), Parcelize
 
-
+## 7. 나만의 갤러리
+|<img src="https://github.com/cheonjoosung/FastCampus-Toy-Project/blob/master/image/no7-1.jpg?raw=true" width="180" height="400">
+|<img src="https://github.com/cheonjoosung/FastCampus-Toy-Project/blob/master/image/no7-2.jpg?raw=true" width="180" height="400">
+|-|-|
+- 갤러리에 있는 이미지를 가져와서 UI 에 보여줌
+- UI 학습 : RecyclerView, ListAdapter, ViewPager2, Toolbar
+- 기능 학습 : 앱 권한 처리, 스토리지 접근 프레임워크
