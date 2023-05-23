@@ -68,8 +68,11 @@
     <!-- ch07. 나만의 갤러리   -->
     <string name="msg_permission_for_read_image">이미지를 가져오기 위해서 외부 저장소 읽기 권한이 필요합니다.</string>
     <string name="msg_load_image">이미지 가져오기를 실행합니다.</string>
+    <string name="msg_no_selected_image">선택된 이미지가 없습니다.</string>
     <string name="load_image">이미지 가져오기</string>
     <string name="load_more_image">사진 더 불러오기</string>
     <string name="make_my_album">나만의 앨범 만들기</string>
+    <string name="my_album">나만의 앨범</string>
+    <string name="add_add">추가하기</string>
 
 </resources>

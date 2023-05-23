@@ -7,6 +7,8 @@ import android.net.Uri
 import android.os.Build
 import android.os.Bundle
 import android.util.Log
+import android.view.Menu
+import android.view.MenuItem
 import android.widget.Toast
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AlertDialog
@@ -38,6 +40,11 @@ class MyGalleryActivity : AppCompatActivity() {
         binding = ActivityMyGalleryBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        binding.toolBar.apply {
+            title = getString(R.string.load_image)
+            setSupportActionBar(this)
+        }
+
         with(binding) {
             loadImageButton.setOnClickListener {
                 checkPermission()
@@ -48,7 +55,11 @@ class MyGalleryActivity : AppCompatActivity() {
                     .map { it.uri.toString() }.toTypedArray()
 
                 if (images.isNullOrEmpty()) {
-                    Toast.makeText(applicationContext, "선택된 이미지가 없습니다.", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(
+                        applicationContext,
+                        getString(R.string.msg_no_selected_image),
+                        Toast.LENGTH_SHORT
+                    ).show()
                     return@setOnClickListener
                 }
 
@@ -168,6 +179,24 @@ class MyGalleryActivity : AppCompatActivity() {
                 if (resultCode == PackageManager.PERMISSION_GRANTED) {
                     loadImage()
                 }
+            }
+        }
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        menuInflater.inflate(R.menu.main_menu, menu)
+        return true
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        return when (item.itemId) {
+            R.id.action_add -> {
+                checkPermission()
+                true
+            }
+
+            else -> {
+                return super.onOptionsItemSelected(item)
             }
         }
     }
