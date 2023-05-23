@@ -1,13 +1,19 @@
 <resources>
     <string name="app_name">FastCampus</string>
+
+    <!-- ch01. 숫자 세기    -->
     <string name="init">초기화</string>
     <string name="add">+</string>
     <string name="zero">0</string>
+
+    <!-- ch02. 단위 변환    -->
     <string name="hint_number">자연수를 입력해주세요.</string>
     <string name="mm">mm</string>
     <string name="cm">cm</string>
     <string name="m">m</string>
     <string name="km">km</string>
+
+    <!-- ch03. 응급 의료 정보    -->
     <string name="name">이름</string>
     <string name="birth">생년월일</string>
     <string name="blood_type">혈액형</string>
@@ -21,6 +27,8 @@
     <string name="hintPhone">010-xxxx-xxxx</string>
     <string name="exposure">노출여부</string>
     <string name="save">저장</string>
+
+    <!-- ch04. 계산기    -->
     <string name="one">1</string>
     <string name="two">2</string>
     <string name="three">3</string>
@@ -39,6 +47,8 @@
     <string name="mul">*</string>
     <string name="equation">equation</string>
     <string name="result">result</string>
+
+    <!-- ch05. 스톱 와치    -->
     <string name="lap">랩</string>
     <string name="stop">정지</string>
     <string name="pause">일시정지</string>
@@ -47,9 +57,18 @@
     <string name="twoZero">00</string>
     <string name="second">초</string>
     <string name="countDown">카운트 다운</string>
+
+    <!-- ch06. 단어장    -->
     <string name="edit">수정</string>
     <string name="add_word">단어 추가</string>
     <string name="word">단어</string>
     <string name="mean">뜻</string>
     <string name="add_text">추가</string>
+
+    <!-- ch07. 나만의 갤러리   -->
+    <string name="msg_permission_for_read_image">이미지를 가져오기 위해서 외부 저장소 읽기 권한이 필요합니다.</string>
+    <string name="msg_load_image">이미지 가져오기를 실행합니다.</string>
+    <string name="load_image">이미지 가져오기</string>
+    <string name="load_more_image">사진 더 불러오기</string>
+
 </resources>
