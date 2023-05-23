@@ -4,6 +4,8 @@
 
     <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
 
+    <uses-permission android:name="android.permission.READ_MEDIA_IMAGES" />
+
     <application
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
@@ -14,6 +16,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.FastCampus"
         tools:targetApi="31">
+
         <activity
             android:name=".ch07_my_gallery.MyGalleryActivity"
             android:exported="false" />
