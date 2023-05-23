@@ -16,6 +16,9 @@
         android:theme="@style/Theme.FastCampus"
         tools:targetApi="31">
         <activity
+            android:name=".ch08_music_player.MusicPlayerActivity"
+            android:exported="false" />
+        <activity
             android:name=".ch07_my_gallery.FrameActivity"
             android:exported="false" />
         <activity
