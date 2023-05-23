@@ -30,13 +30,13 @@
             android:name=".ch05_stop_watch.StopWatchActivity"
             android:exported="false" />
         <activity
-            android:name=".ch03_calculator.CalculatorActivity"
+            android:name=".ch04_calculator.CalculatorActivity"
             android:exported="false" />
         <activity
-            android:name=".ch04_emergency_medical.InputActivity"
+            android:name=".ch03_emergency_medical.InputActivity"
             android:exported="false" />
         <activity
-            android:name=".ch04_emergency_medical.EmergencyMedicalCareActivity"
+            android:name=".ch03_emergency_medical.EmergencyMedicalCareActivity"
             android:exported="false" />
         <activity
             android:name=".ch02_unit_conversion.UnitConversionActivity"

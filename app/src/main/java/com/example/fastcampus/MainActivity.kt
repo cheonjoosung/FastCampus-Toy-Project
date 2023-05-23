@@ -5,8 +5,8 @@ import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.example.fastcampus.ch01_count_number.CountNumberActivity
 import com.example.fastcampus.ch02_unit_conversion.UnitConversionActivity
-import com.example.fastcampus.ch03_calculator.CalculatorActivity
-import com.example.fastcampus.ch04_emergency_medical.EmergencyMedicalCareActivity
+import com.example.fastcampus.ch04_calculator.CalculatorActivity
+import com.example.fastcampus.ch03_emergency_medical.EmergencyMedicalCareActivity
 import com.example.fastcampus.ch05_stop_watch.StopWatchActivity
 import com.example.fastcampus.ch06_word_book.WordBookActivity
 import com.example.fastcampus.ch07_my_gallery.MyGalleryActivity

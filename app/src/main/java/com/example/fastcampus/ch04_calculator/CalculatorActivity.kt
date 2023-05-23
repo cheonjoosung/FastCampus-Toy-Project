@@ -1,4 +1,4 @@
-package com.example.fastcampus.ch03_calculator
+package com.example.fastcampus.ch04_calculator
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
