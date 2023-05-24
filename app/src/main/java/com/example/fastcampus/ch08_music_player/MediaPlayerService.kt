@@ -6,6 +6,7 @@ import android.app.NotificationManager
 import android.app.PendingIntent
 import android.app.Service
 import android.content.Intent
+import android.content.IntentFilter
 import android.graphics.drawable.Icon
 import android.media.MediaPlayer
 import android.os.IBinder
@@ -23,6 +24,8 @@ class MediaPlayerService : Service() {
     private var mediaPlayer: MediaPlayer? = null
     override fun onBind(intent: Intent): IBinder? = null
 
+    private val receiver = LowBatteryReceiver()
+
     override fun onCreate() {
         super.onCreate()
 
@@ -30,6 +33,7 @@ class MediaPlayerService : Service() {
 
         // 채널을 만들고 노티피케이션 추가가 가능
         createNotificationChannel()
+        initReceiver()
 
         val playIcon = Icon.createWithResource(baseContext, R.drawable.baseline_play_arrow_24)
         val pauseIcon = Icon.createWithResource(baseContext, R.drawable.baseline_pause_24)
@@ -134,6 +138,15 @@ class MediaPlayerService : Service() {
             release()
         }
         mediaPlayer = null
+        unregisterReceiver(receiver)
         super.onDestroy()
+    }
+
+    private fun initReceiver() {
+        val intentFilter = IntentFilter().apply {
+            addAction(Intent.ACTION_BATTERY_LOW)
+        }
+
+        registerReceiver(receiver, intentFilter)
     }
 }
