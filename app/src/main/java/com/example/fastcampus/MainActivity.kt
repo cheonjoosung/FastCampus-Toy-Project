@@ -11,6 +11,7 @@ import com.example.fastcampus.ch05_stop_watch.StopWatchActivity
 import com.example.fastcampus.ch06_word_book.WordBookActivity
 import com.example.fastcampus.ch07_my_gallery.MyGalleryActivity
 import com.example.fastcampus.ch08_music_player.MusicPlayerActivity
+import com.example.fastcampus.ch09_web_toon.WebToonActivity
 import com.example.fastcampus.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
@@ -31,6 +32,7 @@ class MainActivity : AppCompatActivity() {
             add(ProjectList("단어장", WordBookActivity::class.java))
             add(ProjectList("나만의 갤러리", MyGalleryActivity::class.java))
             add(ProjectList("음악 플레이어", MusicPlayerActivity::class.java))
+            add(ProjectList("웹툰", WebToonActivity::class.java))
         }
 
         binding.rvAppList.adapter = ProjectListAdapter(list).apply {
