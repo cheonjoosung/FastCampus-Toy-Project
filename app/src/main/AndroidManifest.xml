@@ -4,6 +4,7 @@
 
     <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
     <uses-permission android:name="android.permission.READ_MEDIA_IMAGES" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
 
     <application
         android:allowBackup="true"
@@ -15,6 +16,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.FastCampus"
         tools:targetApi="31">
+
+        <service
+            android:name=".ch08_music_player.MediaPlayerService"
+            android:enabled="true"
+            android:exported="true" />
+
         <activity
             android:name=".ch08_music_player.MusicPlayerActivity"
             android:exported="false" />

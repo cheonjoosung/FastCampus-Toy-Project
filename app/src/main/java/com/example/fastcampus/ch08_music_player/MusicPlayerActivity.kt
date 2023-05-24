@@ -1,9 +1,12 @@
 package com.example.fastcampus.ch08_music_player
 
+import android.content.Intent
 import android.media.MediaPlayer
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
-import com.example.fastcampus.R
+import com.example.fastcampus.MEDIA_PLAYER_PAUSE
+import com.example.fastcampus.MEDIA_PLAYER_PLAY
+import com.example.fastcampus.MEDIA_PLAYER_STOP
 import com.example.fastcampus.databinding.ActivityMusicPlayerBinding
 
 class MusicPlayerActivity : AppCompatActivity() {
@@ -23,22 +26,23 @@ class MusicPlayerActivity : AppCompatActivity() {
     }
 
     private fun play() {
-        if (mediaPlayer == null) {
-            mediaPlayer = MediaPlayer.create(applicationContext, R.raw.electronic).apply {
-                isLooping = true
-            }
+        val intent = Intent(this, MediaPlayerService::class.java).apply {
+            action = MEDIA_PLAYER_PLAY
         }
-
-        mediaPlayer?.start()
+        startService(intent)
     }
 
     private fun stop() {
-        mediaPlayer?.stop()
+        val intent = Intent(this, MediaPlayerService::class.java).apply {
+            action = MEDIA_PLAYER_STOP
+        }
+        startService(intent)
     }
 
     private fun pause() {
-        mediaPlayer?.pause()
-        mediaPlayer?.release()
-        mediaPlayer = null
+        val intent = Intent(this, MediaPlayerService::class.java).apply {
+            action = MEDIA_PLAYER_PAUSE
+        }
+        startService(intent)
     }
 }
