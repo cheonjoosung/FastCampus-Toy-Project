@@ -54,3 +54,10 @@
 - 갤러리에 있는 이미지를 가져와서 UI 에 보여줌
 - UI 학습 : RecyclerView, ListAdapter, ViewPager2, Toolbar
 - 기능 학습 : 앱 권한 처리, 스토리지 접근 프레임워크
+
+## 8. 음악 플레이어
+<img src="https://github.com/cheonjoosung/FastCampus-Toy-Project/blob/master/image/no8.jpg?raw=true" width="180" height="400">
+
+- 백그라운드기능을 활용하여 음악을 재생
+- UI 학습 : ConstraintLayout, Notification
+- 기능 학습 : 서비스, 브로드캐스트 리시버 등을 활용하여 백그라운드로 음악 재생, MediaPlayer 활용
