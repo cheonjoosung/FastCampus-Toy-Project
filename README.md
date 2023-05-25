@@ -61,3 +61,10 @@
 - 백그라운드기능을 활용하여 음악을 재생
 - UI 학습 : ConstraintLayout, Notification
 - 기능 학습 : 서비스, 브로드캐스트 리시버 등을 활용하여 백그라운드로 음악 재생, MediaPlayer 활용
+
+## 9. 웹툰
+<img src="https://github.com/cheonjoosung/FastCampus-Toy-Project/blob/master/image/no8.jpg?raw=true" width="180" height="400">
+
+- 백그라운드기능을 활용하여 음악을 재생
+- UI 학습 : Tablayoutmediator, WebView, ViewPager2, Fragment, Dialog, SharedPreference
+- 기능 학습 : 서비스, 브로드캐스트 리시버 등을 활용하여 백그라운드로 음악 재생, MediaPlayer 활용
