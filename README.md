@@ -63,8 +63,10 @@
 - 기능 학습 : 서비스, 브로드캐스트 리시버 등을 활용하여 백그라운드로 음악 재생, MediaPlayer 활용
 
 ## 9. 웹툰
-<img src="https://github.com/cheonjoosung/FastCampus-Toy-Project/blob/master/image/no8.jpg?raw=true" width="180" height="400">
+|<img src="https://github.com/cheonjoosung/FastCampus-Toy-Project/blob/master/image/no9-1.jpg?raw=true" width="180" height="400">
+|<img src="https://github.com/cheonjoosung/FastCampus-Toy-Project/blob/master/image/no9-2.jpg?raw=true" width="180" height="400">
+|-|-|
 
 - 백그라운드기능을 활용하여 음악을 재생
-- UI 학습 : Tablayoutmediator, WebView, ViewPager2, Fragment, Dialog, SharedPreference
-- 기능 학습 : 서비스, 브로드캐스트 리시버 등을 활용하여 백그라운드로 음악 재생, MediaPlayer 활용
+- UI 학습 : Tablayoutmediator, WebView, ViewPager2, Fragment, Dialog
+- 기능 학습 : 웹뷰&클라이언트를 이용하여 웹 화면 기능 구현, SharedPreference 를 활용하여 웹툰 마지막 시점 저장
