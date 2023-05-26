@@ -12,3 +12,5 @@ const val MEDIA_PLAYER_PAUSE = "pause"
 const val MEDIA_PLAYER_STOP = "stop"
 const val CHANNEL_ID = "mediaPlayerChannel"
 const val CHANNEL = "mediaPlayer"
+
+const val WEB_HISTORY = "webHistory"

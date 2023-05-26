@@ -75,4 +75,8 @@
     <string name="my_album">나만의 앨범</string>
     <string name="add_add">추가하기</string>
 
+    <!-- ch09. 웹툰    -->
+    <string name="change_tab_name">탭 이름 바꾸기</string>
+    <string name="back_to_last">마지막 시점으로 돌아가기</string>
+
 </resources>
