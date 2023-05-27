@@ -13,5 +13,7 @@ class RecorderActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityRecorderBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+
     }
 }

@@ -79,4 +79,9 @@
     <string name="change_tab_name">탭 이름 바꾸기</string>
     <string name="back_to_last">마지막 시점으로 돌아가기</string>
 
+    <!-- ch10. 녹음    -->
+    <string name="zero_time_2">00:00:00</string>
+    <string name="recordButton">녹음 버튼</string>
+    <string name="playButton">재생 버튼</string>
+
 </resources>
