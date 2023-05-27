@@ -14,3 +14,5 @@ const val CHANNEL_ID = "mediaPlayerChannel"
 const val CHANNEL = "mediaPlayer"
 
 const val WEB_HISTORY = "webHistory"
+
+const val AUDIO_REQUEST_CODE = 200
