@@ -5,13 +5,14 @@ import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.example.fastcampus.ch01_count_number.CountNumberActivity
 import com.example.fastcampus.ch02_unit_conversion.UnitConversionActivity
-import com.example.fastcampus.ch04_calculator.CalculatorActivity
 import com.example.fastcampus.ch03_emergency_medical.EmergencyMedicalCareActivity
+import com.example.fastcampus.ch04_calculator.CalculatorActivity
 import com.example.fastcampus.ch05_stop_watch.StopWatchActivity
 import com.example.fastcampus.ch06_word_book.WordBookActivity
 import com.example.fastcampus.ch07_my_gallery.MyGalleryActivity
 import com.example.fastcampus.ch08_music_player.MusicPlayerActivity
 import com.example.fastcampus.ch09_web_toon.WebToonActivity
+import com.example.fastcampus.ch10_recorder.RecorderActivity
 import com.example.fastcampus.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
@@ -33,6 +34,7 @@ class MainActivity : AppCompatActivity() {
             add(ProjectList("나만의 갤러리", MyGalleryActivity::class.java))
             add(ProjectList("음악 플레이어", MusicPlayerActivity::class.java))
             add(ProjectList("웹툰", WebToonActivity::class.java))
+            add(ProjectList("녹음", RecorderActivity::class.java))
         }
 
         binding.rvAppList.adapter = ProjectListAdapter(list).apply {
@@ -47,5 +49,5 @@ class MainActivity : AppCompatActivity() {
 
 data class ProjectList(
     val name: String,
-    val claasName: Class<*>
+    val claasName: Class<*>,
 )

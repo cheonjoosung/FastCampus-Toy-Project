@@ -18,6 +18,9 @@
         android:theme="@style/Theme.FastCampus"
         tools:targetApi="31">
         <activity
+            android:name=".ch10_recorder.RecorderActivity"
+            android:exported="false" />
+        <activity
             android:name=".ch09_web_toon.WebToonActivity"
             android:exported="false" />
 
