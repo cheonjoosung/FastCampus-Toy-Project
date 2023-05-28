@@ -70,3 +70,10 @@
 - 백그라운드기능을 활용하여 음악을 재생
 - UI 학습 : Tablayoutmediator, WebView, ViewPager2, Fragment, Dialog
 - 기능 학습 : 웹뷰&클라이언트를 이용하여 웹 화면 기능 구현, SharedPreference 를 활용하여 웹툰 마지막 시점 저장
+
+## 10. 녹음
+<img src="https://github.com/cheonjoosung/FastCampus-Toy-Project/blob/master/image/no10.jpg?raw=true" width="180" height="400">
+
+- 오디오를 녹음
+- UI 학습 : canvas 활용한 녹음 파형 CustomView
+- 기능 학습 : MediaPlayer, MediaRecorder, Permission 처리, Handler 학습
