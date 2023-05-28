@@ -21,7 +21,7 @@ import com.example.fastcampus.R
 import com.example.fastcampus.databinding.ActivityRecorderBinding
 import java.io.IOException
 
-class RecorderActivity : AppCompatActivity() {
+class RecorderActivity : AppCompatActivity(), OnTimerTickListener {
 
     private lateinit var binding: ActivityRecorderBinding
 
@@ -29,11 +29,13 @@ class RecorderActivity : AppCompatActivity() {
     private var player: MediaPlayer? = null
     private var fileName: String = ""
 
-    private var state = State.RELEASE
-
     enum class State {
         RELEASE, RECORDING, PLAYING
     }
+
+    private var state = State.RELEASE
+
+    private lateinit var timer: Timer
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -87,6 +89,7 @@ class RecorderActivity : AppCompatActivity() {
         }
 
         fileName = "${externalCacheDir?.absolutePath}/audioTest.3gp"
+        timer = Timer(this)
     }
 
     private fun checkRecordPermission() {
@@ -156,6 +159,9 @@ class RecorderActivity : AppCompatActivity() {
             }
         }
 
+        binding.waveFormView.clearData()
+        timer.start()
+
         binding.recordButton.setImageDrawable(
             ContextCompat.getDrawable(
                 this,
@@ -182,6 +188,9 @@ class RecorderActivity : AppCompatActivity() {
                 R.drawable.baseline_fiber_manual_record_24
             )
         )
+
+        timer.stop()
+
         binding.recordButton.imageTintList = ColorStateList.valueOf(Color.RED)
 
         binding.playButton.isEnabled = true
@@ -210,6 +219,8 @@ class RecorderActivity : AppCompatActivity() {
 
         binding.recordButton.isEnabled = false
         binding.recordButton.alpha = 0.3f
+        binding.waveFormView.clearWave()
+        timer.start()
     }
 
     private fun stop() {
@@ -220,6 +231,8 @@ class RecorderActivity : AppCompatActivity() {
 
         binding.recordButton.isEnabled = true
         binding.recordButton.alpha = 1f
+
+        timer.stop()
     }
 
     private fun showPermissionRationalDialog() {
@@ -277,4 +290,23 @@ class RecorderActivity : AppCompatActivity() {
             }
         }
     }
+
+    override fun onTick(duration: Long) {
+
+        val milliSecond = duration % 1000
+        val second = (duration / 1000) % 60
+        val minute = (duration / 1000 / 60)
+
+        binding.timerTextView.text = String.format("%02d:%02d:%02d", minute, second, milliSecond / 10)
+
+        if (state == State.PLAYING) {
+            binding.waveFormView.replayAmplitude(duration.toInt())
+        } else if (state == State.RECORDING){
+            binding.waveFormView.addAmplitude(recorder?.maxAmplitude?.toFloat() ?: 0f)
+        }
+    }
+}
+
+interface OnTimerTickListener {
+    fun onTick(duration: Long)
 }
