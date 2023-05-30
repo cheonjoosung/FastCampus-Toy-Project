@@ -1,8 +1,9 @@
-package com.example.fastcampus
+package com.example.fastcampus.ch0_main
 
 import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import com.example.fastcampus.R
 import com.example.fastcampus.ch01_count_number.CountNumberActivity
 import com.example.fastcampus.ch02_unit_conversion.UnitConversionActivity
 import com.example.fastcampus.ch03_emergency_medical.EmergencyMedicalCareActivity
@@ -25,31 +26,34 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        val list = mutableListOf<ProjectList>().apply {
-            add(ProjectList("숫자 세기", CountNumberActivity::class.java))
-            add(ProjectList("단위 변환기", UnitConversionActivity::class.java))
-            add(ProjectList("응급 의료 정보", EmergencyMedicalCareActivity::class.java))
-            add(ProjectList("계산기", CalculatorActivity::class.java))
-            add(ProjectList("스톱 워치", StopWatchActivity::class.java))
-            add(ProjectList("단어장", WordBookActivity::class.java))
-            add(ProjectList("나만의 갤러리", MyGalleryActivity::class.java))
-            add(ProjectList("음악 플레이어", MusicPlayerActivity::class.java))
-            add(ProjectList("웹툰", WebToonActivity::class.java))
-            add(ProjectList("녹음", RecorderActivity::class.java))
-            add(ProjectList("오늘의 공지", TodayNoticeActivity::class.java))
-        }
+        val projectList = getProjectList()
 
-        binding.rvAppList.adapter = ProjectListAdapter(list).apply {
+        binding.rvAppList.adapter = ProjectListAdapter(projectList).apply {
             projectListClickListener = {
                 Intent(this@MainActivity, it.claasName).run {
                     startActivity(this)
                 }
             }
         }
+
+    }
+
+    private fun getProjectList(): List<ProjectList> {
+        return listOf(
+            ProjectList(getString(R.string.count_number), CountNumberActivity::class.java),
+            ProjectList(getString(R.string.unit_conversion), UnitConversionActivity::class.java),
+            ProjectList(
+                getString(R.string.emergency_medical),
+                EmergencyMedicalCareActivity::class.java
+            ),
+            ProjectList(getString(R.string.calculator), CalculatorActivity::class.java),
+            ProjectList(getString(R.string.stop_watch), StopWatchActivity::class.java),
+            ProjectList(getString(R.string.word_book), WordBookActivity::class.java),
+            ProjectList(getString(R.string.my_gallery), MyGalleryActivity::class.java),
+            ProjectList(getString(R.string.music_player), MusicPlayerActivity::class.java),
+            ProjectList(getString(R.string.web_toon), WebToonActivity::class.java),
+            ProjectList(getString(R.string.recorder), RecorderActivity::class.java),
+            ProjectList(getString(R.string.today_notice), TodayNoticeActivity::class.java),
+        )
     }
 }
-
-data class ProjectList(
-    val name: String,
-    val claasName: Class<*>,
-)

@@ -1,6 +1,19 @@
 <resources>
     <string name="app_name">FastCampus</string>
 
+    <!-- ch00. 메인   -->
+    <string name="count_number">숫자 세기</string>
+    <string name="unit_conversion">단위 변환기</string>
+    <string name="emergency_medical">응급 의료 정보</string>
+    <string name="calculator">계산기</string>
+    <string name="stop_watch">스톱 워치</string>
+    <string name="word_book">단어장</string>
+    <string name="my_gallery">나만의 갤러리</string>
+    <string name="music_player">음악 플레이어</string>
+    <string name="web_toon">웹툰</string>
+    <string name="recorder">녹음</string>
+    <string name="today_notice">오늘의 공지</string>
+
     <!-- ch01. 숫자 세기    -->
     <string name="init">초기화</string>
     <string name="add">+</string>

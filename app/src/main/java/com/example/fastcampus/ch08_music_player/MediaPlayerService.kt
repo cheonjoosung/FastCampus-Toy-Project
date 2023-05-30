@@ -16,7 +16,7 @@ import com.example.fastcampus.CHANNEL_ID
 import com.example.fastcampus.MEDIA_PLAYER_PAUSE
 import com.example.fastcampus.MEDIA_PLAYER_PLAY
 import com.example.fastcampus.MEDIA_PLAYER_STOP
-import com.example.fastcampus.MainActivity
+import com.example.fastcampus.ch0_main.MainActivity
 import com.example.fastcampus.R
 
 class MediaPlayerService : Service() {

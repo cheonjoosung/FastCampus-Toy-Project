@@ -73,7 +73,7 @@
             android:name=".ch01_count_number.CountNumberActivity"
             android:exported="false" />
         <activity
-            android:name=".MainActivity"
+            android:name=".ch0_main.MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

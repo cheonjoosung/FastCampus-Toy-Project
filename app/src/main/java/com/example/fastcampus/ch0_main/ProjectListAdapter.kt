@@ -1,4 +1,4 @@
-package com.example.fastcampus
+package com.example.fastcampus.ch0_main
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
