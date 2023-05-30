@@ -77,3 +77,10 @@
 - 오디오를 녹음
 - UI 학습 : canvas 활용한 녹음 파형 CustomView
 - 기능 학습 : MediaPlayer, MediaRecorder, Permission 처리, Handler 학습
+
+## 11. 오늘의 공지
+<img src="https://github.com/cheonjoosung/FastCampus-Toy-Project/blob/master/image/no11.jpg?raw=true" width="180" height="400">
+
+- 
+- UI 학습 : 
+- 기능 학습 : 
