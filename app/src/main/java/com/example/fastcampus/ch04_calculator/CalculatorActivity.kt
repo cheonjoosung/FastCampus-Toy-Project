@@ -1,13 +1,11 @@
 package com.example.fastcampus.ch04_calculator
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
 import android.view.View
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import com.example.fastcampus.R
 import com.example.fastcampus.databinding.ActivityCalculatorBinding
-import java.text.DecimalFormat
 
 class CalculatorActivity : AppCompatActivity() {
 
@@ -17,7 +15,7 @@ class CalculatorActivity : AppCompatActivity() {
     private val secondNumberText = StringBuilder("")
     private val operatorText = StringBuilder("")
 
-    private val decimalFormat = DecimalFormat("#,###")
+    //private val decimalFormat = DecimalFormat("#,###")
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -70,13 +68,11 @@ class CalculatorActivity : AppCompatActivity() {
     }
 
     private fun numberClicked(num: Int) {
-        Log.e(localClassName, "clicked $num")
-
         val numberString = num.toString()
         val numberText = if (operatorText.isEmpty()) firstNumberText else secondNumberText
 
         if ((operatorText.toString() == "/" || operatorText.toString() == "%") && numberString == "0") {
-            Toast.makeText(this, "0으로 나눌수없음", Toast.LENGTH_SHORT).show()
+            Toast.makeText(this, getString(R.string.msg_no_divide_zero), Toast.LENGTH_SHORT).show()
             return
         } else {
             numberText.append(numberString)
@@ -85,15 +81,16 @@ class CalculatorActivity : AppCompatActivity() {
     }
 
     private fun operatorClicked(op: String) {
-        Log.e(localClassName, "clicked $op")
 
         if (firstNumberText.isEmpty()) {
-            Toast.makeText(this, "먼저 숫자를 입력해주세요", Toast.LENGTH_SHORT).show()
+            Toast.makeText(this, getString(R.string.msg_number_input_need), Toast.LENGTH_SHORT)
+                .show()
             return
         }
 
         if (secondNumberText.isNotEmpty()) {
-            Toast.makeText(this, "1개의 연산자만 가능합니다.", Toast.LENGTH_SHORT).show()
+            Toast.makeText(this, getString(R.string.msg_only_one_operator), Toast.LENGTH_SHORT)
+                .show()
             return
         }
 
@@ -102,10 +99,9 @@ class CalculatorActivity : AppCompatActivity() {
     }
 
     private fun equalClicked() {
-        Log.e(localClassName, "clicked equal")
 
         if (firstNumberText.isEmpty() || secondNumberText.isEmpty() || operatorText.isEmpty()) {
-            Toast.makeText(this, "수식이 잘못되었습니다.", Toast.LENGTH_SHORT).show()
+            Toast.makeText(this, getString(R.string.msg_expression_error), Toast.LENGTH_SHORT).show()
             return
         }
 
@@ -130,7 +126,6 @@ class CalculatorActivity : AppCompatActivity() {
     }
 
     private fun clearClicked() {
-        Log.e(localClassName, "clicked clear")
         firstNumberText.clear()
         secondNumberText.clear()
         operatorText.clear()
@@ -139,6 +134,7 @@ class CalculatorActivity : AppCompatActivity() {
     }
 
     private fun updateUI() {
-        binding.tvEquation.text = "$firstNumberText $operatorText $secondNumberText"
+        val equation = "$firstNumberText $operatorText $secondNumberText"
+        binding.tvEquation.text = equation
     }
 }

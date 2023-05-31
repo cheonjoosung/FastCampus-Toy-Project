@@ -60,6 +60,10 @@
     <string name="mul">*</string>
     <string name="equation">equation</string>
     <string name="result">result</string>
+    <string name="msg_no_divide_zero">0으로 나눌 수 없습니다.</string>
+    <string name="msg_number_input_need">먼저 숫자를 입력 해주세요.</string>
+    <string name="msg_only_one_operator">1개의 연산자만 가능합니다.</string>
+    <string name="msg_expression_error">수식이 잘못되었습니다.</string>
 
     <!-- ch05. 스톱 와치    -->
     <string name="lap">랩</string>

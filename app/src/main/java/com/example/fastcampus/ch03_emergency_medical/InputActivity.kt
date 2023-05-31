@@ -4,7 +4,6 @@ import android.app.DatePickerDialog
 import android.app.DatePickerDialog.OnDateSetListener
 import android.content.Context
 import android.os.Bundle
-import android.util.Log
 import android.view.View
 import android.widget.AdapterView
 import android.widget.ArrayAdapter
@@ -30,30 +29,32 @@ class InputActivity : AppCompatActivity() {
 
         with(binding) {
 
-            spinnerBlood.adapter = ArrayAdapter(
-                applicationContext,
-                android.R.layout.simple_spinner_dropdown_item,
-                list
-            )
+            spinnerBlood.apply {
 
-            spinnerBlood.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
-                override fun onItemSelected(
-                    parent: AdapterView<*>?,
-                    view: View?,
-                    position: Int,
-                    id: Long
-                ) {
+                adapter = ArrayAdapter(
+                    applicationContext,
+                    android.R.layout.simple_spinner_dropdown_item,
+                    list
+                )
 
+                spinnerBlood.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
+                    override fun onItemSelected(
+                        parent: AdapterView<*>?,
+                        view: View?,
+                        position: Int,
+                        id: Long
+                    ) {
+                        /** do nothing **/
+                    }
+
+                    override fun onNothingSelected(parent: AdapterView<*>?) {
+                        /** do nothing **/
+                    }
                 }
-
-                override fun onNothingSelected(parent: AdapterView<*>?) {
-                }
-
             }
 
             birthDateLayer.setOnClickListener {
-                val listener = OnDateSetListener { date, year, month, dayOfMonth ->
-                    Log.e(localClassName, "??? $year-${month.inc()}-$dayOfMonth")
+                val listener = OnDateSetListener { _, year, month, dayOfMonth ->
                     val str = "$year-${month.inc()}-$dayOfMonth"
                     tvBirthValue.text = str
                 }
