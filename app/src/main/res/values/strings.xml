@@ -100,5 +100,7 @@
     <string name="zero_time_2">00:00:00</string>
     <string name="recordButton">녹음 버튼</string>
     <string name="playButton">재생 버튼</string>
+    <string name="serverHost">ServerHost</string>
+    <string name="connect">접속하기</string>
 
 </resources>

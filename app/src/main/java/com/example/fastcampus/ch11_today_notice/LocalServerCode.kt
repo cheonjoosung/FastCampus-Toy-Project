@@ -7,6 +7,9 @@ import java.net.ServerSocket
 
 fun main() {
 
+    //192.168.209.110
+    //192.168.209.164
+
     Thread {
         val port = 8080
         val server = ServerSocket(port)
@@ -26,8 +29,8 @@ fun main() {
 
             printer.println("HTTP/1.1 200 OK")
             printer.println("Content-Type: text/html\r\n")
-
-            printer.println("<h1>Hello World</h1>")
+            // Body
+            printer.println("{\"message\": \"hello world\", \"nickname\": \"홍길동\"}")
             printer.println("\r\n")
             printer.flush()
 

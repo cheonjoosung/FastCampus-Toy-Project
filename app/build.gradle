@@ -47,6 +47,9 @@ dependencies {
     // for okhttp
     implementation 'com.squareup.okhttp3:okhttp:4.10.0'
 
+    // for gson
+    implementation 'com.google.code.gson:gson:2.10'
+
     // for Room
     def room_version = "2.5.0"
     implementation("androidx.room:room-runtime:$room_version")
