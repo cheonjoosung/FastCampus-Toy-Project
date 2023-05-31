@@ -13,6 +13,7 @@
     <string name="web_toon">웹툰</string>
     <string name="recorder">녹음</string>
     <string name="today_notice">오늘의 공지</string>
+    <string name="github_repository">깃헙 레파지토리</string>
 
     <!-- ch01. 숫자 세기    -->
     <string name="init">초기화</string>
