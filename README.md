@@ -86,3 +86,12 @@
 - 네트워크 통신(소켓 또는 okhttp)을 통해 서버에 오늘의 공지 데이터를 요청하고 화면에 내용을 표현하는 앱
 - UI 학습 : 없음
 - 기능 학습 : Socket, Okhttp, GSon 학습
+
+## 12. 깃헙 레포지토리
+|<img src="https://github.com/cheonjoosung/FastCampus-Toy-Project/blob/master/image/no11-1.jpg?raw=true" width="180" height="400">
+|<img src="https://github.com/cheonjoosung/FastCampus-Toy-Project/blob/master/image/no11-2.jpg?raw=true" width="180" height="400">
+|-|-|
+
+- 깃헙 API 를 이용하여 repository 조회하는 앱
+- UI 학습 : RecyclerView
+- 기능 학습 : Retrofit, Okhttp, ListAdapter, Github Open API, Handler
