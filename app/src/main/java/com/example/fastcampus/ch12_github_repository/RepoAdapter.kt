@@ -8,7 +8,9 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.fastcampus.ch12_github_repository.network.Repo
 import com.example.fastcampus.databinding.ItemRepoBinding
 
-class RepoAdapter : ListAdapter<Repo, RepoAdapter.RepoViewHolder>(diffUtil) {
+class RepoAdapter(
+    val onClick: ((Repo) -> Unit)
+) : ListAdapter<Repo, RepoAdapter.RepoViewHolder>(diffUtil) {
 
     companion object {
         val diffUtil = object : DiffUtil.ItemCallback<Repo>() {
@@ -30,6 +32,10 @@ class RepoAdapter : ListAdapter<Repo, RepoAdapter.RepoViewHolder>(diffUtil) {
             binding.descriptionTextView.text = item.description
             binding.starCountTextView.text = item.starCount.toString()
             binding.forkTextView.text = item.forkCount.toString()
+
+            binding.root.setOnClickListener {
+                onClick(item)
+            }
         }
     }
 

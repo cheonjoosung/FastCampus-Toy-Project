@@ -1,19 +1,20 @@
 package com.example.fastcampus.ch12_github_repository
 
-import androidx.appcompat.app.AppCompatActivity
+import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
 import android.util.Log
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.example.fastcampus.R
+import androidx.recyclerview.widget.RecyclerView
+import com.example.fastcampus.ch12_github_repository.network.ApiClient
 import com.example.fastcampus.ch12_github_repository.network.GithubService
 import com.example.fastcampus.ch12_github_repository.network.Repo
 import com.example.fastcampus.databinding.ActivityRepoBinding
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
-import retrofit2.Retrofit
-import retrofit2.converter.gson.GsonConverterFactory
 
 class RepoActivity : AppCompatActivity() {
 
@@ -21,12 +22,9 @@ class RepoActivity : AppCompatActivity() {
 
     private lateinit var repoAdapter: RepoAdapter
 
-    private val url = "https://api.github.com/"
+    private var page = 0
 
-    private val retrofit = Retrofit.Builder()
-        .baseUrl(url)
-        .addConverterFactory(GsonConverterFactory.create())
-        .build()
+    private var hasMore = true
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -37,29 +35,50 @@ class RepoActivity : AppCompatActivity() {
         val username = intent.getStringExtra("username") ?: return
         binding.usernameTextView.text = username
 
-        repoAdapter = RepoAdapter()
+        repoAdapter = RepoAdapter {
+            val intent = Intent(Intent.ACTION_VIEW, Uri.parse(it.htmlUrl))
+            startActivity(intent)
+        }
+        val linearLayoutManager = LinearLayoutManager(this@RepoActivity)
 
         binding.repoRecyclerView.apply {
             adapter = repoAdapter
-            layoutManager = LinearLayoutManager(this@RepoActivity)
+            layoutManager = linearLayoutManager
         }
 
-        listRepo(username)
+        binding.repoRecyclerView.addOnScrollListener(object : RecyclerView.OnScrollListener() {
+            override fun onScrolled(recyclerView: RecyclerView, dx: Int, dy: Int) {
+                super.onScrolled(recyclerView, dx, dy)
+
+                val totalCount = linearLayoutManager.itemCount
+                val lastVisitPosition = linearLayoutManager.findLastCompletelyVisibleItemPosition()
+
+                if (lastVisitPosition >= totalCount - 1 && hasMore) {
+                    page += 1
+                    Toast.makeText(this@RepoActivity, "Repo를 더 조회합니다", Toast.LENGTH_SHORT).show()
+                    listRepo(username, page)
+                }
+            }
+        })
+
+        listRepo(username, 0)
     }
 
-    private fun listRepo(username: String) {
-        val githubService = retrofit.create(GithubService::class.java)
+    private fun listRepo(username: String, page: Int) {
+        val githubService = ApiClient.retrofit.create(GithubService::class.java)
 
-        githubService.listRepos(username = username).enqueue(object : Callback<List<Repo>> {
-            override fun onResponse(call: Call<List<Repo>>, response: Response<List<Repo>>) {
-                Log.e(localClassName, "get repo success ${response.body().toString()}")
-                repoAdapter.submitList(response.body())
-            }
+        githubService.listRepos(username = username, page = page)
+            .enqueue(object : Callback<List<Repo>> {
+                override fun onResponse(call: Call<List<Repo>>, response: Response<List<Repo>>) {
+                    Log.e(localClassName, "get repo success ${response.body().toString()}")
+                    hasMore = response.body()?.count() == 30
+                    repoAdapter.submitList(repoAdapter.currentList + response.body().orEmpty())
+                }
 
-            override fun onFailure(call: Call<List<Repo>>, t: Throwable) {
-                Log.e(localClassName, "get repo failed ${t.message}")
-            }
+                override fun onFailure(call: Call<List<Repo>>, t: Throwable) {
+                    Log.e(localClassName, "get repo failed ${t.message}")
+                }
 
-        })
+            })
     }
 }
