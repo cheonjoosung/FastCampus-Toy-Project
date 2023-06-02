@@ -88,10 +88,10 @@
 - 기능 학습 : Socket, Okhttp, GSon 학습
 
 ## 12. 깃헙 레포지토리
-|<img src="https://github.com/cheonjoosung/FastCampus-Toy-Project/blob/master/image/no11-1.jpg?raw=true" width="180" height="400">
-|<img src="https://github.com/cheonjoosung/FastCampus-Toy-Project/blob/master/image/no11-2.jpg?raw=true" width="180" height="400">
+|<img src="https://github.com/cheonjoosung/FastCampus-Toy-Project/blob/master/image/no12-1.jpg?raw=true" width="180" height="400">
+|<img src="https://github.com/cheonjoosung/FastCampus-Toy-Project/blob/master/image/no12-2.jpg?raw=true" width="180" height="400">
 |-|-|
 
-- 깃헙 API 를 이용하여 repository 조회하는 앱
+- 깃헙 API 를 활용해서 username 검색 & repository 조회
 - UI 학습 : RecyclerView
-- 기능 학습 : Retrofit, Okhttp, ListAdapter, Github Open API, Handler
+- 기능 학습 : Retrofit, Okhttp, ListAdapter, Github Open API, Handler, 무한 스크롤
