@@ -12,7 +12,7 @@ object ApiClient {
         .addInterceptor {
             val request =
                 it.request().newBuilder()
-                    .addHeader("Authorization", "Bearer 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")
+                    .addHeader("Authorization", "Bearer {token}")
                     .build()
 
             it.proceed(request)
