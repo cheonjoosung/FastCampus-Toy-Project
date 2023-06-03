@@ -16,6 +16,7 @@ import com.example.fastcampus.ch09_web_toon.WebToonActivity
 import com.example.fastcampus.ch10_recorder.RecorderActivity
 import com.example.fastcampus.ch11_today_notice.TodayNoticeActivity
 import com.example.fastcampus.ch12_github_repository.GithubRepositoryActivity
+import com.example.fastcampus.ch13_news.NewsActivity
 import com.example.fastcampus.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
@@ -56,6 +57,7 @@ class MainActivity : AppCompatActivity() {
             ProjectList(getString(R.string.recorder), RecorderActivity::class.java),
             ProjectList(getString(R.string.today_notice), TodayNoticeActivity::class.java),
             ProjectList(getString(R.string.github_repository), GithubRepositoryActivity::class.java),
+            ProjectList(getString(R.string.news), NewsActivity::class.java),
         )
     }
 }
