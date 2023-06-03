@@ -8,6 +8,7 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.example.fastcampus.R
 import com.example.fastcampus.ch12_github_repository.network.ApiClient
 import com.example.fastcampus.ch12_github_repository.network.GithubService
 import com.example.fastcampus.ch12_github_repository.network.Repo
@@ -55,7 +56,7 @@ class RepoActivity : AppCompatActivity() {
 
                 if (lastVisitPosition >= totalCount - 1 && hasMore) {
                     page += 1
-                    Toast.makeText(this@RepoActivity, "Repo를 더 조회합니다", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(this@RepoActivity, getString(R.string.msg_repo_more), Toast.LENGTH_SHORT).show()
                     listRepo(username, page)
                 }
             }

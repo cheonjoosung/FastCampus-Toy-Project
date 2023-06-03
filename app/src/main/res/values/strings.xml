@@ -14,6 +14,7 @@
     <string name="recorder">녹음</string>
     <string name="today_notice">오늘의 공지</string>
     <string name="github_repository">깃헙 레파지토리</string>
+    <string name="news">뉴스</string>
 
     <!-- ch01. 숫자 세기    -->
     <string name="init">초기화</string>
@@ -101,9 +102,18 @@
     <string name="zero_time_2">00:00:00</string>
     <string name="recordButton">녹음 버튼</string>
     <string name="playButton">재생 버튼</string>
+
+    <!-- ch11. 오늘의 공지    -->
     <string name="serverHost">ServerHost</string>
+    <string name="msg_network_error">Network Failed</string>
+
+    <!-- ch12. 깃헙 레파지토리    -->
     <string name="connect">접속하기</string>
     <string name="star_count">starCount</string>
     <string name="fork">fork</string>
+    <string name="msg_repo_more">Repo를 더 조회합니다</string>
+
+    <!-- ch13. 뉴스    -->
+
 
 </resources>

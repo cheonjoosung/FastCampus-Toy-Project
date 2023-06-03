@@ -6,6 +6,7 @@ import android.view.View
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.isVisible
+import com.example.fastcampus.R
 import com.example.fastcampus.databinding.ActivityTodayNoticeBinding
 import com.google.gson.Gson
 import okhttp3.Call
@@ -62,7 +63,7 @@ class TodayNoticeActivity : AppCompatActivity() {
                             runOnUiThread {
                                 Toast.makeText(
                                     applicationContext,
-                                    "Network Failed",
+                                    getString(R.string.msg_network_error),
                                     Toast.LENGTH_SHORT
                                 ).show()
                             }
