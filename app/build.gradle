@@ -48,6 +48,12 @@ dependencies {
     implementation 'com.squareup.retrofit2:retrofit:2.9.0'
     implementation 'com.squareup.retrofit2:converter-gson:2.9.0'
 
+    // for TikXML
+    implementation 'com.tickaroo.tikxml:annotation:0.8.13'
+    implementation 'com.tickaroo.tikxml:core:0.8.13'
+    implementation 'com.tickaroo.tikxml:retrofit-converter:0.8.13'
+    kapt 'com.tickaroo.tikxml:processor:0.8.13'
+
     // for okhttp
     implementation 'com.squareup.okhttp3:okhttp:4.10.0'
 
@@ -58,6 +64,12 @@ dependencies {
     def room_version = "2.5.0"
     implementation("androidx.room:room-runtime:$room_version")
     kapt("androidx.room:room-compiler:$room_version")
+
+    // for jsoup
+    implementation 'org.jsoup:jsoup:1.16.1'
+
+    // for glide
+    implementation 'com.github.bumptech.glide:glide:4.15.1'
 
     testImplementation 'junit:junit:4.13.2'
     androidTestImplementation 'androidx.test.ext:junit:1.1.5'
