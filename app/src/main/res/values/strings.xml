@@ -15,6 +15,7 @@
     <string name="today_notice">오늘의 공지</string>
     <string name="github_repository">깃헙 레파지토리</string>
     <string name="news">뉴스</string>
+    <string name="chat">채팅</string>
 
     <!-- ch01. 숫자 세기    -->
     <string name="init">초기화</string>
@@ -121,6 +122,8 @@
     <string name="economy">경제</string>
     <string name="social">사회</string>
     <string name="feed">피드</string>
+
+    <!-- ch14. 채팅    -->
 
 
 </resources>
