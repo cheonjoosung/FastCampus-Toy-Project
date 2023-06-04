@@ -95,3 +95,13 @@
 - 깃헙 API 를 활용해서 username 검색 & repository 조회
 - UI 학습 : RecyclerView
 - 기능 학습 : Retrofit, Okhttp, ListAdapter, Github Open API, Handler, 무한 스크롤
+
+## 13. 뉴스
+|<img src="https://github.com/cheonjoosung/FastCampus-Toy-Project/blob/master/image/no13-1.jpg?raw=true" width="180" height="400">
+|<img src="https://github.com/cheonjoosung/FastCampus-Toy-Project/blob/master/image/no13-2.jpg?raw=true" width="180" height="400">
+|<img src="https://github.com/cheonjoosung/FastCampus-Toy-Project/blob/master/image/no13-3.jpg?raw=true" width="180" height="400">
+|-|-|-|
+
+- 뉴스 html 를 가져와 파싱을 하여 카드 형태의 뉴스로 보여주는 앱
+- UI 학습 : Material Design, Chip, Card
+- 기능 학습 : Retrofit, Jsoup, Glide, Lottie, Tikxml
