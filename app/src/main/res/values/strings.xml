@@ -112,9 +112,15 @@
     <string name="star_count">starCount</string>
     <string name="fork">fork</string>
     <string name="msg_repo_more">Repo를 더 조회합니다</string>
-    <string name="news_thumbnail">뉴스 썸네일</string>
 
     <!-- ch13. 뉴스    -->
+    <string name="news_thumbnail">뉴스 썸네일</string>
+    <string name="politics">정치</string>
+    <string name="sports">스포츠</string>
+    <string name="it">정보기술</string>
+    <string name="economy">경제</string>
+    <string name="social">사회</string>
+    <string name="feed">피드</string>
 
 
 </resources>
