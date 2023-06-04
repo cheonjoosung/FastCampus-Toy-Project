@@ -124,6 +124,23 @@
     <string name="feed">피드</string>
 
     <!-- ch14. 채팅    -->
-
+    <string name="password">password</string>
+    <string name="email">email</string>
+    <string name="login">로그인</string>
+    <string name="sign_up">회원가입</string>
+    <string name="msg_email_password_input_error">이메일 또는 패스워드가 입력되지 않았습니다</string>
+    <string name="msg_name_input_error">이름이 입력되지 않았습니다</string>
+    <string name="msg_success_sign_up">회원가입에 성공했습니다.</string>
+    <string name="msg_failed_sign_up">회원가입에 실패했습니다.</string>
+    <string name="msg_success_sign_in">로그인에 성공했습니다.</string>
+    <string name="msg_failed_sign_in">로그인에 실패했습니다.</string>
+    <string name="profile">프로필</string>
+    <string name="user_list">유저 목록</string>
+    <string name="my_page">나의 페이지</string>
+    <string name="chat_list">채팅 목록</string>
+    <string name="apply">적용하기</string>
+    <string name="sign_out">로그아웃</string>
+    <string name="description">description</string>
+    <string name="user_name">user name</string>
 
 </resources>
