@@ -16,3 +16,7 @@ const val CHANNEL = "mediaPlayer"
 const val WEB_HISTORY = "webHistory"
 
 const val AUDIO_REQUEST_CODE = 200
+
+const val DB_USERS = "Users"
+const val DB_CHAT_ROOMS ="ChatRooms"
+const val DB_CHATS = "Chats"

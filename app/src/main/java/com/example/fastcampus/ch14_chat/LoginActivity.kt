@@ -4,9 +4,11 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
+import com.example.fastcampus.DB_USERS
 import com.example.fastcampus.R
 import com.example.fastcampus.databinding.ActivityLoginBinding
 import com.google.firebase.auth.ktx.auth
+import com.google.firebase.database.ktx.database
 import com.google.firebase.ktx.Firebase
 
 class LoginActivity : AppCompatActivity() {
@@ -72,7 +74,16 @@ class LoginActivity : AppCompatActivity() {
 
         Firebase.auth.signInWithEmailAndPassword(email, password)
             .addOnCompleteListener(this) { task ->
-                if (task.isSuccessful) {
+                val currentUser = Firebase.auth.currentUser
+                if (task.isSuccessful && currentUser!= null) {
+
+                    val userId =currentUser.uid
+                    val user = mutableMapOf<String, Any>()
+                    user["userId"] = userId
+                    user["username"] = email
+
+                    Firebase.database.reference.child(DB_USERS).child(userId).updateChildren(user)
+
                     Toast.makeText(
                         this,
                         getString(R.string.msg_success_sign_in),

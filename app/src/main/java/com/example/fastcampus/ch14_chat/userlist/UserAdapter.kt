@@ -25,7 +25,7 @@ class UserAdapter : ListAdapter<UserItem, UserAdapter.UserViewHolder>(diff) {
     inner class UserViewHolder(private val binding: ItemUserlistBinding) :
         RecyclerView.ViewHolder(binding.root) {
         fun bind(item: UserItem) {
-            binding.nicknameTextView.text = item.userName
+            binding.nicknameTextView.text = item.username
             binding.descriptionTextView.text = item.description
         }
     }
