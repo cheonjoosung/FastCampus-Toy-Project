@@ -7,7 +7,9 @@ import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.example.fastcampus.databinding.ItemChatroomBinding
 
-class ChatListAdapter : ListAdapter<ChatRoomItem, ChatListAdapter.ChatListViewHolder>(diff) {
+class ChatListAdapter(
+    private val onClick: ((ChatRoomItem) -> Unit),
+) : ListAdapter<ChatRoomItem, ChatListAdapter.ChatListViewHolder>(diff) {
 
     companion object {
         val diff = object : DiffUtil.ItemCallback<ChatRoomItem>() {
@@ -27,6 +29,10 @@ class ChatListAdapter : ListAdapter<ChatRoomItem, ChatListAdapter.ChatListViewHo
         fun bind(item: ChatRoomItem) {
             binding.nicknameTextView.text = item.otherUserName
             binding.lastMessageTextView.text = item.lastMessage
+
+            binding.root.setOnClickListener {
+                onClick(item)
+            }
         }
     }
 

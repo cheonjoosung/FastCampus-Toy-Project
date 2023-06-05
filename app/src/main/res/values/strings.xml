@@ -142,5 +142,7 @@
     <string name="sign_out">로그아웃</string>
     <string name="description">description</string>
     <string name="user_name">user name</string>
+    <string name="send">전송</string>
+    <string name="msg_input">메시지를 입력하세요</string>
 
 </resources>

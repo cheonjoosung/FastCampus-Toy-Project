@@ -7,7 +7,9 @@ import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.example.fastcampus.databinding.ItemUserlistBinding
 
-class UserAdapter : ListAdapter<UserItem, UserAdapter.UserViewHolder>(diff) {
+class UserAdapter(
+    private val onClick: ((UserItem) -> Unit)
+) : ListAdapter<UserItem, UserAdapter.UserViewHolder>(diff) {
 
     companion object {
         val diff = object : DiffUtil.ItemCallback<UserItem>() {
@@ -27,6 +29,8 @@ class UserAdapter : ListAdapter<UserItem, UserAdapter.UserViewHolder>(diff) {
         fun bind(item: UserItem) {
             binding.nicknameTextView.text = item.username
             binding.descriptionTextView.text = item.description
+
+            binding.root.setOnClickListener { onClick(item) }
         }
     }
 
