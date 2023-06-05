@@ -105,3 +105,13 @@
 - 뉴스 html 를 가져와 파싱을 하여 카드 형태의 뉴스로 보여주는 앱
 - UI 학습 : Material Design, Chip, Card
 - 기능 학습 : Retrofit, Jsoup, Glide, Lottie, Tikxml
+
+
+## 14. 채팅
+|<img src="https://github.com/cheonjoosung/FastCampus-Toy-Project/blob/master/image/no14-1.jpg?raw=true" width="180" height="400">
+|<img src="https://github.com/cheonjoosung/FastCampus-Toy-Project/blob/master/image/no14-2.jpg?raw=true" width="180" height="400">
+|-|-|
+
+- 대화/알림 기능이 있는 채팅 앱
+- UI 학습 : Material Design, Chip, Card
+- 기능 학습 : Firebase Cloud Message, Firebase Realtime Database
