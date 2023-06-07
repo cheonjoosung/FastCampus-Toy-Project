@@ -16,6 +16,7 @@
     <string name="github_repository">깃헙 레파지토리</string>
     <string name="news">뉴스</string>
     <string name="chat">채팅</string>
+    <string name="weather">날씨</string>
 
     <!-- ch01. 숫자 세기    -->
     <string name="init">초기화</string>
@@ -144,5 +145,7 @@
     <string name="user_name">user name</string>
     <string name="send">전송</string>
     <string name="msg_input">메시지를 입력하세요</string>
+
+    <!-- ch15. 날씨    -->
 
 </resources>
