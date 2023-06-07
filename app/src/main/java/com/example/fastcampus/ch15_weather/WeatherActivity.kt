@@ -14,6 +14,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityCompat
 import com.example.fastcampus.ApiKey.WEATHER_API_KEY
 import com.example.fastcampus.R
+import com.example.fastcampus.ch15_weather.network.WeatherRepository
 import com.example.fastcampus.ch15_weather.network.WeatherService
 import com.example.fastcampus.databinding.ActivityWeatherBinding
 import com.example.fastcampus.databinding.ItemForecastBinding
@@ -29,8 +30,6 @@ import java.util.Locale
 class WeatherActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityWeatherBinding
-
-    private val url = "http://apis.data.go.kr/"
 
     private val locationPermissionRequest = registerForActivityResult(
         ActivityResultContracts.RequestMultiplePermissions()
@@ -77,7 +76,7 @@ class WeatherActivity : AppCompatActivity() {
             val longitude = it?.longitude ?: 126.90514411770405
 
             Thread {
-                 try {
+                try {
                     val addressList = Geocoder(this, Locale.KOREA).getFromLocation(
                         latitude,
                         longitude,
@@ -92,111 +91,36 @@ class WeatherActivity : AppCompatActivity() {
                 }
             }.start()
 
-            callWeather(latitude, longitude)
-        }
-    }
+            WeatherRepository.callWeather(latitude, longitude,
+                successCallback = { forecastList ->
 
-    private fun callWeather(latitude: Double, longitude: Double) {
-        //위도 37.48814860666663, 경도 126.90514411770405
-        val retrofit = Retrofit.Builder()
-            .baseUrl(url)
-            .addConverterFactory(GsonConverterFactory.create())
-            .build()
+                    val currentForecast = forecastList.first()
 
-        val service = retrofit.create(WeatherService::class.java)
+                    binding.temperatureTextView.text =
+                        getString(R.string.temperature_text, currentForecast.temperature)
+                    binding.skyTextView.text = currentForecast.weather
+                    binding.precipitationTextView.text =
+                        getString(R.string.precipitation_text, currentForecast.precipitation)
 
-        val baseDateTime = BaseDateTime.getBaseDateTime()
-        val converter = GeoPointConverter()
-        val point = converter.convert(lat = latitude, lon = longitude)
+                    binding.childForecastLayout.apply {
+                        forecastList.forEachIndexed { index, forecast ->
+                            if (index == 0) return@forEachIndexed
 
-        service.getVillageForecast(
-            serviceKey = WEATHER_API_KEY,
-            baseDate = baseDateTime.baseDate,
-            baseTime = baseDateTime.baseTime,
-            nx = point.nx,
-            ny = point.ny
-        ).enqueue(object : Callback<WeatherEntity> {
-            override fun onResponse(call: Call<WeatherEntity>, response: Response<WeatherEntity>) {
-                val list = response.body()?.response?.body?.items?.forecastEntities.orEmpty()
+                            val itemView = ItemForecastBinding.inflate(layoutInflater)
+                            itemView.timeTextView.text = forecast.forecastTime
+                            itemView.weatherTextView.text = forecast.weather
+                            itemView.temperatureTextView.text =
+                                getString(R.string.temperature_text, forecast.temperature)
 
-                val forecastDateTimeMap = mutableMapOf<String, Forecast>()
-
-                for (item in list) {
-                    val key = "${item.forecastDate}/${item.forecastTime}"
-                    if (forecastDateTimeMap[key] == null) {
-                        forecastDateTimeMap[key] = Forecast(
-                            forecastDate = item.forecastDate,
-                            forecastTime = item.forecastTime
-                        )
-                    }
-
-                    forecastDateTimeMap[key]?.apply {
-                        when (item.category) {
-                            Category.POP -> precipitation = item.forecastValue.toInt()
-                            Category.PTY -> precipitationType = transformRainType(item)
-                            Category.SKY -> sky = transformSky(item)
-                            Category.TMP -> temperature = item.forecastValue.toDouble()
-                            else -> {}
+                            addView(itemView.root)
                         }
                     }
+                },
+                failureCallback = { t ->
+                    t.stackTrace
                 }
-
-                val forecastList = forecastDateTimeMap.values.toMutableList()
-                forecastList.sortWith { f1, f2 ->
-                    val f1DataTime = "${f1.forecastDate}${f1.forecastTime}"
-                    val f2DataTime = "${f2.forecastDate}${f2.forecastTime}"
-
-                    return@sortWith f1DataTime.compareTo(f2DataTime)
-                }
-
-                val currentForecast = forecastList.first()
-                binding.temperatureTextView.text =
-                    getString(R.string.temperature_text, currentForecast.temperature)
-                binding.skyTextView.text = currentForecast.weather
-                binding.precipitationTextView.text =
-                    getString(R.string.precipitation_text, currentForecast.precipitation)
-
-                binding.childForecastLayout.apply {
-                    forecastList.forEachIndexed { index, forecast ->
-                        if (index == 0) return@forEachIndexed
-
-                        val itemView = ItemForecastBinding.inflate(layoutInflater)
-                        itemView.timeTextView.text = forecast.forecastTime
-                        itemView.weatherTextView.text = forecast.weather
-                        itemView.temperatureTextView.text =
-                            getString(R.string.temperature_text, forecast.temperature)
-
-                        addView(itemView.root)
-                    }
-                }
-
-                Log.e(localClassName, forecastDateTimeMap.toString())
-            }
-
-            override fun onFailure(call: Call<WeatherEntity>, t: Throwable) {
-                t.printStackTrace()
-            }
-
-        })
-    }
-
-    private fun transformRainType(forecastEntity: ForecastEntity): String {
-        return when (forecastEntity.forecastValue.toInt()) {
-            0 -> "없음"
-            1 -> "비"
-            2 -> "비/눈"
-            3 -> "눈"
-            4 -> "소나기"
-            else -> ""
+            )
         }
     }
 
-    private fun transformSky(forecastEntity: ForecastEntity): String {
-        return when (forecastEntity.forecastValue.toInt()) {
-            1 -> "맑음"
-            3 -> "구름많음"
-            4 -> "흐림"
-            else -> ""
-        }
-    }
 }
