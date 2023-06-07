@@ -147,5 +147,6 @@
     <string name="msg_input">메시지를 입력하세요</string>
 
     <!-- ch15. 날씨    -->
-
+    <string name="temperature_text">%.1f°</string>
+    <string name="precipitation_text">강수확률 : %d %%</string>
 </resources>
