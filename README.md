@@ -115,3 +115,13 @@
 - 대화/알림 기능이 있는 채팅 앱
 - UI 학습 : Material Design, Chip, Card
 - 기능 학습 : Firebase Cloud Message, Firebase Realtime Database
+
+
+## 15. 날씨
+|<img src="https://github.com/cheonjoosung/FastCampus-Toy-Project/blob/master/image/no15-1.jpg?raw=true" width="180" height="400">
+|<img src="https://github.com/cheonjoosung/FastCampus-Toy-Project/blob/master/image/no15-2.jpg?raw=true" width="180" height="400">
+|-|-|
+
+- 공공데이터 포털의 정보를 활용한 날씨 앱
+- UI 학습 : Android Widget
+- 기능 학습 : Location, Foreground Service, 공공데이타 API
