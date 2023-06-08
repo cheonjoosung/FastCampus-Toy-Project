@@ -18,6 +18,7 @@
     <string name="chat">채팅</string>
     <string name="weather">날씨</string>
     <string name="map">맛집도</string>
+    <string name="genri">젠리</string>
 
     <!-- ch01. 숫자 세기    -->
     <string name="init">초기화</string>

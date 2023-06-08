@@ -23,6 +23,9 @@
         android:usesCleartextTraffic="true"
         tools:targetApi="31">
         <activity
+            android:name=".ch17_genri.GenriActivity"
+            android:exported="false" />
+        <activity
             android:name=".ch16_food_map.FoodMapActivity"
             android:exported="false" />
         <activity
