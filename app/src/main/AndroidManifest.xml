@@ -23,7 +23,7 @@
         android:usesCleartextTraffic="true"
         tools:targetApi="31">
         <activity
-            android:name=".ch16_map.MapActivity"
+            android:name=".ch16_food_map.FoodMapActivity"
             android:exported="false" />
         <activity
             android:name=".ch15_weather.SettingActivity"

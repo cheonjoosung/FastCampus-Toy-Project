@@ -125,3 +125,8 @@
 - 공공데이터 포털의 정보를 활용한 날씨 앱
 - UI 학습 : Android Widget
 - 기능 학습 : Location, Foreground Service, 공공데이타 API
+
+
+## 16. 대동맛집도
+- 패스
+

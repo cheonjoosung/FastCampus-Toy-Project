@@ -19,7 +19,7 @@ import com.example.fastcampus.ch12_github_repository.GithubRepositoryActivity
 import com.example.fastcampus.ch13_news.NewsActivity
 import com.example.fastcampus.ch14_chat.ChatActivity
 import com.example.fastcampus.ch15_weather.WeatherActivity
-import com.example.fastcampus.ch16_map.MapActivity
+import com.example.fastcampus.ch16_food_map.FoodMapActivity
 import com.example.fastcampus.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
@@ -63,7 +63,7 @@ class MainActivity : AppCompatActivity() {
             ProjectList(getString(R.string.news), NewsActivity::class.java),
             ProjectList(getString(R.string.chat), ChatActivity::class.java),
             ProjectList(getString(R.string.weather), WeatherActivity::class.java),
-            ProjectList(getString(R.string.map), MapActivity::class.java),
+            ProjectList(getString(R.string.map), FoodMapActivity::class.java),
         )
     }
 }
