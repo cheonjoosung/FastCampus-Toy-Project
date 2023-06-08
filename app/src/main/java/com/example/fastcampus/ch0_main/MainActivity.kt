@@ -3,6 +3,7 @@ package com.example.fastcampus.ch0_main
 import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import com.example.fastcampus.ApiKey
 import com.example.fastcampus.R
 import com.example.fastcampus.ch01_count_number.CountNumberActivity
 import com.example.fastcampus.ch02_unit_conversion.UnitConversionActivity
@@ -22,6 +23,7 @@ import com.example.fastcampus.ch15_weather.WeatherActivity
 import com.example.fastcampus.ch16_food_map.FoodMapActivity
 import com.example.fastcampus.ch17_genri.GenriActivity
 import com.example.fastcampus.databinding.ActivityMainBinding
+import com.kakao.sdk.common.KakaoSdk
 
 class MainActivity : AppCompatActivity() {
 
@@ -31,6 +33,8 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+        KakaoSdk.init(this, ApiKey.KAKAO_KEY)
 
         val projectList = getProjectList()
 

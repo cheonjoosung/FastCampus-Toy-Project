@@ -7,6 +7,15 @@ plugins {
 }
 
 android {
+/*    signingConfigs {
+        debug {
+            storeFile File("fastcampus.keystore")
+            storePassword 'android'
+            keyAlias 'androidDebug'
+            keyPassword 'android'
+        }
+    }*/
+
     namespace 'com.example.fastcampus'
     compileSdk 33
 
@@ -83,6 +92,9 @@ dependencies {
 
     // for google location
     implementation 'com.google.android.gms:play-services-location:21.0.1'
+
+    // for kakao
+    implementation "com.kakao.sdk:v2-user:2.14.0" // 카카오 로그인
 
     testImplementation 'junit:junit:4.13.2'
     androidTestImplementation 'androidx.test.ext:junit:1.1.5'

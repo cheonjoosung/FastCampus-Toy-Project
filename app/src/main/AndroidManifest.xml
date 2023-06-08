@@ -23,6 +23,9 @@
         android:usesCleartextTraffic="true"
         tools:targetApi="31">
         <activity
+            android:name=".ch17_genri.LoginActivity"
+            android:exported="false" />
+        <activity
             android:name=".ch17_genri.GenriActivity"
             android:exported="false" />
         <activity
@@ -134,6 +137,22 @@
         <service
             android:name=".ch15_weather.UpdateWeatherService"
             android:foregroundServiceType="location" />
+
+        <activity
+            android:name="com.kakao.sdk.auth.AuthCodeHandlerActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <!-- Redirect URI: "kakao${NATIVE_APP_KEY}://oauth" -->
+                <data
+                    android:host="oauth"
+                    android:scheme="kakao0bc27ca1735ea97d7a89455f2228c14b" />
+            </intent-filter>
+        </activity>
     </application>
 
 </manifest>

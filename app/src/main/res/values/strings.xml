@@ -151,4 +151,10 @@
     <!-- ch15. 날씨    -->
     <string name="temperature_text">%.1f°</string>
     <string name="precipitation_text">강수확률 : %d %%</string>
+
+    <!-- ch16. 대동맛집도    -->
+
+    <!-- ch17. 젠리    -->
+    <string name="kakao_login">카카오톡 로그인</string>
+
 </resources>
