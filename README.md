@@ -130,3 +130,10 @@
 ## 16. 대동맛집도
 - 패스
 
+## 17. 젠리
+<img src="https://github.com/cheonjoosung/FastCampus-Toy-Project/blob/master/image/no17-1.jpg?raw=true" width="180" height="400">
+
+- 카카오 로그인으로 가져온 정보와 위치정보를 바탕으로 구글 지도에 표시하고 감정표현을 날릴 수 있는 앱
+- UI 학습 : BottomSheetFragment, GoogleMap
+- 기능 학습 : Google API, 카카오 로그인, Firebase
+
