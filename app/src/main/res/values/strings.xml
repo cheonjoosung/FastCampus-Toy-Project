@@ -19,6 +19,7 @@
     <string name="weather">날씨</string>
     <string name="map">맛집도</string>
     <string name="genri">젠리</string>
+    <string name="tomorrow_house">내일의 집</string>
 
     <!-- ch01. 숫자 세기    -->
     <string name="init">초기화</string>
@@ -156,5 +157,8 @@
 
     <!-- ch17. 젠리    -->
     <string name="kakao_login">카카오톡 로그인</string>
+
+    <!-- ch18. 내일의집    -->
+
 
 </resources>

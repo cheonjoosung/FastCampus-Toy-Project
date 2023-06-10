@@ -22,6 +22,7 @@ import com.example.fastcampus.ch14_chat.ChatActivity
 import com.example.fastcampus.ch15_weather.WeatherActivity
 import com.example.fastcampus.ch16_food_map.FoodMapActivity
 import com.example.fastcampus.ch17_genri.LoginGenriActivity
+import com.example.fastcampus.ch18_tomorrow_house.TomorrowHouseActivity
 import com.example.fastcampus.databinding.ActivityMainBinding
 import com.kakao.sdk.common.KakaoSdk
 
@@ -70,6 +71,7 @@ class MainActivity : AppCompatActivity() {
             ProjectList(getString(R.string.weather), WeatherActivity::class.java),
             ProjectList(getString(R.string.map), FoodMapActivity::class.java),
             ProjectList(getString(R.string.genri), LoginGenriActivity::class.java),
+            ProjectList(getString(R.string.tomorrow_house), TomorrowHouseActivity::class.java),
         )
     }
 }
