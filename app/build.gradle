@@ -90,6 +90,8 @@ dependencies {
     implementation 'com.google.firebase:firebase-auth-ktx'
     implementation 'com.google.firebase:firebase-database-ktx'
     implementation 'com.google.firebase:firebase-messaging-ktx'
+    implementation 'com.google.firebase:firebase-storage-ktx'
+    implementation 'com.google.firebase:firebase-firestore-ktx'
 
     // for google location
     implementation 'com.google.android.gms:play-services-location:21.0.1'
@@ -99,6 +101,10 @@ dependencies {
 
     // for google map
     implementation 'com.google.android.gms:play-services-maps:18.1.0'
+
+    // for navigation
+    implementation 'androidx.navigation:navigation-fragment-ktx:2.6.0'
+    implementation 'androidx.navigation:navigation-ui-ktx:2.6.0'
 
 
     testImplementation 'junit:junit:4.13.2'
