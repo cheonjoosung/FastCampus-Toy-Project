@@ -1,10 +1,10 @@
-package com.example.fastcampus.ch18_tomorrow_house
+package com.example.fastcampus.ch18_tomorrow_house.ui
 
 import android.os.Bundle
+import android.util.Log
 import android.view.View
 import androidx.core.view.isVisible
 import androidx.fragment.app.Fragment
-import androidx.navigation.fragment.findNavController
 import com.example.fastcampus.R
 import com.example.fastcampus.databinding.FragmentAuthBinding
 import com.google.android.material.snackbar.Snackbar
@@ -31,8 +31,8 @@ class AuthFragment : Fragment(R.layout.fragment_auth) {
     }
 
     private fun signUp() {
-        val email = binding.emailEditText.toString()
-        val password = binding.passwordEditText.toString()
+        val email = binding.emailEditText.text.toString().trim()
+        val password = binding.passwordEditText.text.toString().trim()
 
         if (email.isEmpty() || password.isEmpty()) return
 
@@ -45,11 +45,14 @@ class AuthFragment : Fragment(R.layout.fragment_auth) {
                     Snackbar.make(binding.root, "회원가입에 실패했습니다.", Snackbar.LENGTH_SHORT).show()
                 }
             }
+            .addOnFailureListener {
+                Log.e("AuthFragment", "signup $email $password  ${it.message}")
+            }
     }
 
     private fun signIn() {
-        val email = binding.emailEditText.toString()
-        val password = binding.passwordEditText.toString()
+        val email = binding.emailEditText.text.toString()
+        val password = binding.passwordEditText.text.toString()
 
         if (email.isEmpty() || password.isEmpty()) return
 
@@ -62,6 +65,9 @@ class AuthFragment : Fragment(R.layout.fragment_auth) {
                     } else {
                         Snackbar.make(binding.root, "로그인에 실패했습니다.", Snackbar.LENGTH_SHORT).show()
                     }
+                }
+                .addOnFailureListener {
+                    Log.e("AuthFragment", "${it.message}")
                 }
         } else {
             Firebase.auth.signOut()

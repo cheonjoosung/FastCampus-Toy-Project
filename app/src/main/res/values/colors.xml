@@ -10,4 +10,9 @@
     <color name="yellow">#FFEB3B</color>
     <color name="green">#4CAF50</color>
     <color name="sky">#03A9F4</color>
+
+    <color name="teal_200">#03A9F4</color>
+    <color name="teal_700">#0347F4</color>
+
+    <color name="grey_cc">#cccccc</color>
 </resources>
