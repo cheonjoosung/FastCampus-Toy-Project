@@ -159,6 +159,8 @@
     <string name="kakao_login">카카오톡 로그인</string>
 
     <!-- ch18. 내일의집    -->
+    <string name="my_info">내정보</string>
+    <string name="home">홈</string>
 
 
 </resources>
