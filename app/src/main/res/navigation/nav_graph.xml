@@ -23,6 +23,9 @@
         <action
             android:id="@+id/action_homeFragment_to_articleFragment"
             app:destination="@id/articleFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_bookmarkFragment"
+            app:destination="@id/bookmarkFragment" />
 
     </fragment>
 
@@ -54,12 +57,17 @@
         android:id="@+id/articleFragment"
         android:name="com.example.fastcampus.ch18_tomorrow_house.ui.ArticleFragment"
         android:label="글 상세 {articleId}"
-        tools:layout="@layout/fragment_article" >
+        tools:layout="@layout/fragment_article">
 
         <argument
             android:name="articleId"
             app:argType="string" />
     </fragment>
 
+    <fragment
+        android:id="@+id/bookmarkFragment"
+        android:name="com.example.fastcampus.ch18_tomorrow_house.ui.BookmarkFragment"
+        android:label="BookmarkFragment"
+        tools:layout="@layout/fragment_bookmark" />
 
 </navigation>

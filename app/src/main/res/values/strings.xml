@@ -164,6 +164,8 @@
     <string name="upload">업로드</string>
     <string name="photo">사진</string>
     <string name="article_thumbnail">기사 썸네일</string>
+    <string name="hint_board">게시글 검색</string>
+    <string name="bookmark">bookmark</string>
 
 
 </resources>

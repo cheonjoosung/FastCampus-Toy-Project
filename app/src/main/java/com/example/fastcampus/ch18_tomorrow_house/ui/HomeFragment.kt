@@ -25,6 +25,13 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
         super.onViewCreated(view, savedInstanceState)
         binding = FragmentHomeBinding.bind(view)
 
+        binding.bookmarkImageButton.setOnClickListener {
+            if (Firebase.auth.currentUser == null) return@setOnClickListener
+
+            val action = HomeFragmentDirections.actionHomeFragmentToBookmarkFragment()
+            findNavController().navigate(action)
+        }
+
 
         binding.writeButton.setOnClickListener {
             setUpWriteButton(it)
