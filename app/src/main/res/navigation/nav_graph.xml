@@ -20,6 +20,10 @@
             app:popEnterAnim="@anim/slide_in_left"
             app:popExitAnim="@anim/slide_out_right" />
 
+        <action
+            android:id="@+id/action_homeFragment_to_articleFragment"
+            app:destination="@id/articleFragment" />
+
     </fragment>
 
     <fragment
@@ -31,7 +35,8 @@
     <fragment
         android:id="@+id/writeArticleFragment"
         android:name="com.example.fastcampus.ch18_tomorrow_house.ui.article.WriteArticleFragment"
-        android:label="WriteArticleFragment" >
+        android:label="WriteArticleFragment"
+        tools:layout="@layout/fragment_write">
         <action
             android:id="@+id/action_writeArticleFragment_to_homeFragment"
             app:destination="@id/homeFragment" />
@@ -43,6 +48,17 @@
             app:exitAnim="@anim/slide_out_right"
             app:popEnterAnim="@anim/slide_in_right"
             app:popExitAnim="@anim/slide_out_left" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/articleFragment"
+        android:name="com.example.fastcampus.ch18_tomorrow_house.ui.ArticleFragment"
+        android:label="글 상세 {articleId}"
+        tools:layout="@layout/fragment_article" >
+
+        <argument
+            android:name="articleId"
+            app:argType="string" />
     </fragment>
 
 
