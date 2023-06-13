@@ -24,6 +24,9 @@
         android:usesCleartextTraffic="true"
         tools:targetApi="31">
         <activity
+            android:name=".ch20_youtube.YoutubeActivity"
+            android:exported="false" />
+        <activity
             android:name=".ch19_starbux.StarbuxActivity"
             android:exported="false" />
         <activity
