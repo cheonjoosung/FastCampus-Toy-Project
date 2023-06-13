@@ -20,6 +20,7 @@
     <string name="map">맛집도</string>
     <string name="genri">젠리</string>
     <string name="tomorrow_house">내일의 집</string>
+    <string name="star_bux">스타벅스</string>
 
     <!-- ch01. 숫자 세기    -->
     <string name="init">초기화</string>
@@ -167,5 +168,6 @@
     <string name="hint_board">게시글 검색</string>
     <string name="bookmark">bookmark</string>
 
+    <!-- ch19. 스타벅스    -->
 
 </resources>
