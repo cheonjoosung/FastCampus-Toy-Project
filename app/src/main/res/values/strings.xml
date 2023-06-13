@@ -169,5 +169,6 @@
     <string name="bookmark">bookmark</string>
 
     <!-- ch19. 스타벅스    -->
+    <string name="order">주문</string>
 
 </resources>
