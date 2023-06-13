@@ -146,3 +146,12 @@
 - UI 학습 : Navigation
 - 기능 학습 : Firebase Store, Database, Glide
 
+## 19. 스타벅스
+|<img src="https://github.com/cheonjoosung/FastCampus-Toy-Project/blob/master/image/no19-1.jpg?raw=true" width="180" height="400">
+|<img src="https://github.com/cheonjoosung/FastCampus-Toy-Project/blob/master/image/no19-2.jpg?raw=true" width="180" height="400">
+|-|-|
+
+- 애니메이션에 초점을 맞춘 스타벅스 클론 앱
+- UI 학습 : AppBarLayout, MotionLayout
+- 기능 학습 : 확장 함수, 커스텀 뷰 개발을 통해 레이아웃 중복 코드 제거
+
