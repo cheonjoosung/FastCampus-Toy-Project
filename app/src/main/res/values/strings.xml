@@ -175,5 +175,8 @@
     <string name="what_news">what news</string>
     <string name="coupon">Coupon</string>
     <string name="star_of_star">%d/%d★</string>
+    <string name="msg_recommend_menu">%s님을 위한 추천 %s 메뉴</string>
+    <string name="menu_picture">메뉴사진</string>
+    <string name="delivery">DELIVERY</string>
 
 </resources>

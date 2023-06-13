@@ -5,5 +5,9 @@
     "totalCount" : 12
   },
 
-  "appbarImage": "https://picsum.photos/200/100"
+  "appbarImage": "https://picsum.photos/200/100",
+  "banner": {
+    "image": "https://image.istarbucks.co.kr/img/event/2019/ev_191231_bonus_star_1.jpg",
+    "contentDescription" : "스타벅스 별 보너스 이벤트"
+  }
 }
