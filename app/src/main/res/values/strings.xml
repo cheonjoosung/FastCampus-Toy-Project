@@ -170,5 +170,10 @@
 
     <!-- ch19. 스타벅스    -->
     <string name="order">주문</string>
+    <string name="app_bar_image">앱바 이미지</string>
+    <string name="msg_coffee_recommend">%s님, \n오늘도 커피 한잔 드실?</string>
+    <string name="what_news">what news</string>
+    <string name="coupon">Coupon</string>
+    <string name="star_of_star">%d/%d★</string>
 
 </resources>
