@@ -155,3 +155,13 @@
 - UI 학습 : AppBarLayout, MotionLayout
 - 기능 학습 : 확장 함수, 커스텀 뷰 개발을 통해 레이아웃 중복 코드 제거
 
+
+## 20. 유튜브 클론
+|<img src="https://github.com/cheonjoosung/FastCampus-Toy-Project/blob/master/image/no20-1.jpg?raw=true" width="180" height="400">
+|<img src="https://github.com/cheonjoosung/FastCampus-Toy-Project/blob/master/image/no20-2.jpg?raw=true" width="180" height="400">
+|-|-|
+
+- 유튜브를 기능 일부를 개발한 클론 앱
+- UI 학습 : MotionLayout, Touch
+- 기능 학습 : Exoplayer, Touch 이벤트 가로채기
+
