@@ -181,5 +181,6 @@
     <string name="delivery">DELIVERY</string>
 
     <string name="sub_title_video_info">%s · 조회수 %s · %s</string>
+    <string name="header_sub_title_video_info">조회수 %s · %s</string>
 
 </resources>
