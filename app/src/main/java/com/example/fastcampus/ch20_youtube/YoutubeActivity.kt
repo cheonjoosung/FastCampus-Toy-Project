@@ -19,7 +19,10 @@ class YoutubeActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
 
-        videoAdapter = VideoAdapter(context = this)
+        videoAdapter = VideoAdapter(context = this) { videoItem ->
+            binding.motionLayout.setTransition(R.id.collapse, R.id.expand)
+            binding.motionLayout.transitionToEnd()
+        }
 
         with(binding) {
             videoListRecyclerView.apply {
@@ -31,5 +34,7 @@ class YoutubeActivity : AppCompatActivity() {
         val videoList = readData("video.json", VideoList::class.java) ?: VideoList(emptyList())
         Log.e(localClassName, "videoList ${videoList.videos.size}")
         videoAdapter.submitList(videoList.videos)
+
+        binding.playerRecyclerView
     }
 }

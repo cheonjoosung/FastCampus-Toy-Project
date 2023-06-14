@@ -10,7 +10,8 @@ import com.bumptech.glide.Glide
 import com.example.fastcampus.R
 import com.example.fastcampus.databinding.ItemVideoBinding
 
-class VideoAdapter(private val context: Context) : ListAdapter<VideoEntity, VideoAdapter.ViewHolder>(
+class VideoAdapter(private val context: Context,private val onClick: (VideoEntity) -> Unit
+) : ListAdapter<VideoEntity, VideoAdapter.ViewHolder>(
     diffUtil
 ) {
 
@@ -28,6 +29,10 @@ class VideoAdapter(private val context: Context) : ListAdapter<VideoEntity, Vide
             Glide.with(binding.videoThumbnailImageView)
                 .load(item.videoThumb)
                 .into(binding.videoThumbnailImageView)
+
+            binding.root.setOnClickListener {
+                onClick.invoke(item)
+            }
         }
     }
 

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:iconTint="?attr/colorOnPrimary"
+        android:icon="@drawable/baseline_home_24"
+        android:title="@string/home"
+        android:id="@+id/navigation_home" />
+
+    <item
+        android:iconTint="?attr/colorOnPrimary"
+        android:icon="@drawable/baseline_web_stories_24"
+        android:title="보관함"
+        android:id="@+id/navigation_storage" />
+</menu>
