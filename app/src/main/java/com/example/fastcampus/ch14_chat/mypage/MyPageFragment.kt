@@ -5,13 +5,11 @@ import android.os.Bundle
 import android.view.View
 import android.widget.Toast
 import androidx.fragment.app.Fragment
-import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.fastcampus.DB_USERS
 import com.example.fastcampus.R
 import com.example.fastcampus.ch14_chat.LoginActivity
 import com.example.fastcampus.ch14_chat.userlist.UserItem
 import com.example.fastcampus.databinding.FragmentMypageBinding
-import com.example.fastcampus.databinding.FragmentUserlistBinding
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.ktx.database

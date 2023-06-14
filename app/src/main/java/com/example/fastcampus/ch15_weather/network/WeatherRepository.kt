@@ -1,15 +1,12 @@
 package com.example.fastcampus.ch15_weather.network
 
-import android.util.Log
 import com.example.fastcampus.ApiKey
-import com.example.fastcampus.R
 import com.example.fastcampus.ch15_weather.BaseDateTime
 import com.example.fastcampus.ch15_weather.Category
 import com.example.fastcampus.ch15_weather.Forecast
 import com.example.fastcampus.ch15_weather.ForecastEntity
 import com.example.fastcampus.ch15_weather.GeoPointConverter
 import com.example.fastcampus.ch15_weather.WeatherEntity
-import com.example.fastcampus.databinding.ItemForecastBinding
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response

@@ -4,22 +4,22 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import androidx.recyclerview.widget.RecyclerView.ViewHolder
-import com.example.fastcampus.databinding.ItemProjectListBinding
+import com.example.fastcampus.databinding.ItemProjectBinding
 
 class ProjectListAdapter(
-    private val list: List<ProjectList>
+    private val list: List<Project>
 ) : RecyclerView.Adapter<ProjectListAdapter.ProjectListViewHolder>() {
 
-    var projectListClickListener: ((ProjectList) -> Unit)? = null
+    var projectListClickListener: ((Project) -> Unit)? = null
 
-    class ProjectListViewHolder(val binding: ItemProjectListBinding) : ViewHolder(binding.root)
+    class ProjectListViewHolder(val binding: ItemProjectBinding) : ViewHolder(binding.root)
 
     override fun onCreateViewHolder(
         parent: ViewGroup,
         viewType: Int
     ): ProjectListViewHolder {
         val binding =
-            ItemProjectListBinding.inflate(LayoutInflater.from(parent.context), parent, false)
+            ItemProjectBinding.inflate(LayoutInflater.from(parent.context), parent, false)
         return ProjectListViewHolder(binding)
     }
 
@@ -31,9 +31,9 @@ class ProjectListAdapter(
 
         with(holder.binding) {
             val str = (position + 1).toString() + ". " + item.name
-            btnName.text = str
+            projectNameTextView.text = str
 
-            btnName.setOnClickListener {
+            holder.binding.root.setOnClickListener {
                 projectListClickListener?.invoke(item)
             }
         }

@@ -7,23 +7,15 @@ import android.location.Geocoder
 import android.net.Uri
 import android.os.Bundle
 import android.provider.Settings
-import android.util.Log
 import android.widget.Toast
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityCompat
-import com.example.fastcampus.ApiKey.WEATHER_API_KEY
 import com.example.fastcampus.R
 import com.example.fastcampus.ch15_weather.network.WeatherRepository
-import com.example.fastcampus.ch15_weather.network.WeatherService
 import com.example.fastcampus.databinding.ActivityWeatherBinding
 import com.example.fastcampus.databinding.ItemForecastBinding
 import com.google.android.gms.location.LocationServices
-import retrofit2.Call
-import retrofit2.Callback
-import retrofit2.Response
-import retrofit2.Retrofit
-import retrofit2.converter.gson.GsonConverterFactory
 import java.lang.Exception
 import java.util.Locale
 

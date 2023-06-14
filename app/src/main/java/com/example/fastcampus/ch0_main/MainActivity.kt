@@ -3,30 +3,12 @@ package com.example.fastcampus.ch0_main
 import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.view.isVisible
 import com.example.fastcampus.ApiKey
-import com.example.fastcampus.R
-import com.example.fastcampus.ch01_count_number.CountNumberActivity
-import com.example.fastcampus.ch02_unit_conversion.UnitConversionActivity
-import com.example.fastcampus.ch03_emergency_medical.EmergencyMedicalCareActivity
-import com.example.fastcampus.ch04_calculator.CalculatorActivity
-import com.example.fastcampus.ch05_stop_watch.StopWatchActivity
-import com.example.fastcampus.ch06_word_book.WordBookActivity
-import com.example.fastcampus.ch07_my_gallery.MyGalleryActivity
-import com.example.fastcampus.ch08_music_player.MusicPlayerActivity
-import com.example.fastcampus.ch09_web_toon.WebToonActivity
-import com.example.fastcampus.ch10_recorder.RecorderActivity
-import com.example.fastcampus.ch11_today_notice.TodayNoticeActivity
-import com.example.fastcampus.ch12_github_repository.GithubRepositoryActivity
-import com.example.fastcampus.ch13_news.NewsActivity
-import com.example.fastcampus.ch14_chat.ChatActivity
-import com.example.fastcampus.ch15_weather.WeatherActivity
-import com.example.fastcampus.ch16_food_map.FoodMapActivity
-import com.example.fastcampus.ch17_genri.LoginGenriActivity
-import com.example.fastcampus.ch18_tomorrow_house.TomorrowHouseActivity
-import com.example.fastcampus.ch19_starbux.StarbuxActivity
-import com.example.fastcampus.ch20_youtube.YoutubeActivity
+import com.example.fastcampus.CommonUtils.getProjectList
 import com.example.fastcampus.databinding.ActivityMainBinding
 import com.kakao.sdk.common.KakaoSdk
+
 
 class MainActivity : AppCompatActivity() {
 
@@ -40,42 +22,69 @@ class MainActivity : AppCompatActivity() {
         KakaoSdk.init(this, ApiKey.KAKAO_KEY)
 
         val projectList = getProjectList()
+        val part1 = projectList.filter { it.type == Type.PART1 }
+        val part2 = projectList.filter { it.type == Type.PART2 }
+        val part3 = projectList.filter { it.type == Type.PART3 }
 
-        binding.rvAppList.adapter = ProjectListAdapter(projectList).apply {
-            projectListClickListener = {
-                Intent(this@MainActivity, it.claasName).run {
-                    startActivity(this)
+        if (part1.isNotEmpty()) {
+            binding.part1RecyclerView.adapter = ProjectListAdapter(part1).apply {
+                projectListClickListener = {
+                    startProject(it.claasName)
                 }
             }
         }
 
+        if (part2.isNotEmpty()) {
+            binding.part2RecyclerView.adapter = ProjectListAdapter(part2).apply {
+                projectListClickListener = {
+                    startProject(it.claasName)
+                }
+            }
+        }
+
+        if (part3.isNotEmpty()) {
+            binding.part3RecyclerView.adapter = ProjectListAdapter(part3).apply {
+                projectListClickListener = {
+                    startProject(it.claasName)
+                }
+            }
+        }
+
+        with(binding) {
+            part1TextView.apply {
+                isVisible = part1.isNotEmpty()
+                setOnClickListener { moveToProjectListActivity(Type.PART1) }
+            }
+            part2TextView.apply {
+                isVisible = part2.isNotEmpty()
+                setOnClickListener { moveToProjectListActivity(Type.PART2) }
+            }
+            part3TextView.apply {
+                isVisible = part3.isNotEmpty()
+                setOnClickListener { moveToProjectListActivity(Type.PART3) }
+            }
+        }
+
+
     }
 
-    private fun getProjectList(): List<ProjectList> {
-        return listOf(
-            ProjectList(getString(R.string.count_number), CountNumberActivity::class.java),
-            ProjectList(getString(R.string.unit_conversion), UnitConversionActivity::class.java),
-            ProjectList(
-                getString(R.string.emergency_medical),
-                EmergencyMedicalCareActivity::class.java
-            ),
-            ProjectList(getString(R.string.calculator), CalculatorActivity::class.java),
-            ProjectList(getString(R.string.stop_watch), StopWatchActivity::class.java),
-            ProjectList(getString(R.string.word_book), WordBookActivity::class.java),
-            ProjectList(getString(R.string.my_gallery), MyGalleryActivity::class.java),
-            ProjectList(getString(R.string.music_player), MusicPlayerActivity::class.java),
-            ProjectList(getString(R.string.web_toon), WebToonActivity::class.java),
-            ProjectList(getString(R.string.recorder), RecorderActivity::class.java),
-            ProjectList(getString(R.string.today_notice), TodayNoticeActivity::class.java),
-            ProjectList(getString(R.string.github_repository), GithubRepositoryActivity::class.java),
-            ProjectList(getString(R.string.news), NewsActivity::class.java),
-            ProjectList(getString(R.string.chat), ChatActivity::class.java),
-            ProjectList(getString(R.string.weather), WeatherActivity::class.java),
-            ProjectList(getString(R.string.map), FoodMapActivity::class.java),
-            ProjectList(getString(R.string.genri), LoginGenriActivity::class.java),
-            ProjectList(getString(R.string.tomorrow_house), TomorrowHouseActivity::class.java),
-            ProjectList(getString(R.string.star_bux), StarbuxActivity::class.java),
-            ProjectList(getString(R.string.youtube), YoutubeActivity::class.java),
+    private fun startProject(claasName: Class<*>) {
+        Intent(this@MainActivity, claasName).run {
+            startActivity(this)
+        }
+    }
+
+    private fun moveToProjectListActivity(type: Type) {
+        val partType = when (type) {
+            Type.PART1 -> 1
+            Type.PART2 -> 2
+            else -> 3
+        }
+
+        startActivity(
+            Intent(this@MainActivity, ProjectDetailActivity::class.java).apply {
+                putExtra("partType", partType)
+            }
         )
     }
 }

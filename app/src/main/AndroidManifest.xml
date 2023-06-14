@@ -24,6 +24,9 @@
         android:usesCleartextTraffic="true"
         tools:targetApi="31">
         <activity
+            android:name=".ch0_main.ProjectDetailActivity"
+            android:exported="false" />
+        <activity
             android:name=".ch20_youtube.YoutubeActivity"
             android:exported="false" />
         <activity
@@ -88,13 +91,11 @@
 
         <receiver
             android:name=".ch08_music_player.LowBatteryReceiver"
-            android:enabled="true"
-            android:exported="true" />
+            android:enabled="true"/>
 
         <service
             android:name=".ch08_music_player.MediaPlayerService"
-            android:enabled="true"
-            android:exported="true" />
+            android:enabled="true" />
 
         <activity
             android:name=".ch08_music_player.MusicPlayerActivity"
@@ -125,8 +126,7 @@
             android:exported="false" />
         <activity
             android:name=".ch02_unit_conversion.UnitConversionActivity"
-            android:exported="false"
-            android:screenOrientation="portrait" />
+            android:exported="false"/>
         <activity
             android:name=".ch01_count_number.CountNumberActivity"
             android:exported="false" />

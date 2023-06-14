@@ -182,5 +182,8 @@
 
     <string name="sub_title_video_info">%s · 조회수 %s · %s</string>
     <string name="header_sub_title_video_info">조회수 %s · %s</string>
+    <string name="part_1_title">Part 1. 안드로이드 기본</string>
+    <string name="part_2_title">Part 2. 안드로이드 기본</string>
+    <string name="part_3_title">Part 3. 안드로이드 기본</string>
 
 </resources>
