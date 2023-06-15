@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ch06_word_book.WordBookActivity">
+    tools:context=".part1.ch06_word_book.WordBookActivity">
 
     <ImageView
         android:id="@+id/editImageView"

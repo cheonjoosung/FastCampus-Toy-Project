@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ch02_unit_conversion.UnitConversionActivity">
+    tools:context=".part1.ch02_unit_conversion.UnitConversionActivity">
 
     <Spinner
         android:id="@+id/spinner"

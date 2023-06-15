@@ -90,45 +90,45 @@
             android:exported="false" />
 
         <receiver
-            android:name=".ch08_music_player.LowBatteryReceiver"
+            android:name=".part1.ch08_music_player.LowBatteryReceiver"
             android:enabled="true"/>
 
         <service
-            android:name=".ch08_music_player.MediaPlayerService"
+            android:name=".part1.ch08_music_player.MediaPlayerService"
             android:enabled="true" />
 
         <activity
-            android:name=".ch08_music_player.MusicPlayerActivity"
+            android:name=".part1.ch08_music_player.MusicPlayerActivity"
             android:exported="false" />
         <activity
-            android:name=".ch07_my_gallery.FrameActivity"
+            android:name=".part1.ch07_my_gallery.FrameActivity"
             android:exported="false" />
         <activity
-            android:name=".ch07_my_gallery.MyGalleryActivity"
+            android:name=".part1.ch07_my_gallery.MyGalleryActivity"
             android:exported="false" />
         <activity
-            android:name=".ch06_word_book.AddActivity"
+            android:name=".part1.ch06_word_book.AddActivity"
             android:exported="false" />
         <activity
-            android:name=".ch06_word_book.WordBookActivity"
+            android:name=".part1.ch06_word_book.WordBookActivity"
             android:exported="false" />
         <activity
-            android:name=".ch05_stop_watch.StopWatchActivity"
+            android:name=".part1.ch05_stop_watch.StopWatchActivity"
             android:exported="false" />
         <activity
-            android:name=".ch04_calculator.CalculatorActivity"
+            android:name=".part1.ch04_calculator.CalculatorActivity"
             android:exported="false" />
         <activity
-            android:name=".ch03_emergency_medical.InputActivity"
+            android:name=".part1.ch03_emergency_medical.InputActivity"
             android:exported="false" />
         <activity
-            android:name=".ch03_emergency_medical.EmergencyMedicalCareActivity"
+            android:name=".part1.ch03_emergency_medical.EmergencyMedicalCareActivity"
             android:exported="false" />
         <activity
-            android:name=".ch02_unit_conversion.UnitConversionActivity"
+            android:name=".part1.ch02_unit_conversion.UnitConversionActivity"
             android:exported="false"/>
         <activity
-            android:name=".ch01_count_number.CountNumberActivity"
+            android:name=".part1.ch01_count_number.CountNumberActivity"
             android:exported="false" />
         <activity
             android:name=".ch0_main.MainActivity"

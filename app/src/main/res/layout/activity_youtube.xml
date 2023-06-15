@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<com.example.fastcampus.ch20_youtube.ExoPlayerMotionLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<com.example.fastcampus.part2.ch20_youtube.ExoPlayerMotionLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:id="@+id/motionLayout"
     app:layoutDescription="@xml/player_scene"
-    tools:context=".ch20_youtube.YoutubeActivity">
+    tools:context=".part2.ch20_youtube.YoutubeActivity">
 
     <androidx.coordinatorlayout.widget.CoordinatorLayout
         android:id="@+id/coordinatorLayout"
@@ -133,4 +133,4 @@
         app:layout_constraintStart_toStartOf="parent"
         app:menu="@menu/bottom_nav_menu" />
 
-</com.example.fastcampus.ch20_youtube.ExoPlayerMotionLayout>
+</com.example.fastcampus.part2.ch20_youtube.ExoPlayerMotionLayout>

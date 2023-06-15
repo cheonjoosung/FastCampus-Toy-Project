@@ -17,7 +17,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <com.example.fastcampus.ch10_recorder.WaveFormView
+    <com.example.fastcampus.part2.ch10_recorder.WaveFormView
         android:id="@+id/waveFormView"
         android:background="#B7ABAB"
         android:layout_width="0dp"
