@@ -22,6 +22,7 @@
     <string name="tomorrow_house">내일의 집</string>
     <string name="star_bux">스타벅스</string>
     <string name="youtube">유튜브</string>
+    <string name="face_recognition">얼굴 인식</string>
 
     <!-- ch01. 숫자 세기    -->
     <string name="init">초기화</string>

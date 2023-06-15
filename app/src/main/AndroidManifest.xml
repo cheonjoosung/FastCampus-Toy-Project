@@ -24,6 +24,9 @@
         android:usesCleartextTraffic="true"
         tools:targetApi="31">
         <activity
+            android:name=".part3.face_recognition.FaceRecognitionActivity"
+            android:exported="false" />
+        <activity
             android:name=".ch0_main.ProjectDetailActivity"
             android:exported="false" />
         <activity
@@ -91,7 +94,7 @@
 
         <receiver
             android:name=".part1.ch08_music_player.LowBatteryReceiver"
-            android:enabled="true"/>
+            android:enabled="true" />
 
         <service
             android:name=".part1.ch08_music_player.MediaPlayerService"
@@ -126,7 +129,7 @@
             android:exported="false" />
         <activity
             android:name=".part1.ch02_unit_conversion.UnitConversionActivity"
-            android:exported="false"/>
+            android:exported="false" />
         <activity
             android:name=".part1.ch01_count_number.CountNumberActivity"
             android:exported="false" />

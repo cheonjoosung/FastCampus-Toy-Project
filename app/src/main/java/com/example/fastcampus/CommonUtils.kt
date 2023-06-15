@@ -23,6 +23,7 @@ import com.example.fastcampus.part2.ch17_genri.LoginGenriActivity
 import com.example.fastcampus.part2.ch18_tomorrow_house.TomorrowHouseActivity
 import com.example.fastcampus.part2.ch19_starbux.StarbuxActivity
 import com.example.fastcampus.part2.ch20_youtube.YoutubeActivity
+import com.example.fastcampus.part3.face_recognition.FaceRecognitionActivity
 
 object CommonUtils {
     fun Context.getProjectList(): List<Project> {
@@ -62,6 +63,7 @@ object CommonUtils {
             ),
             Project(getString(R.string.star_bux), StarbuxActivity::class.java, Type.PART2),
             Project(getString(R.string.youtube), YoutubeActivity::class.java, Type.PART2),
+            Project(getString(R.string.face_recognition), FaceRecognitionActivity::class.java, Type.PART3),
         )
     }
 }
