@@ -11,7 +11,6 @@ import com.example.fastcampus.databinding.ActivityProjectDetailBinding
 class ProjectDetailActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityProjectDetailBinding
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityProjectDetailBinding.inflate(layoutInflater)

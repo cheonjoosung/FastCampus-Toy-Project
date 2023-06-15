@@ -30,16 +30,16 @@
             android:name=".ch0_main.ProjectDetailActivity"
             android:exported="false" />
         <activity
-            android:name=".ch20_youtube.YoutubeActivity"
+            android:name=".part2.ch20_youtube.YoutubeActivity"
             android:exported="false" />
         <activity
-            android:name=".ch19_starbux.StarbuxActivity"
+            android:name=".part2.ch19_starbux.StarbuxActivity"
             android:exported="false" />
         <activity
-            android:name=".ch18_tomorrow_house.TomorrowHouseActivity"
+            android:name=".part2.ch18_tomorrow_house.TomorrowHouseActivity"
             android:exported="false" />
         <activity
-            android:name=".ch17_genri.InputEmailActivity"
+            android:name=".part2.ch17_genri.InputEmailActivity"
             android:exported="false" />
 
         <meta-data
@@ -47,49 +47,49 @@
             android:value="${MAPS_API_KEY}" />
 
         <activity
-            android:name=".ch17_genri.LoginGenriActivity"
+            android:name=".part2.ch17_genri.LoginGenriActivity"
             android:exported="false" />
         <activity
-            android:name=".ch17_genri.GenriActivity"
+            android:name=".part2.ch17_genri.GenriActivity"
             android:exported="false" />
         <activity
-            android:name=".ch16_food_map.FoodMapActivity"
+            android:name=".part2.ch16_food_map.FoodMapActivity"
             android:exported="false" />
         <activity
-            android:name=".ch15_weather.SettingActivity"
+            android:name=".part2.ch15_weather.SettingActivity"
             android:exported="false" />
         <activity
-            android:name=".ch15_weather.WeatherActivity"
+            android:name=".part2.ch15_weather.WeatherActivity"
             android:exported="false" />
         <activity
-            android:name=".ch14_chat.chatdetail.ChatDetailActivity"
+            android:name=".part2.ch14_chat.chatdetail.ChatDetailActivity"
             android:exported="false" />
         <activity
-            android:name=".ch14_chat.LoginActivity"
+            android:name=".part2.ch14_chat.LoginActivity"
             android:exported="false" />
         <activity
-            android:name=".ch14_chat.ChatActivity"
+            android:name=".part2.ch14_chat.ChatActivity"
             android:exported="false" />
         <activity
-            android:name=".ch13_news.WebViewActivity"
+            android:name=".part2.ch13_news.WebViewActivity"
             android:exported="false" />
         <activity
-            android:name=".ch13_news.NewsActivity"
+            android:name=".part2.ch13_news.NewsActivity"
             android:exported="false" />
         <activity
-            android:name=".ch12_github_repository.RepoActivity"
+            android:name=".part2.ch12_github_repository.RepoActivity"
             android:exported="false" />
         <activity
-            android:name=".ch12_github_repository.GithubRepositoryActivity"
+            android:name=".part2.ch12_github_repository.GithubRepositoryActivity"
             android:exported="false" />
         <activity
-            android:name=".ch11_today_notice.TodayNoticeActivity"
+            android:name=".part2.ch11_today_notice.TodayNoticeActivity"
             android:exported="false" />
         <activity
-            android:name=".ch10_recorder.RecorderActivity"
+            android:name=".part2.ch10_recorder.RecorderActivity"
             android:exported="false" />
         <activity
-            android:name=".ch09_web_toon.WebToonActivity"
+            android:name=".part2.ch09_web_toon.WebToonActivity"
             android:exported="false" />
 
         <receiver
@@ -144,7 +144,7 @@
         </activity>
 
         <receiver
-            android:name=".ch15_weather.widget.WeatherAppWidgetProvider"
+            android:name=".part2.ch15_weather.widget.WeatherAppWidgetProvider"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
@@ -156,7 +156,7 @@
         </receiver>
 
         <service
-            android:name=".ch15_weather.UpdateWeatherService"
+            android:name=".part2.ch15_weather.UpdateWeatherService"
             android:foregroundServiceType="location" />
 
         <activity
