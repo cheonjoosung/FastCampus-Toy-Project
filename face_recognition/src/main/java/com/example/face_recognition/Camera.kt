@@ -110,7 +110,7 @@ class Camera(
     }
 
     @RequiresApi(Build.VERSION_CODES.O)
-    private fun stopFaceDetect() {
+    fun stopFaceDetect() {
         try {
             cameraProviderFuture.get().unbindAll()
             previewView.releasePointerCapture()
