@@ -33,8 +33,12 @@ class ProjectListAdapter(
             val str = (position + 1).toString() + ". " + item.name
             projectNameTextView.text = str
 
-            holder.binding.root.setOnClickListener {
+            root.setOnClickListener {
                 projectListClickListener?.invoke(item)
+            }
+
+            item.imageResInt?.let {
+                projectImageView.setImageResource(it)
             }
         }
     }

@@ -28,42 +28,132 @@ import com.example.fastcampus.part3.face_recognition.FaceRecognitionActivity
 object CommonUtils {
     fun Context.getProjectList(): List<Project> {
         return listOf(
-            Project(getString(R.string.count_number), CountNumberActivity::class.java, Type.PART1),
+            Project(
+                getString(R.string.count_number),
+                CountNumberActivity::class.java,
+                Type.PART1,
+                R.drawable.baseline_count
+            ),
             Project(
                 getString(R.string.unit_conversion),
                 UnitConversionActivity::class.java,
-                Type.PART1
+                Type.PART1,
+                R.drawable.baseline_convert
             ),
             Project(
                 getString(R.string.emergency_medical),
-                EmergencyMedicalCareActivity::class.java, Type.PART1
+                EmergencyMedicalCareActivity::class.java,
+                Type.PART1,
+                R.drawable.baseline_emergency_24
             ),
-            Project(getString(R.string.calculator), CalculatorActivity::class.java, Type.PART1),
-            Project(getString(R.string.stop_watch), StopWatchActivity::class.java, Type.PART1),
-            Project(getString(R.string.word_book), WordBookActivity::class.java, Type.PART1),
-            Project(getString(R.string.my_gallery), MyGalleryActivity::class.java, Type.PART1),
-            Project(getString(R.string.music_player), MusicPlayerActivity::class.java, Type.PART1),
-            Project(getString(R.string.web_toon), WebToonActivity::class.java, Type.PART2),
-            Project(getString(R.string.recorder), RecorderActivity::class.java, Type.PART2),
-            Project(getString(R.string.today_notice), TodayNoticeActivity::class.java, Type.PART2),
+            Project(
+                getString(R.string.calculator),
+                CalculatorActivity::class.java,
+                Type.PART1,
+                R.drawable.baseline_calculate_24
+            ),
+            Project(
+                getString(R.string.stop_watch),
+                StopWatchActivity::class.java,
+                Type.PART1,
+                R.drawable.baseline_timer_24
+            ),
+            Project(
+                getString(R.string.word_book),
+                WordBookActivity::class.java,
+                Type.PART1,
+                R.drawable.baseline_bookmark_border_24
+            ),
+            Project(
+                getString(R.string.my_gallery),
+                MyGalleryActivity::class.java,
+                Type.PART1,
+                R.drawable.baseline_image_24
+            ),
+            Project(
+                getString(R.string.music_player),
+                MusicPlayerActivity::class.java,
+                Type.PART1,
+                R.drawable.baseline_play_circle_outline_24
+            ),
+            Project(
+                getString(R.string.web_toon),
+                WebToonActivity::class.java,
+                Type.PART2,
+                R.drawable.baseline_webtoon_24
+            ),
+            Project(
+                getString(R.string.recorder),
+                RecorderActivity::class.java,
+                Type.PART2,
+                R.drawable.baseline_fiber_smart_record_24
+            ),
+            Project(
+                getString(R.string.today_notice),
+                TodayNoticeActivity::class.java,
+                Type.PART2,
+                R.drawable.baseline_notifications_none_24
+            ),
             Project(
                 getString(R.string.github_repository),
                 GithubRepositoryActivity::class.java,
-                Type.PART2
+                Type.PART2,
+                R.drawable.baseline_star_border_24
             ),
-            Project(getString(R.string.news), NewsActivity::class.java, Type.PART2),
-            Project(getString(R.string.chat), ChatActivity::class.java, Type.PART2),
-            Project(getString(R.string.weather), WeatherActivity::class.java, Type.PART2),
-            Project(getString(R.string.map), FoodMapActivity::class.java, Type.PART2),
-            Project(getString(R.string.genri), LoginGenriActivity::class.java, Type.PART2),
+            Project(
+                getString(R.string.news),
+                NewsActivity::class.java,
+                Type.PART2,
+                R.drawable.baseline_newspaper_24
+            ),
+            Project(
+                getString(R.string.chat),
+                ChatActivity::class.java,
+                Type.PART2,
+                R.drawable.baseline_chat_24
+            ),
+            Project(
+                getString(R.string.weather),
+                WeatherActivity::class.java,
+                Type.PART2,
+                R.drawable.baseline_wb_sunny_24
+            ),
+            Project(
+                getString(R.string.map),
+                FoodMapActivity::class.java,
+                Type.PART2,
+                R.drawable.baseline_map_24
+            ),
+            Project(
+                getString(R.string.genri),
+                LoginGenriActivity::class.java,
+                Type.PART2,
+                R.drawable.baseline_location_on_24
+            ),
             Project(
                 getString(R.string.tomorrow_house),
                 TomorrowHouseActivity::class.java,
-                Type.PART2
+                Type.PART2,
+                R.drawable.baseline_add_home_24
             ),
-            Project(getString(R.string.star_bux), StarbuxActivity::class.java, Type.PART2),
-            Project(getString(R.string.youtube), YoutubeActivity::class.java, Type.PART2),
-            Project(getString(R.string.face_recognition), FaceRecognitionActivity::class.java, Type.PART3),
+            Project(
+                getString(R.string.star_bux),
+                StarbuxActivity::class.java,
+                Type.PART2,
+                R.drawable.baseline_coffee
+            ),
+            Project(
+                getString(R.string.youtube),
+                YoutubeActivity::class.java,
+                Type.PART2,
+                R.drawable.baseline_youtube
+            ),
+            Project(
+                getString(R.string.face_recognition),
+                FaceRecognitionActivity::class.java,
+                Type.PART3,
+                R.drawable.baseline_face_24
+            ),
         )
     }
 }

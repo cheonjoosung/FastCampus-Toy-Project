@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.isVisible
 import com.example.fastcampus.ApiKey
 import com.example.fastcampus.CommonUtils.getProjectList
+import com.example.fastcampus.ch0_main.ProjectDetailActivity.Companion.PART_TYPE
 import com.example.fastcampus.databinding.ActivityMainBinding
 import com.kakao.sdk.common.KakaoSdk
 
@@ -14,17 +15,18 @@ class MainActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityMainBinding
 
+    private val projectList by lazy { getProjectList() }
+
+    private val part1 by lazy { projectList.filter { it.type == Type.PART1 } }
+    private val part2 by lazy { projectList.filter { it.type == Type.PART2 } }
+    private val part3 by lazy { projectList.filter { it.type == Type.PART3 } }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
         KakaoSdk.init(this, ApiKey.KAKAO_KEY)
-
-        val projectList = getProjectList()
-        val part1 = projectList.filter { it.type == Type.PART1 }
-        val part2 = projectList.filter { it.type == Type.PART2 }
-        val part3 = projectList.filter { it.type == Type.PART3 }
 
         if (part1.isNotEmpty()) {
             binding.part1RecyclerView.adapter = ProjectListAdapter(part1).apply {
@@ -55,35 +57,30 @@ class MainActivity : AppCompatActivity() {
                 isVisible = part1.isNotEmpty()
                 setOnClickListener { moveToProjectListActivity(Type.PART1) }
             }
+
             part2TextView.apply {
                 isVisible = part2.isNotEmpty()
                 setOnClickListener { moveToProjectListActivity(Type.PART2) }
             }
+
             part3TextView.apply {
                 isVisible = part3.isNotEmpty()
                 setOnClickListener { moveToProjectListActivity(Type.PART3) }
             }
         }
 
-
     }
 
     private fun startProject(claasName: Class<*>) {
-        Intent(this@MainActivity, claasName).run {
-            startActivity(this)
-        }
+        startActivity(
+            Intent(this@MainActivity, claasName)
+        )
     }
 
     private fun moveToProjectListActivity(type: Type) {
-        val partType = when (type) {
-            Type.PART1 -> 1
-            Type.PART2 -> 2
-            else -> 3
-        }
-
         startActivity(
             Intent(this@MainActivity, ProjectDetailActivity::class.java).apply {
-                putExtra("partType", partType)
+                putExtra(PART_TYPE, type.ordinal + 1)
             }
         )
     }

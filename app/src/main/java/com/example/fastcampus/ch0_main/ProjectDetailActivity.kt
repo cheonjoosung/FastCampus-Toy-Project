@@ -10,21 +10,21 @@ import com.example.fastcampus.databinding.ActivityProjectDetailBinding
 
 class ProjectDetailActivity : AppCompatActivity() {
 
+    companion object {
+        const val PART_TYPE = "partType"
+    }
+
     private lateinit var binding: ActivityProjectDetailBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityProjectDetailBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        val type = intent.getIntExtra("partType", -1)
+        val type = intent.getIntExtra(PART_TYPE, -1)
         if (type == -1) finish()
         else {
             val list = getProjectList().filter {
-                when (type) {
-                    1 -> it.type == Type.PART1
-                    2 -> it.type == Type.PART2
-                    else -> it.type == Type.PART3
-                }
+                type == (it.type.ordinal + 1)
             }
 
             binding.projectListRecyclerView.layoutManager =
