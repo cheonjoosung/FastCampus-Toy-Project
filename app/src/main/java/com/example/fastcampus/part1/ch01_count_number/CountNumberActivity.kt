@@ -6,24 +6,25 @@ import com.example.fastcampus.databinding.ActivityCountNumberBinding
 
 class CountNumberActivity : AppCompatActivity() {
 
-    private lateinit var binding: ActivityCountNumberBinding
+    private val binding: ActivityCountNumberBinding by lazy {
+        ActivityCountNumberBinding.inflate(layoutInflater)
+    }
 
     private var number = 0
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = ActivityCountNumberBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
         with(binding) {
 
-            btnAdd.setOnClickListener {
+            addButton.setOnClickListener {
                 number++
-                tvCount.text = number.toString()
+                countTextView.text = number.toString()
             }
 
-            btnReset.setOnClickListener {
+            resetButton.setOnClickListener {
                 number = 0
-                tvCount.text = number.toString()
+                countTextView.text = number.toString()
             }
         }
     }

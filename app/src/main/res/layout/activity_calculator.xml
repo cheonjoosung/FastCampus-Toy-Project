@@ -125,7 +125,7 @@
     <Button
         android:id="@+id/btn_add"
         style="@style/operatorKeypad"
-        android:text="@string/add"
+        android:text="@string/add_operator"
         tools:ignore="MissingConstraints" />
 
     <Button
