@@ -21,6 +21,10 @@ class MainActivity : AppCompatActivity() {
     private val part2 by lazy { projectList.filter { it.type == Type.PART2 } }
     private val part3 by lazy { projectList.filter { it.type == Type.PART3 } }
 
+    private lateinit var part1Adapter: ProjectListAdapter
+    private lateinit var part2Adapter: ProjectListAdapter
+    private lateinit var part3Adapter: ProjectListAdapter
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
@@ -29,27 +33,27 @@ class MainActivity : AppCompatActivity() {
         KakaoSdk.init(this, ApiKey.KAKAO_KEY)
 
         if (part1.isNotEmpty()) {
-            binding.part1RecyclerView.adapter = ProjectListAdapter(part1).apply {
-                projectListClickListener = {
-                    startProject(it.claasName)
-                }
+            part1Adapter = ProjectListAdapter {
+                startProject(it.claasName)
             }
+            part1Adapter.submitList(part1)
+            binding.part1RecyclerView.adapter = part1Adapter
         }
 
         if (part2.isNotEmpty()) {
-            binding.part2RecyclerView.adapter = ProjectListAdapter(part2).apply {
-                projectListClickListener = {
-                    startProject(it.claasName)
-                }
+            part2Adapter = ProjectListAdapter {
+                startProject(it.claasName)
             }
+            part2Adapter.submitList(part2)
+            binding.part2RecyclerView.adapter = part2Adapter
         }
 
         if (part3.isNotEmpty()) {
-            binding.part3RecyclerView.adapter = ProjectListAdapter(part3).apply {
-                projectListClickListener = {
-                    startProject(it.claasName)
-                }
+            part3Adapter = ProjectListAdapter {
+                startProject(it.claasName)
             }
+            part3Adapter.submitList(part3)
+            binding.part3RecyclerView.adapter = part3Adapter
         }
 
         with(binding) {

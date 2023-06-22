@@ -9,6 +9,6 @@ data class Project(
     val imageResInt: Int? = R.drawable.baseline_android_24
 )
 
-enum class Type(name: String, partType: Int) {
-    PART1("PART1", 1), PART2("PART2", 2), PART3("PART3", 3)
+enum class Type() {
+    PART1, PART2, PART3
 }

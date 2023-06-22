@@ -15,6 +15,9 @@ class ProjectDetailActivity : AppCompatActivity() {
     }
 
     private lateinit var binding: ActivityProjectDetailBinding
+
+    private lateinit var adapter: ProjectListAdapter
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityProjectDetailBinding.inflate(layoutInflater)
@@ -27,16 +30,18 @@ class ProjectDetailActivity : AppCompatActivity() {
                 type == (it.type.ordinal + 1)
             }
 
+            adapter = ProjectListAdapter {
+                Intent(this@ProjectDetailActivity, it.claasName).run {
+                    startActivity(this)
+                }
+            }
+
+            adapter.submitList(list)
+
             binding.projectListRecyclerView.layoutManager =
                 GridLayoutManager(this@ProjectDetailActivity, 2)
 
-            binding.projectListRecyclerView.adapter = ProjectListAdapter(list).apply {
-                projectListClickListener = {
-                    Intent(this@ProjectDetailActivity, it.claasName).run {
-                        startActivity(this)
-                    }
-                }
-            }
+            binding.projectListRecyclerView.adapter = adapter
 
             binding.titleTextView.text = when (type) {
                 1 -> getString(R.string.part_1_title)
