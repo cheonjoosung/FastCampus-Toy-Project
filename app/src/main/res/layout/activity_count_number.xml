@@ -11,7 +11,7 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="16dp"
-        android:background="?attr/colorPrimary"
+        android:background="@drawable/border_color_on_primary"
         android:gravity="center_horizontal"
         android:text="@string/count_number"
         android:textColor="?attr/colorOnPrimary"

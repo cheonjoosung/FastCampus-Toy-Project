@@ -6,143 +6,93 @@
     android:layout_height="match_parent"
     tools:context=".part1.ch02_unit_conversion.UnitConversionActivity">
 
-    <Spinner
-        android:id="@+id/spinner"
-        android:layout_width="100dp"
-        android:layout_height="50dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginStart="8dp"
-        app:layout_constraintEnd_toStartOf="@id/et_input"
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/titleTextView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginTop="70dp"
+        android:background="@drawable/border_color_on_primary"
+        android:gravity="center_horizontal"
+        android:text="@string/count_number"
+        android:textColor="?attr/colorOnPrimary"
+        android:textSize="36sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Spinner
+        android:id="@+id/inputSpinner"
+        android:layout_width="0dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="36dp"
+        android:background="?attr/colorOnPrimary"
+        app:layout_constraintEnd_toStartOf="@id/arrowTextView"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/titleTextView"
         tools:layout_editor_absoluteX="1dp"
-        android:background="@color/white"
+        tools:layout_editor_absoluteY="25dp" />
+
+    <TextView
+        android:id="@+id/arrowTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="16dp"
+        android:text="@string/arrow_left_to_right"
+        android:textColor="?attr/colorOnPrimary"
+        android:textSize="36sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@id/inputSpinner"
+        app:layout_constraintEnd_toStartOf="@id/outputSpinner"
+        app:layout_constraintStart_toEndOf="@id/inputSpinner"
+        app:layout_constraintTop_toTopOf="@id/inputSpinner" />
+
+    <Spinner
+        android:id="@+id/outputSpinner"
+        android:layout_width="0dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="36dp"
+        android:layout_marginEnd="16dp"
+        android:background="?attr/colorOnPrimary"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/arrowTextView"
+        app:layout_constraintTop_toBottomOf="@id/titleTextView"
+        tools:layout_editor_absoluteX="1dp"
         tools:layout_editor_absoluteY="25dp" />
 
     <EditText
-        android:id="@+id/et_input"
+        android:id="@+id/inputEditText"
         android:layout_width="0dp"
         android:layout_height="50dp"
-        android:layout_margin="16dp"
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginTop="50dp"
+        android:autofillHints=""
         android:hint="@string/hint_number"
         android:inputType="numberDecimal"
-        android:textSize="24sp"
         android:maxLength="9"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@id/spinner"
-        app:layout_constraintTop_toTopOf="parent"
-        android:autofillHints="" />
-
-    <TextView
-        android:id="@+id/tv_mm"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginHorizontal="16dp"
-        android:gravity="end"
+        android:textAlignment="textEnd"
         android:textSize="24sp"
         android:textStyle="bold"
-        app:layout_constraintEnd_toStartOf="@id/tv_mm_unit"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/et_input"
-        tools:text="100" />
+        app:layout_constraintTop_toBottomOf="@id/outputSpinner" />
 
     <TextView
-        android:id="@+id/tv_mm_unit"
-        android:layout_width="48dp"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="16dp"
-        android:gravity="end"
-        android:text="@string/mm"
-        android:textSize="24sp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@id/tv_mm"
-        app:layout_constraintTop_toBottomOf="@id/et_input" />
-
-    <TextView
-        android:id="@+id/tv_cm"
+        android:id="@+id/outPutTextView"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="16dp"
         android:layout_marginTop="16dp"
         android:gravity="end"
+        android:textAlignment="textEnd"
         android:textSize="24sp"
         android:textStyle="bold"
-        app:layout_constraintEnd_toStartOf="@id/tv_cm_unit"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tv_mm"
-        tools:text="100" />
-
-    <TextView
-        android:id="@+id/tv_cm_unit"
-        android:layout_width="48dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="16dp"
-        android:gravity="end"
-        android:text="@string/cm"
-        android:textSize="24sp"
-        android:textStyle="bold"
+        android:background="@drawable/border_color_on_primary"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@id/tv_cm"
-        app:layout_constraintTop_toBottomOf="@id/tv_mm" />
-
-    <TextView
-        android:id="@+id/tv_m"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginHorizontal="16dp"
-        android:layout_marginTop="16dp"
-        android:gravity="end"
-        android:textSize="24sp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toStartOf="@id/tv_m_unit"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tv_cm"
-        tools:text="100" />
-
-    <TextView
-        android:id="@+id/tv_m_unit"
-        android:layout_width="48dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="16dp"
-        android:gravity="end"
-        android:text="@string/mm"
-        android:textSize="24sp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@id/tv_m"
-        app:layout_constraintTop_toBottomOf="@id/tv_cm_unit" />
-
-    <TextView
-        android:id="@+id/tv_km"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginHorizontal="16dp"
-        android:layout_marginTop="16dp"
-        android:gravity="end"
-        android:textSize="24sp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toStartOf="@id/tv_km_unit"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tv_m"
-        tools:text="100" />
-
-    <TextView
-        android:id="@+id/tv_km_unit"
-        android:layout_width="48dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="16dp"
-        android:gravity="end"
-        android:text="@string/km"
-        android:textSize="24sp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@id/tv_km"
-        app:layout_constraintTop_toBottomOf="@id/tv_m_unit" />
-
+        app:layout_constraintTop_toBottomOf="@id/inputEditText"
+        tools:text="@string/output_unit" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

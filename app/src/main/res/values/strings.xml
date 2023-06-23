@@ -35,6 +35,8 @@
     <string name="cm">cm</string>
     <string name="m">m</string>
     <string name="km">km</string>
+    <string name="arrow_left_to_right">→</string>
+    <string name="output_unit">결과 : %0.8f</string>
 
     <!-- ch03. 응급 의료 정보    -->
     <string name="name">이름</string>

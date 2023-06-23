@@ -14,24 +14,41 @@ import com.example.fastcampus.databinding.ActivityUnitConversionBinding
 
 class UnitConversionActivity : AppCompatActivity() {
 
-    private lateinit var binding: ActivityUnitConversionBinding
+    private val binding: ActivityUnitConversionBinding by lazy {
+        ActivityUnitConversionBinding.inflate(layoutInflater)
+    }
 
     private val list = arrayOf("mm", "cm", "m", "km")
 
+    private val inputSpinnerAdapter by lazy {
+        ArrayAdapter(
+            applicationContext,
+            android.R.layout.simple_spinner_item,
+            arrayOf("mm", "cm", "m", "km")
+        )
+    }
+
+    private val outputSpinnerAdapter by lazy {
+        ArrayAdapter(
+            applicationContext,
+            android.R.layout.simple_spinner_item,
+            arrayOf("mm", "cm", "m", "km")
+        )
+    }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = ActivityUnitConversionBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        setInputSpinner()
+        setOutputSpinner()
+        setEditInput()
+    }
+
+    private fun setInputSpinner() {
         with(binding) {
-
-            spinner.apply {
-
-                adapter = ArrayAdapter(
-                    applicationContext,
-                    android.R.layout.simple_spinner_dropdown_item,
-                    arrayOf("mm", "cm", "m", "km")
-                )
+            inputSpinner.apply {
+                adapter = inputSpinnerAdapter
 
                 onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
                     override fun onItemSelected(
@@ -40,17 +57,56 @@ class UnitConversionActivity : AppCompatActivity() {
                         i: Int,
                         l: Long
                     ) {
-                        if (binding.etInput.text.toString() == "0" || binding.etInput.text.isNullOrBlank()) {
-                            setAllUnitZero()
+                        if (inputEditText.text.toString() == "0" || inputEditText.text.isNullOrBlank()) {
+                            inputEditText.text.clear()
+                            outPutTextView.text = ""
                         } else
-                            unitInputChanged(list[i], binding.etInput.text.toString())
+                            unitInputChanged(
+                                list[i],
+                                outputSpinner.selectedItem as String,
+                                inputEditText.text.toString()
+                            )
                     }
 
                     override fun onNothingSelected(adapterView: AdapterView<*>) {}
                 }
             }
+        }
+    }
 
-            etInput.addTextChangedListener(object : TextWatcher {
+    private fun setOutputSpinner() {
+        with(binding) {
+            outputSpinner.apply {
+                adapter = outputSpinnerAdapter
+
+                onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
+                    override fun onItemSelected(
+                        adapterView: AdapterView<*>,
+                        view: View,
+                        i: Int,
+                        l: Long
+                    ) {
+                        if (inputEditText.text.toString() == "0" || inputEditText.text.isNullOrBlank()) {
+                            inputEditText.text.clear()
+                            outPutTextView.text = ""
+                        } else {
+                            unitInputChanged(
+                                inputSpinner.selectedItem as String,
+                                list[i],
+                                inputEditText.text.toString()
+                            )
+                        }
+                    }
+
+                    override fun onNothingSelected(adapterView: AdapterView<*>) {}
+                }
+            }
+        }
+    }
+
+    private fun setEditInput() {
+        with(binding) {
+            inputEditText.addTextChangedListener(object : TextWatcher {
                 override fun beforeTextChanged(
                     s: CharSequence?,
                     start: Int,
@@ -62,12 +118,14 @@ class UnitConversionActivity : AppCompatActivity() {
 
                 override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
 
-                    if (binding.etInput.text.toString() == "0" || binding.etInput.text.isNullOrBlank()) {
-                        setAllUnitZero()
+                    if (inputEditText.text.toString() == "0" || inputEditText.text.isNullOrBlank()) {
+                        inputEditText.text.clear()
+                        outPutTextView.text = ""
                     } else
                         unitInputChanged(
-                            binding.spinner.selectedItem as String,
-                            binding.etInput.text.toString()
+                            inputSpinner.selectedItem as String,
+                            outputSpinner.selectedItem as String,
+                            inputEditText.text.toString()
                         )
                 }
 
@@ -81,23 +139,25 @@ class UnitConversionActivity : AppCompatActivity() {
     /**
      * 1cm -> 10mm, 0.01m, 0.0001km
      */
-    private fun unitInputChanged(unit: String, value: String) {
+    private fun unitInputChanged(inputUnit: String, outputUnit: String, value: String) {
 
         try {
             val changedValue = value.toDouble()
 
-            when (unit) {
+            when (inputUnit) {
                 "mm" -> {
                     val cm = changedValue / 10.toDouble()
                     val m = cm / 100.toDouble()
                     val km = m / 1000.toDouble()
 
-                    convertUnitInTextValue(binding.tvMm, changedValue)
-                    convertUnitInTextValue(binding.tvCm, cm)
-                    convertUnitInTextValue(binding.tvM, m)
-                    convertUnitInTextValue(binding.tvKm, km)
+                    val result = when (outputUnit) {
+                        "mm" -> changedValue
+                        "cm" -> cm
+                        "m" -> m
+                        else -> km
+                    }
 
-                    setUnitValue(changedValue, cm, m, km)
+                    convertUnitInTextValue(binding.outPutTextView, result)
                 }
 
                 "cm" -> {
@@ -105,7 +165,14 @@ class UnitConversionActivity : AppCompatActivity() {
                     val m = changedValue / 100.toDouble()
                     val km = m / 1000.toDouble()
 
-                    setUnitValue(mm, changedValue, m, km)
+                    val result = when (outputUnit) {
+                        "mm" -> mm
+                        "cm" -> changedValue
+                        "m" -> m
+                        else -> km
+                    }
+
+                    convertUnitInTextValue(binding.outPutTextView, result)
                 }
 
                 "m" -> {
@@ -113,7 +180,14 @@ class UnitConversionActivity : AppCompatActivity() {
                     val cm = mm / 10.toDouble()
                     val km = changedValue / 1000.toDouble()
 
-                    setUnitValue(mm, cm, changedValue, km)
+                    val result = when (outputUnit) {
+                        "mm" -> mm
+                        "cm" -> cm
+                        "m" -> changedValue
+                        else -> km
+                    }
+
+                    convertUnitInTextValue(binding.outPutTextView, result)
                 }
 
                 "km" -> {
@@ -121,26 +195,20 @@ class UnitConversionActivity : AppCompatActivity() {
                     val cm = mm / 10.toDouble()
                     val m = cm / 100.toDouble()
 
-                    setUnitValue(mm, cm, m, changedValue)
+                    val result = when (outputUnit) {
+                        "mm" -> mm
+                        "cm" -> cm
+                        "m" -> m
+                        else -> changedValue
+                    }
+
+                    convertUnitInTextValue(binding.outPutTextView, result)
                 }
             }
         } catch (e: Exception) {
-            setAllUnitZero()
+            convertUnitInTextValue(binding.outPutTextView, 0.toDouble())
+            convertUnitInTextValue(binding.inputEditText, 0.toDouble())
         }
-    }
-
-    private fun setUnitValue(mm: Double, cm: Double, m: Double, km: Double) {
-        convertUnitInTextValue(binding.tvMm, mm)
-        convertUnitInTextValue(binding.tvCm, cm)
-        convertUnitInTextValue(binding.tvM, m)
-        convertUnitInTextValue(binding.tvKm, km)
-    }
-
-    private fun setAllUnitZero() {
-        convertUnitInTextValue(binding.tvMm, 0.toDouble())
-        convertUnitInTextValue(binding.tvCm, 0.toDouble())
-        convertUnitInTextValue(binding.tvM, 0.toDouble())
-        convertUnitInTextValue(binding.tvKm, 0.toDouble())
     }
 
     private fun convertUnitInTextValue(tv: TextView, value: Double) {
