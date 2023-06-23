@@ -189,6 +189,10 @@
 
     <string name="sub_title_video_info">%s · 조회수 %s · %s</string>
     <string name="header_sub_title_video_info">조회수 %s · %s</string>
+    <string name="msg_simple_password_input">간편 비밀번호 6자리 입력해주세요</string>
+    <string name="input_done">입력완료</string>
+    <string name="secure_keypad">보안 키패드</string>
+    <string name="phone_verify">휴대폰 인증</string>
 
     <!-- ch20. 얼굴인식 -->
 

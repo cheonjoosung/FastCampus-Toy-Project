@@ -1,5 +1,6 @@
 package com.example.fastcampus.part3.finance
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.example.fastcampus.R
@@ -14,5 +15,16 @@ class FinanceActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
+        binding.view = this
+    }
+
+    fun openShuffle() {
+        startActivity(
+            Intent(this, PinActivity::class.java)
+        )
+    }
+
+    fun openVerifyOtp() {
+
     }
 }

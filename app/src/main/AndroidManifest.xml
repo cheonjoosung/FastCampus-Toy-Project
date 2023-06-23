@@ -180,6 +180,10 @@
                     android:scheme="kakao0bc27ca1735ea97d7a89455f2228c14b" />
             </intent-filter>
         </activity>
+
+        <activity
+            android:name=".part3.finance.PinActivity"
+            android:exported="false" />
     </application>
 
 </manifest>
