@@ -23,6 +23,10 @@
     <string name="star_bux">스타벅스</string>
     <string name="youtube">유튜브</string>
     <string name="face_recognition">얼굴 인식</string>
+    <string name="finance">금융 서비스</string>
+    <string name="part_1_title">Part 1. 안드로이드 기본</string>
+    <string name="part_2_title">Part 2. 안드로이드 기본</string>
+    <string name="part_3_title">Part 3. 안드로이드 기본</string>
 
     <!-- ch01. 숫자 세기    -->
     <string name="init">초기화</string>
@@ -185,8 +189,11 @@
 
     <string name="sub_title_video_info">%s · 조회수 %s · %s</string>
     <string name="header_sub_title_video_info">조회수 %s · %s</string>
-    <string name="part_1_title">Part 1. 안드로이드 기본</string>
-    <string name="part_2_title">Part 2. 안드로이드 기본</string>
-    <string name="part_3_title">Part 3. 안드로이드 기본</string>
+
+    <!-- ch20. 얼굴인식 -->
+
+
+    <!-- ch21. 금융서비스 -->
+
 
 </resources>

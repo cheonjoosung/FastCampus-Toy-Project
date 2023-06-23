@@ -24,6 +24,7 @@ import com.example.fastcampus.part2.ch18_tomorrow_house.TomorrowHouseActivity
 import com.example.fastcampus.part2.ch19_starbux.StarbuxActivity
 import com.example.fastcampus.part2.ch20_youtube.YoutubeActivity
 import com.example.fastcampus.part3.face_recognition.FaceRecognitionActivity
+import com.example.fastcampus.part3.finance.FinanceActivity
 
 object CommonUtils {
     fun Context.getProjectList(): List<Project> {
@@ -153,6 +154,12 @@ object CommonUtils {
                 FaceRecognitionActivity::class.java,
                 Type.PART3,
                 R.drawable.baseline_face_24
+            ),
+            Project(
+                getString(R.string.finance),
+                FinanceActivity::class.java,
+                Type.PART3,
+                R.drawable.baseline_attach_money_24
             ),
         )
     }
