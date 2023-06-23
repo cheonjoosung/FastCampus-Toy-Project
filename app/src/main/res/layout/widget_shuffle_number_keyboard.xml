@@ -92,6 +92,7 @@
             android:padding="24dp"
             android:onClick="@{() -> view.onClickDelete()}"
             android:src="@drawable/baseline_arrow_back_24"
+            android:tint="?attr/colorOnPrimary"
             tools:text="9" />
 
         <androidx.appcompat.widget.AppCompatTextView
