@@ -129,6 +129,7 @@
             android:exported="false" />
         <activity
             android:name=".part1.ch03_emergency_medical.InputActivity"
+            android:windowSoftInputMode="adjustResize"
             android:exported="false" />
         <activity
             android:name=".part1.ch03_emergency_medical.EmergencyMedicalCareActivity"

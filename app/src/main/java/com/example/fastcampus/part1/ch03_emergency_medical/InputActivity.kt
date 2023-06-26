@@ -27,8 +27,13 @@ class InputActivity : AppCompatActivity() {
         binding = ActivityInputBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        with(binding) {
+        setSpinner()
+        setBirth()
+        setSave()
+    }
 
+    private fun setSpinner() {
+        with(binding) {
             spinnerBlood.apply {
 
                 adapter = ArrayAdapter(
@@ -52,7 +57,11 @@ class InputActivity : AppCompatActivity() {
                     }
                 }
             }
+        }
+    }
 
+    private fun setBirth() {
+        with(binding) {
             birthDateLayer.setOnClickListener {
                 val listener = OnDateSetListener { _, year, month, dayOfMonth ->
                     val str = "$year-${month.inc()}-$dayOfMonth"
@@ -61,6 +70,11 @@ class InputActivity : AppCompatActivity() {
 
                 DatePickerDialog(this@InputActivity, listener, 2000, 2, 1).show()
             }
+        }
+    }
+
+    private fun setSave() {
+        with(binding) {
 
             btnSave.setOnClickListener {
 

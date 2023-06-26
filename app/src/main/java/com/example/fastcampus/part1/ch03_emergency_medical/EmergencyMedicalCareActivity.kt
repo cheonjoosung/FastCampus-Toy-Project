@@ -15,19 +15,20 @@ import com.example.fastcampus.databinding.ActivityEmergencyMedicalCareBinding
 
 class EmergencyMedicalCareActivity : AppCompatActivity() {
 
-    private lateinit var binding: ActivityEmergencyMedicalCareBinding
+    private val binding: ActivityEmergencyMedicalCareBinding by lazy {
+        ActivityEmergencyMedicalCareBinding.inflate(layoutInflater)
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = ActivityEmergencyMedicalCareBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
         with(binding) {
 
             fabEdit.setOnClickListener {
-                Intent(this@EmergencyMedicalCareActivity, InputActivity::class.java).apply {
-                    startActivity(this)
-                }
+                startActivity(
+                    Intent(this@EmergencyMedicalCareActivity, InputActivity::class.java)
+                )
             }
 
             fabDelete.setOnClickListener {
@@ -41,10 +42,11 @@ class EmergencyMedicalCareActivity : AppCompatActivity() {
             }
 
             tvPhoneValue.setOnClickListener {
-                Intent(Intent.ACTION_VIEW).apply {
-                    data = Uri.parse("tel:${(tvPhoneValue.text).toString().replace("-", "")}")
-                    startActivity(this)
-                }
+                startActivity(
+                    Intent(Intent.ACTION_VIEW).apply {
+                        data = Uri.parse("tel:${(tvPhoneValue.text).toString().replace("-", "")}")
+                    }
+                )
             }
         }
 

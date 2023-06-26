@@ -29,11 +29,12 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginEnd="24dp"
+        android:autofillHints="true"
         android:hint="@string/name"
+        android:inputType="text"
         app:layout_constraintBaseline_toBaselineOf="@id/tv_name"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="@+id/guideline2"
-        android:autofillHints="" />
+        app:layout_constraintStart_toStartOf="@+id/guideline2" />
 
     <TextView
         android:id="@+id/tv_birth"
@@ -50,6 +51,7 @@
         style="@style/Value"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
         app:layout_constraintBaseline_toBaselineOf="@id/tv_birth"
         app:layout_constraintEnd_toStartOf="@id/iv_date"
         app:layout_constraintStart_toStartOf="@+id/guideline2"
@@ -57,14 +59,15 @@
 
     <ImageView
         android:id="@+id/iv_date"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:layout_marginEnd="24dp"
+        android:contentDescription="@string/calendarButton"
         android:src="@drawable/baseline_date_24"
         app:layout_constraintBottom_toBottomOf="@id/tv_birth_value"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@id/tv_birth_value"
-        app:layout_constraintTop_toTopOf="@id/tv_birth_value"
-        android:contentDescription="@string/calendarButton"/>
+        app:layout_constraintTop_toTopOf="@id/tv_birth_value" />
 
     <TextView
         android:id="@+id/tv_blood"
@@ -128,12 +131,12 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginEnd="24dp"
+        android:autofillHints=""
         android:hint="@string/hintPhone"
+        android:inputType="phone"
         app:layout_constraintBaseline_toBaselineOf="@id/tv_phone"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="@+id/guideline2"
-        android:autofillHints=""
-        android:inputType="number" />
+        app:layout_constraintStart_toStartOf="@+id/guideline2" />
 
     <TextView
         android:id="@+id/tv_etc"
@@ -161,18 +164,22 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginEnd="24dp"
+        android:autofillHints="true"
         android:hint="@string/etc"
+        android:inputType="text"
         app:layout_constraintBaseline_toBaselineOf="@id/tv_etc"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@id/cb_etc"
-        android:autofillHints="" />
+        app:layout_constraintStart_toEndOf="@id/cb_etc" />
 
     <Button
         android:id="@+id/btn_save"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:text="@string/save"
         android:layout_margin="24dp"
+        android:text="@string/save"
+        android:textColor="?attr/colorOnPrimary"
+        android:textSize="24sp"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
