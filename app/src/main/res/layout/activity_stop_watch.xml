@@ -12,6 +12,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginBottom="30dp"
+        android:textColor="?attr/colorOnPrimary"
         app:layout_constraintBottom_toTopOf="@id/timeTextView"
         app:layout_constraintStart_toStartOf="parent" />
 
@@ -31,6 +32,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/twoZero"
+        android:textColor="?attr/colorOnPrimary"
         android:textSize="50sp"
         app:layout_constraintBottom_toTopOf="@id/countDownProgressBar"
         app:layout_constraintEnd_toEndOf="parent"
@@ -52,6 +54,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/zero_time"
+        android:textColor="?attr/colorOnPrimary"
         android:textSize="120sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -66,6 +69,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:text="@string/zero"
+        android:textColor="?attr/colorOnPrimary"
         android:textSize="30sp"
         app:layout_constraintBaseline_toBaselineOf="@id/timeTextView"
         app:layout_constraintStart_toEndOf="@id/timeTextView" />

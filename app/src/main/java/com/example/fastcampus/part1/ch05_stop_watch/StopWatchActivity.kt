@@ -3,10 +3,7 @@ package com.example.fastcampus.part1.ch05_stop_watch
 import android.media.AudioManager
 import android.media.ToneGenerator
 import android.os.Bundle
-import android.os.Handler
-import android.util.Log
 import android.view.Gravity
-import android.view.View
 import android.widget.TextView
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
@@ -17,11 +14,12 @@ import com.example.fastcampus.databinding.ActivityStopWatchBinding
 import com.example.fastcampus.databinding.DialogCountdownSettingBinding
 import java.util.Timer
 import kotlin.concurrent.timer
-import kotlin.math.max
 
 class StopWatchActivity : AppCompatActivity() {
 
-    private lateinit var binding: ActivityStopWatchBinding
+    private val binding: ActivityStopWatchBinding by lazy {
+        ActivityStopWatchBinding.inflate(layoutInflater)
+    }
 
     private var countDownSecond = 10
     private var currentDeciSecond = 0 //0.1초 단위
@@ -31,7 +29,6 @@ class StopWatchActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = ActivityStopWatchBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
         initCountView()
@@ -99,8 +96,12 @@ class StopWatchActivity : AppCompatActivity() {
             }
 
             if (currentDeciSecond == 0 && currentCountDownDeciSecond < 31 && currentCountDownDeciSecond % 10 == 0) {
-                val toneType = if (currentCountDownDeciSecond == 0) ToneGenerator.TONE_CDMA_HIGH_L else ToneGenerator.TONE_CDMA_ANSWER
-                ToneGenerator(AudioManager.STREAM_ALARM, ToneGenerator.MAX_VOLUME).startTone(toneType, 100)
+                val toneType =
+                    if (currentCountDownDeciSecond == 0) ToneGenerator.TONE_CDMA_HIGH_L else ToneGenerator.TONE_CDMA_ANSWER
+                ToneGenerator(AudioManager.STREAM_ALARM, ToneGenerator.MAX_VOLUME).startTone(
+                    toneType,
+                    100
+                )
             }
         }
     }
@@ -135,7 +136,13 @@ class StopWatchActivity : AppCompatActivity() {
             val second = currentDeciSecond.div(10) % 60
             val deciSecond = currentDeciSecond % 10
 
-            text = container.childCount.inc().toString() + ". " + String.format("%02d:%02d %01d", minute, second, deciSecond)
+            val lapText = container.childCount.inc().toString() + ". " + String.format(
+                    "%02d:%02d %01d",
+            minute,
+            second,
+            deciSecond
+            )
+            text = lapText
         }.run {
             container.addView(this, 0)
         }
@@ -153,6 +160,7 @@ class StopWatchActivity : AppCompatActivity() {
 
     private fun countDownSettingDialog() {
         binding.stopButton.postDelayed({}, 1000L)
+
         AlertDialog.Builder(this).apply {
             val dialogBinding = DialogCountdownSettingBinding.inflate(layoutInflater)
             with(dialogBinding.countDownSecondPicker) {
