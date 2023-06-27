@@ -25,6 +25,8 @@ class FinanceActivity : AppCompatActivity() {
     }
 
     fun openVerifyOtp() {
-
+        startActivity(
+            Intent(this, IdentityInputActivity::class.java)
+        )
     }
 }

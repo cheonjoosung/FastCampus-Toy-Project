@@ -24,6 +24,9 @@
         android:usesCleartextTraffic="true"
         tools:targetApi="31">
         <activity
+            android:name=".part3.finance.IdentityInputActivity"
+            android:exported="false" />
+        <activity
             android:name=".part3.finance.FinanceActivity"
             android:exported="false" />
         <activity
@@ -129,8 +132,8 @@
             android:exported="false" />
         <activity
             android:name=".part1.ch03_emergency_medical.InputActivity"
-            android:windowSoftInputMode="adjustResize"
-            android:exported="false" />
+            android:exported="false"
+            android:windowSoftInputMode="adjustResize" />
         <activity
             android:name=".part1.ch03_emergency_medical.EmergencyMedicalCareActivity"
             android:exported="false" />
@@ -181,7 +184,6 @@
                     android:scheme="kakao0bc27ca1735ea97d7a89455f2228c14b" />
             </intent-filter>
         </activity>
-
         <activity
             android:name=".part3.finance.PinActivity"
             android:exported="false" />
