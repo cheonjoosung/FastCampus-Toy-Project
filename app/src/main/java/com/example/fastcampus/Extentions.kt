@@ -29,6 +29,7 @@ import com.example.fastcampus.part2.ch19_starbux.StarbuxActivity
 import com.example.fastcampus.part2.ch20_youtube.YoutubeActivity
 import com.example.fastcampus.part3.face_recognition.FaceRecognitionActivity
 import com.example.fastcampus.part3.finance.FinanceActivity
+import com.example.fastcampus.part3.wallet.WalletActivity
 
 
 fun Context.getProjectList(): List<Project> {
@@ -164,6 +165,12 @@ fun Context.getProjectList(): List<Project> {
             FinanceActivity::class.java,
             Type.PART3,
             R.drawable.baseline_attach_money_24
+        ),
+        Project(
+            getString(R.string.wallet),
+            WalletActivity::class.java,
+            Type.PART3,
+            R.drawable.baseline_wallet_24
         ),
     )
 }

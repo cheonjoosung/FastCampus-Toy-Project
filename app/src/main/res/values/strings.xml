@@ -24,9 +24,10 @@
     <string name="youtube">유튜브</string>
     <string name="face_recognition">얼굴 인식</string>
     <string name="finance">금융 서비스</string>
+    <string name="wallet">월렛</string>
     <string name="part_1_title">Part 1. 안드로이드 기본</string>
-    <string name="part_2_title">Part 2. 안드로이드 기본</string>
-    <string name="part_3_title">Part 3. 안드로이드 기본</string>
+    <string name="part_2_title">Part 2. 안드로이드 중급</string>
+    <string name="part_3_title">Part 3. 안드로이드 심화</string>
 
     <!-- ch01. 숫자 세기    -->
     <string name="init">초기화</string>
