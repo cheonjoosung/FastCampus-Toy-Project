@@ -5,9 +5,9 @@ import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.isVisible
 import com.example.fastcampus.ApiKey
-import com.example.fastcampus.CommonUtils.getProjectList
 import com.example.fastcampus.ch0_main.ProjectDetailActivity.Companion.PART_TYPE
 import com.example.fastcampus.databinding.ActivityMainBinding
+import com.example.fastcampus.getProjectList
 import com.kakao.sdk.common.KakaoSdk
 
 

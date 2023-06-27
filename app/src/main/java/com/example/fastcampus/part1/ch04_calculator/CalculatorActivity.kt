@@ -6,6 +6,7 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.example.fastcampus.R
 import com.example.fastcampus.databinding.ActivityCalculatorBinding
+import com.example.fastcampus.toastMessage
 
 class CalculatorActivity : AppCompatActivity() {
 
@@ -14,8 +15,6 @@ class CalculatorActivity : AppCompatActivity() {
     private val firstNumberText = StringBuilder("")
     private val secondNumberText = StringBuilder("")
     private val operatorText = StringBuilder("")
-
-    //private val decimalFormat = DecimalFormat("#,###")
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -72,7 +71,7 @@ class CalculatorActivity : AppCompatActivity() {
         val numberText = if (operatorText.isEmpty()) firstNumberText else secondNumberText
 
         if ((operatorText.toString() == "/" || operatorText.toString() == "%") && numberString == "0") {
-            Toast.makeText(this, getString(R.string.msg_no_divide_zero), Toast.LENGTH_SHORT).show()
+            toastMessage(getString(R.string.msg_no_divide_zero))
             return
         } else {
             numberText.append(numberString)
@@ -83,14 +82,14 @@ class CalculatorActivity : AppCompatActivity() {
     private fun operatorClicked(op: String) {
 
         if (firstNumberText.isEmpty()) {
+            toastMessage(getString(R.string.msg_number_input_need))
             Toast.makeText(this, getString(R.string.msg_number_input_need), Toast.LENGTH_SHORT)
                 .show()
             return
         }
 
         if (secondNumberText.isNotEmpty()) {
-            Toast.makeText(this, getString(R.string.msg_only_one_operator), Toast.LENGTH_SHORT)
-                .show()
+            toastMessage(getString(R.string.msg_only_one_operator))
             return
         }
 
@@ -101,7 +100,7 @@ class CalculatorActivity : AppCompatActivity() {
     private fun equalClicked() {
 
         if (firstNumberText.isEmpty() || secondNumberText.isEmpty() || operatorText.isEmpty()) {
-            Toast.makeText(this, getString(R.string.msg_expression_error), Toast.LENGTH_SHORT).show()
+            toastMessage(getString(R.string.msg_expression_error))
             return
         }
 

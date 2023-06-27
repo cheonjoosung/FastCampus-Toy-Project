@@ -4,9 +4,9 @@ import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.GridLayoutManager
-import com.example.fastcampus.CommonUtils.getProjectList
 import com.example.fastcampus.R
 import com.example.fastcampus.databinding.ActivityProjectDetailBinding
+import com.example.fastcampus.getProjectList
 
 class ProjectDetailActivity : AppCompatActivity() {
 
