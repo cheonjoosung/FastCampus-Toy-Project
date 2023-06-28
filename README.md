@@ -167,8 +167,21 @@
 
 
 ## 21. 얼굴인식 서비스
+|<img src="https://github.com/cheonjoosung/FastCampus-Toy-Project/blob/master/image/no21-1.jpg?raw=true" width="180" height="400">
+|<img src="https://github.com/cheonjoosung/FastCampus-Toy-Project/blob/master/image/no21-2.jpg?raw=true" width="180" height="400">
+|-|-|
 - 얼굴을 인식하는 서비스 개발 + 카메라 모듈 개발
 - UI 학습 : 
 - 기능 학습 : 카메라 프리뷰, 얼굴 인식 모듈, Mask
+
+
+## 22. 금융 서비스
+|<img src="https://github.com/cheonjoosung/FastCampus-Toy-Project/blob/master/image/no22-1.jpg?raw=true" width="180" height="400">
+|<img src="https://github.com/cheonjoosung/FastCampus-Toy-Project/blob/master/image/no22-2.jpg?raw=true" width="180" height="400">
+|-|-|
+- 금융서비스 - 회원가입 및 보안 키패드 입력 UI
+- UI 학습 : TextInputLayout, TextEditLayout
+- 기능 학습 : 보안 키패드, 본인 확인 입력
+
 
 
