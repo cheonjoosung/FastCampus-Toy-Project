@@ -2,8 +2,9 @@
 - 35개 프로젝트로 배우는 Android 앱 개발 (feat. Jetpack Compose 초격차 패키지)
 - 실무에서의 활용 방법을 익히고 필요한 기능을 학습하며 문제해결 능력을 키움
 
-<img src="https://github.com/cheonjoosung/FastCampus-Toy-Project/blob/master/image/main1.jpg?raw=true" width="180" height="400">
-<img src="https://github.com/cheonjoosung/FastCampus-Toy-Project/blob/master/image/main2.jpg?raw=true" width="180" height="400">
+|<img src="https://github.com/cheonjoosung/FastCampus-Toy-Project/blob/master/image/main1.jpg?raw=true" width="180" height="400">
+|<img src="https://github.com/cheonjoosung/FastCampus-Toy-Project/blob/master/image/main2.jpg?raw=true" width="180" height="400">
+|-|-|
 
 ## 1. 숫자 세기
 <img src="https://github.com/cheonjoosung/FastCampus-Toy-Project/blob/master/image/no1.jpg?raw=true" width="180" height="400">
