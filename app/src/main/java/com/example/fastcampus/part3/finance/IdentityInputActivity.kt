@@ -6,10 +6,8 @@ import android.os.Bundle
 import android.view.inputmethod.EditorInfo
 import androidx.core.view.isVisible
 import androidx.core.widget.doAfterTextChanged
-import com.example.fastcampus.R
 import com.example.fastcampus.closeKeyboard
 import com.example.fastcampus.databinding.ActivityIdentifyInputBinding
-import com.example.fastcampus.hideKeyboard
 import com.example.fastcampus.setOnEditorActionListener
 import com.example.fastcampus.showKeyboard
 import com.example.fastcampus.showKeyboardDelay
@@ -129,14 +127,20 @@ class IdentityInputActivity : AppCompatActivity() {
         startActivity(Intent(this, VerifyOtpActivity::class.java))
     }
 
-    private fun validName() = !binding.nameEdit.text.isNullOrBlank()
-            && REGEX_NAME.toRegex().matches(binding.nameEdit.text!!)
+    private fun validName(): Boolean {
+        return if (binding.nameEdit.text.isNullOrEmpty()) false
+        else REGEX_NAME.toRegex().matches(binding.nameEdit.text!!)
+    }
 
-    private fun validBirthDay() = !binding.birthdayEdit.text.isNullOrBlank()
-            && REGEX_BIRTHDAY.toRegex().matches(binding.birthdayEdit.text!!)
+    private fun validBirthDay(): Boolean {
+        return if (binding.birthdayEdit.text.isNullOrEmpty()) false
+        else REGEX_BIRTHDAY.toRegex().matches(binding.birthdayEdit.text!!)
+    }
 
-    private fun validPhone() = !binding.phoneEdit.text.isNullOrEmpty()
-            && REGEX_PHONE.toRegex().matches(binding.phoneEdit.text!!)
+    private fun validPhone(): Boolean {
+        return if (binding.phoneEdit.text.isNullOrEmpty()) false
+        else REGEX_PHONE.toRegex().matches(binding.phoneEdit.text!!)
+    }
 
     companion object {
         private const val REGEX_NAME = "^[가-힣]{2,}\$"

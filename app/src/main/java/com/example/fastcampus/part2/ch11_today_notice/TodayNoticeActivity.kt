@@ -22,7 +22,7 @@ class TodayNoticeActivity : AppCompatActivity() {
 
     private val serverURL = "http://192.168.209.110:8080"
 
-    val client = OkHttpClient()
+    private val client = OkHttpClient()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -51,10 +51,11 @@ class TodayNoticeActivity : AppCompatActivity() {
 
                     override fun onResponse(call: Call, response: Response) {
                         if (response.isSuccessful) {
-                            val response = response.body?.string()
-                            val message = Gson().fromJson(response, Message::class.java)
+                            val responseStr = response.body?.string()
+                            val message = Gson().fromJson(responseStr, Message::class.java)
                             runOnUiThread {
-                                noticeTextView.text = message.message + "\n by " + message.nickname
+                                val text = message.message + "\n by " + message.nickname
+                                noticeTextView.text = text
                                 noticeTextView.visibility = View.VISIBLE
                                 serverHostEditText.isVisible = false
                                 confirmButton.isVisible = false

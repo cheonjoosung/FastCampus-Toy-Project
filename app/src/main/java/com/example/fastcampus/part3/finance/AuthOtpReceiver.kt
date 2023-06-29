@@ -51,6 +51,6 @@ class AuthOtpReceiver : BroadcastReceiver() {
     }
 
     companion object {
-        private const val PATTERN = "^<#>.*\\[Sample\\].+\\[(\\d{6})\\].+\$"
+        private const val PATTERN = "^<#>.*\\[Sample].+\\[(\\d{6})].+\$"
     }
 }

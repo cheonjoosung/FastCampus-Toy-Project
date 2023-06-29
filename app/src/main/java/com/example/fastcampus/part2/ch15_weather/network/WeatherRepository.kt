@@ -13,7 +13,7 @@ import retrofit2.converter.gson.GsonConverterFactory
 
 object WeatherRepository {
 
-    private val url = "http://apis.data.go.kr/"
+    private const val url = "http://apis.data.go.kr/"
 
     private val retrofit = Retrofit.Builder()
         .baseUrl(url)

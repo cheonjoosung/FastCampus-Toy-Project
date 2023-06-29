@@ -54,7 +54,7 @@ class MyGalleryActivity : AppCompatActivity() {
                 val images = imageAdapter.currentList.filterIsInstance<ImageItems.Image>()
                     .map { it.uri.toString() }.toTypedArray()
 
-                if (images.isNullOrEmpty()) {
+                if (images.isEmpty()) {
                     Toast.makeText(
                         applicationContext,
                         getString(R.string.msg_no_selected_image),

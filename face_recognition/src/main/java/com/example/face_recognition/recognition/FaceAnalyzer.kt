@@ -59,7 +59,7 @@ internal class FaceAnalyzer(
                         detectStatus = FaceAnalyzerStatus.LeftWink
                         listener?.detectProgress(50F, "오른쪽 눈 깜빡")
                     } else {
-
+                        //do nothing
                     }
                 }
 
@@ -71,7 +71,7 @@ internal class FaceAnalyzer(
                         detectStatus = FaceAnalyzerStatus.LeftWink
                         listener?.detectProgress(75F, "활짝 웃어보세요")
                     } else {
-
+                        //do nothing
                     }
                 }
 
@@ -82,12 +82,12 @@ internal class FaceAnalyzer(
                         listener?.stopDetect()
                         detector.close()
                     } else {
-
+                        //do nothing
                     }
                 }
 
                 else -> {
-
+                    //do nothing
                 }
             }
 
@@ -98,7 +98,7 @@ internal class FaceAnalyzer(
                 listener?.notDetect()
                 listener?.detectProgress(0F, "처음으로 돌아갑니다")
             } else {
-
+                //do nothing
             }
         }
 

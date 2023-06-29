@@ -35,7 +35,7 @@ class ShuffleNumberKeyboard @JvmOverloads constructor(
         _binding = null
     }
 
-    fun shuffle() {
+    private fun shuffle() {
         val keyNumberArray = ArrayList<String>()
         for (i in 0..9) {
             keyNumberArray.add(i.toString())
