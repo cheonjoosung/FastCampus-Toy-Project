@@ -5,19 +5,23 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.children
 import androidx.core.widget.addTextChangedListener
+import com.example.fastcampus.R
 import com.example.fastcampus.databinding.ActivityAddBinding
+import com.example.fastcampus.toastMessage
 import com.google.android.material.chip.Chip
 
 class AddActivity : AppCompatActivity() {
 
-    private lateinit var binding: ActivityAddBinding
+    private val binding: ActivityAddBinding by lazy {
+        ActivityAddBinding.inflate(layoutInflater)
+    }
 
     private var originWord: Word? = null
 
     private val types = listOf("명사", "동사", "대명사", "형용사", "부사", "감탄사", "전치사", "접속사")
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = ActivityAddBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
         with(binding) {
@@ -29,7 +33,7 @@ class AddActivity : AppCompatActivity() {
 
             addButton.setOnClickListener {
                 if (textInputEditText.text.isNullOrEmpty() || typeChipGroup.checkedChipId == -1) {
-                    Toast.makeText(applicationContext, "단어 또는 칩을 선택해주세요.", Toast.LENGTH_SHORT).show()
+                    toastMessage(getString(R.string.msg_choice_word_or_chip))
                     return@setOnClickListener
                 }
 
@@ -38,7 +42,7 @@ class AddActivity : AppCompatActivity() {
 
             textInputEditText.addTextChangedListener {
                 it?.let { text ->
-                    binding.textTextInputLayout.error = when (text.length) {
+                    textTextInputLayout.error = when (text.length) {
                         0 -> "값을 입력"
                         1 -> "2자 이상 입력"
                         else -> null

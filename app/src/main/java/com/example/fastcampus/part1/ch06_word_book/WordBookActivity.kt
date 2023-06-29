@@ -1,20 +1,23 @@
 package com.example.fastcampus.part1.ch06_word_book
 
 import android.content.Intent
-import android.os.Build
 import android.os.Bundle
 import android.widget.LinearLayout
-import android.widget.Toast
 import androidx.activity.result.contract.ActivityResultContracts
-import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.DividerItemDecoration
+import com.example.fastcampus.R
 import com.example.fastcampus.databinding.ActivityWordBookBinding
+import com.example.fastcampus.toastMessage
 
 class WordBookActivity : AppCompatActivity() {
 
-    private lateinit var binding: ActivityWordBookBinding
-    private lateinit var myWordAdapter: WordAdapter
+    private val binding: ActivityWordBookBinding by lazy {
+        ActivityWordBookBinding.inflate(layoutInflater)
+    }
+
+    private lateinit var wordAdapter: WordAdapter
+
     private var selectedWord: Word? = null
 
     private val updateAddWordResult =
@@ -37,24 +40,21 @@ class WordBookActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = ActivityWordBookBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        wordAdapter = WordAdapter {
+            selectedWord = it
+            binding.textTextView.text = it.text
+            binding.meanTextView.text = it.mean
+
+            toastMessage(getString(R.string.msg_clicked_word, it.text))
+        }
 
         with(binding) {
 
             recyclerView.apply {
                 addItemDecoration(DividerItemDecoration(applicationContext, LinearLayout.VERTICAL))
-                myWordAdapter = WordAdapter(mutableListOf()).apply {
-                    click = {
-                        selectedWord = it
-                        textTextView.text = it.text
-                        meanTextView.text = it.mean
-
-                        Toast.makeText(applicationContext, "Clicked $it", Toast.LENGTH_SHORT).show()
-                    }
-                }
-                adapter = myWordAdapter
+                adapter = wordAdapter
             }
 
             addButton.setOnClickListener {
@@ -69,11 +69,12 @@ class WordBookActivity : AppCompatActivity() {
                         AppDatabase.getInstance(applicationContext)?.wordDao()?.delete(it)
 
                         runOnUiThread {
-                            myWordAdapter.list.remove(it)
-                            myWordAdapter.notifyDataSetChanged()
-                            binding.textTextView.text = ""
-                            binding.meanTextView.text = ""
-                            Toast.makeText(applicationContext, "삭제 완료", Toast.LENGTH_SHORT).show()
+                            val currentList = wordAdapter.currentList.toMutableList()
+                            currentList.remove(it)
+                            wordAdapter.submitList(currentList)
+                            textTextView.text = ""
+                            meanTextView.text = ""
+                            toastMessage(getString(R.string.msg_delete_word_done))
                         }
 
                         selectedWord = null
@@ -95,28 +96,28 @@ class WordBookActivity : AppCompatActivity() {
         Thread {
             val list =
                 AppDatabase.getInstance(applicationContext)?.wordDao()?.getAll() ?: emptyList()
-            myWordAdapter.list.addAll(list)
-            runOnUiThread {
-                myWordAdapter.notifyItemRangeChanged(0, list.size)
-            }
+            wordAdapter.submitList(list)
         }.start()
     }
 
     private fun updateAddWord() {
         Thread {
             AppDatabase.getInstance(this)?.wordDao()?.getLatestWord()?.let { word ->
-                myWordAdapter.list.add(0, word)
-                runOnUiThread { myWordAdapter.notifyDataSetChanged() }
+                val currentList = wordAdapter.currentList.toMutableList()
+                currentList.add(word)
+                wordAdapter.submitList(currentList)
             }
         }.start()
     }
 
     private fun editWord(word: Word) {
-        val index = myWordAdapter.list.indexOfFirst { it.id == word.id }
-        myWordAdapter.list[index] = word
+        val currentList = wordAdapter.currentList.toMutableList()
+        val index = currentList.indexOfFirst { it.id == word.id }
+        currentList[index] = word
+
         runOnUiThread {
+            wordAdapter.submitList(currentList)
             selectedWord = word
-            myWordAdapter.notifyItemChanged(index)
             binding.textTextView.text = word.text
             binding.meanTextView.text = word.mean
         }
